@@ -2,10 +2,9 @@
 
 👋 hi there! My name is [Kent C. Dodds](https://kentcdodds.com)!
 
-[![chat-badge][chat-badge]][chat] [![Build Status][build-badge]][build]
+[![Travis Build Status][build-badge]][build]
 [![AppVeyor Build Status][win-build-badge]][win-build]
 [![Code Coverage][coverage-badge]][coverage]
-
 [![GPL-3.0 License][license-badge]][license]
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome][prs-badge]][prs] [![Code of Conduct][coc-badge]][coc]
@@ -180,9 +179,6 @@ at kent@doddsfamily.us
 [npm]: https://www.npmjs.com/
 [node]: https://nodejs.org
 [git]: https://git-scm.com/
-[chat]: https://gitter.im/kentcdodds/learn-react-hooks
-[chat-badge]:
-  https://img.shields.io/gitter/room/kentcdodds/learn-react-hooks.js.svg?style=flat-square&logo=gitter-white
 [build-badge]:
   https://img.shields.io/travis/kentcdodds/learn-react-hooks.svg?style=flat-square&logo=travis
 [build]: https://travis-ci.org/kentcdodds/learn-react-hooks
