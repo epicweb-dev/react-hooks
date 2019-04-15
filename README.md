@@ -87,7 +87,7 @@ This should start up your browser. If you're familiar, this is a standard
 [react-scripts](https://github.com/facebook/create-react-app) application.
 
 You can also open
-[the deployment of the app on Netlify](https://learn-react-hooksjs.netlify.com/).
+[the deployment of the app on Netlify](https://learn-react-hooks.netlify.com/).
 
 ## Running the tests
 
