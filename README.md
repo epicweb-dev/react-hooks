@@ -1,6 +1,7 @@
-# Learn React
+# Learn React Hooks
 
-👋 hi there! My name is [Kent C. Dodds](https://kentcdodds.com)!
+👋 hi there! My name is [Kent C. Dodds](https://kentcdodds.com) and this is the
+source material for [Learn React Hooks](https://kentcdodds.com/workshops/hooks)!
 
 [![Travis Build Status][build-badge]][build]
 [![AppVeyor Build Status][win-build-badge]][win-build]
@@ -48,9 +49,7 @@ variable and how to fix it here for [windows][win-path] or
 
 You may be able to work through the entire workshop in the browser. Go to
 [this codesandbox](https://codesandbox.io/s/github/kentcdodds/learn-react-hooks)
-and you should be good to go. (Note: there are a few exercises in the `intro`
-folder which you won't be able to run in codesandbox, but don't require
-installing any dependencies).
+and you should be good to go.
 
 If you'd rather be able to work through the workshop on your own computer, then
 follow the following instructions.
