@@ -1,0 +1,81 @@
+/*
+Taken from the vanilla-tilt.js demo site:
+https://micku7zu.github.io/vanilla-tilt.js/index.html
+*/
+.tilt-root {
+  height: 150px;
+  background-color: red;
+  width: 200px;
+  background-image: -webkit-linear-gradient(315deg, #ff00ba 0%, #fae713 100%);
+  background-image: linear-gradient(135deg, #ff00ba 0%, #fae713 100%);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+}
+.tilt-child {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translateZ(30px) translateX(-50%) translateY(-50%);
+  box-shadow: 0 0 50px 0 rgba(51, 51, 51, 0.3);
+  background-color: white;
+}
+.totally-centered {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  font: 14px 'Century Gothic', Futura, sans-serif;
+  margin: 20px;
+  min-height: 260px;
+}
+
+.game ol,
+.game ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
