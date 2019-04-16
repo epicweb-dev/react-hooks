@@ -102,12 +102,10 @@ output and play around with it.
 
 ## Working through it
 
-You'll want to start in the `intro/exercises` directory where we start with raw
-React and DOM APIs. Pull open the `.html` files in your browser and follow along
-in the comments.
-
-Once you get through those, then start in the `src/exercises` directory and work
-through those.
+This a very exercise-heavy workshop. You'll find the exercises in the
+`src/exercises` directory. I recommend running the tests and the application.
+When you start an exercise, pull up the exercises page in the app and the test
+in the `src/__tests__` directory.
 
 **Your goal will be to go into each test, swap the final version for the
 exercise version in the import, and make the tests pass**
