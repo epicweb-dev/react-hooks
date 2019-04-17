@@ -15,7 +15,7 @@ function useLocalStorageState({
   const serializedState = serialize(state)
   React.useEffect(() => {
     window.localStorage.setItem(key, serializedState)
-  }, [key, serialize, serializedState])
+  }, [key, serializedState])
 
   return [state, setState]
 }
