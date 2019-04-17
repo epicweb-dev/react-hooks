@@ -19,8 +19,10 @@ function Tilt({children}) {
   //   'max-glare': 0.5,
   // })
   //
-  // 💰 Don't forget to return a cleanup function. VanillaTilt.init will add an
-  // object to your DOM node to cleanup: `tiltNode.vanillaTilt.destroy()`
+  // 💰 VanillaTilt.init will add an object to your DOM node to cleanup:
+  // `tiltNode.vanillaTilt.destroy()`. Use this when returning your cleanup
+  // function. Remember that you want to return a function (DON'T just
+  // return `tiltNode.vanillaTilt.destroy()`).
   //
   // 💰 Don't forget to specify your effect's dependencies array! In our case
   // we know that the tilt node will never change, so make it `[]`. Ask me about
