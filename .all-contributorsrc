@@ -19,7 +19,17 @@
         "infra",
         "test"
       ]
+    },
+    {
+      "login": "tsnieman",
+      "name": "Tyler Nieman",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/595711?v=4",
+      "profile": "http://tsnieman.net/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 7,
+  "repoHost": "https://github.com"
 }
