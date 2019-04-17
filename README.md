@@ -152,6 +152,18 @@ can.
 
 </details>
 
+<details>
+
+<summary>"Error: ENOSPC: System limit for number of file watchers reached" when running tests</summary>
+
+Try increasing your system's file watchers limit:
+```
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+> Read more about what’s happening at https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details
+
+</details>
+
 ## Contributors
 
 Thanks goes to these wonderful people
