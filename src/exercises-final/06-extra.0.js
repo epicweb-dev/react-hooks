@@ -1,4 +1,5 @@
 // Making HTTP requests with useEffect
+// http://localhost:3000/isolated/exercises-final/06-extra.0
 import React from 'react'
 
 function PokemonInfo({pokemonName}) {
