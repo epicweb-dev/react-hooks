@@ -36,10 +36,6 @@ function PokemonInfo({pokemonName}) {
 // before a pokemon is presented (and you can change the implementation) below
 // to render <PokemonInfo /> without the ternary.
 
-// 💯 See if you can refactor this to use the `useReducer` hook. This'll be a
-// tough one if you've never used `useReducer` before!
-// 📜 see 06.md for more information
-
 /*
 🦉 Elaboration & Feedback
 After the instruction, copy the URL below into your browser and fill out the form:
