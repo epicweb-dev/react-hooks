@@ -4,10 +4,7 @@ import {render, wait} from 'react-testing-library'
 import Usage from '../exercises-final/06'
 // import Usage from '../exercises/06'
 
-const realError = console.error
-
 beforeAll(() => {
-  jest.spyOn(console, 'error').mockImplementation(() => {})
   jest
     .spyOn(window, 'fetch')
     .mockImplementation(() =>
@@ -17,26 +14,10 @@ beforeAll(() => {
 
 afterAll(() => {
   window.fetch.mockRestore()
-  console.error.mockRestore()
 })
 
 beforeEach(() => {
   window.fetch.mockClear()
-  console.error.mockClear()
-})
-
-afterEach(() => {
-  try {
-    expect(console.error).toHaveBeenCalledTimes(9)
-  } catch (_e) {
-    const badCalls = console.error.mock.calls.filter(
-      c => c[0] && c[0].includes('Warning'),
-    )
-    console.info(badCalls.length)
-    badCalls.forEach((...args) => {
-      realError(...args)
-    })
-  }
 })
 
 test('displays the pokemon', async () => {

@@ -5,7 +5,7 @@ import Usage from '../exercises-final/07'
 
 test('logs only when the state is changed', () => {
   jest.spyOn(console, 'info').mockImplementation(() => {})
-  const {getByLabelText, getByText} = render(<Usage />)
+  const {getByLabelText, getAllByText} = render(<Usage />)
   expect(console.info.mock.calls).toMatchInlineSnapshot(`
 Array [
   Array [
@@ -36,7 +36,7 @@ Array [
 `)
   console.info.mockClear()
 
-  fireEvent.click(getByText('0'))
+  fireEvent.click(getAllByText('0')[0])
   expect(console.info.mock.calls).toMatchInlineSnapshot(`
 Array [
   Array [
