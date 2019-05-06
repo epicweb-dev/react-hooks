@@ -1,6 +1,6 @@
 import React from 'react'
 import chalk from 'chalk'
-import {render, wait} from 'react-testing-library'
+import {render, fireEvent, wait} from 'react-testing-library'
 import Usage from '../exercises-final/06'
 // import Usage from '../exercises/06'
 
@@ -31,8 +31,8 @@ test('displays the pokemon', async () => {
   const submit = getByText(/submit/i)
 
   // verify that an initial request is made when mounted
-  input.value = 'jeffry'
-  submit.click()
+  fireEvent.change(input, {target: {value: 'jeffry'}})
+  fireEvent.click(submit)
   await wait(() =>
     expect(getByTestId('pokemon-display')).toHaveTextContent('fake-id'),
   )
@@ -51,8 +51,8 @@ test('displays the pokemon', async () => {
       json: () => Promise.resolve({data: {pokemon: {id: 'id-that-is-fake'}}}),
     }),
   )
-  input.value = 'fred'
-  submit.click()
+  fireEvent.change(input, {target: {value: 'fred'}})
+  fireEvent.click(submit)
   await wait(() =>
     expect(getByTestId('pokemon-display')).toHaveTextContent('id-that-is-fake'),
   )
@@ -66,7 +66,7 @@ test('displays the pokemon', async () => {
   window.fetch.mockClear()
 
   // verify that when props remain the same a request is not made
-  submit.click()
+  fireEvent.click(submit)
   try {
     expect(window.fetch).not.toHaveBeenCalled()
   } catch (error) {
@@ -86,8 +86,8 @@ test('displays the pokemon', async () => {
     }),
   )
 
-  input.value = 'george'
-  submit.click()
+  fireEvent.change(input, {target: {value: 'george'}})
+  fireEvent.click(submit)
   await wait(() =>
     expect(getByTestId('pokemon-display')).toHaveTextContent(/error/i),
   )
