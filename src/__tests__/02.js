@@ -30,7 +30,7 @@ test('using a custom hook called useCounter', () => {
     expect(counterFn.toString()).toContain('useCounter')
   } catch (error) {
     throw new Error(
-      '🚨  The Counter component that is rendered must call a hook called "useCounter" to get the "count" and "increment" functions.',
+      '🚨  The Counter component that is rendered must call a hook called "useCounter" to get the "count" number and "increment" function.',
     )
   }
 })
