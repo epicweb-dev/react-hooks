@@ -1,10 +1,6 @@
 // Counter: useEffect
 import React from 'react'
 
-// In this exercise, we're going to enhance our counter component to get it's
-// initial state value from localStorage (if available) and keep localStorage
-// updated as the count is incremented.
-
 function Counter({step = 1, initialCount = 0}) {
   // 🐨 initialize the state to the value from localStorage
   // 💰 Number(window.localStorage.getItem('count') || initialCount)
@@ -14,22 +10,6 @@ function Counter({step = 1, initialCount = 0}) {
   // The callback should set the `count` in localStorage.
   return <button onClick={increment}>{count}</button>
 }
-
-// 💯 Make the `React.useState` call use lazy initialization to avoid a
-// performance bottleneck of reading into localStorage on every render.
-// 📜 see 03.md for more info
-
-// 💯 Add a dependencies array for `React.useEffect` to avoid the callback
-// being called too frequently.
-// 📜 see 03.md for more info
-
-// 💯 Create a custom hook called `useLocalStorageCounter` for reusability of
-// all this logic.
-
-// 💯 Create a custom hook called `useLocalStorageState` that's a much more
-// generic persisted state hook which your `useLocalStorageCounter` hook could
-// use. `useLocalStorageState` could then be used to store just about any state
-// in localStorage and keep it in sync.
 
 /*
 🦉 Elaboration & Feedback
