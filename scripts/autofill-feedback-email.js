@@ -38,7 +38,7 @@ if (isCI) {
     }
     const options = {
       files: [path.join(__dirname, '..', 'src/**/*.js')],
-      from: /&em=\n/,
+      from: /&em=\r?\n/,
       to: `&em=${email}\n`,
     }
 
