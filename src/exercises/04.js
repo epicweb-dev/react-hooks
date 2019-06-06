@@ -1,4 +1,4 @@
-// Tic Tac Toe: Advanced State
+// useState: tic tac toe
 
 import React from 'react'
 
@@ -66,7 +66,7 @@ function Game() {
 /*
 🦉 Elaboration & Feedback
 After the instruction, copy the URL below into your browser and fill out the form:
-http://ws.kcd.im/?ws=React%20Hooks&e=Tick%20Tac%20Toe%3A%20Advanced%20State&em=
+http://ws.kcd.im/?ws=React%20Hooks&e=useState%3A%20tic%20tac%20toe&em=
 */
 
 ////////////////////////////////////////////////////////////////////
@@ -107,6 +107,6 @@ function calculateWinner(squares) {
 function Usage() {
   return <Game />
 }
-Usage.title = 'Tic Tac Toe: Advanced State'
+Usage.title = 'useState: tic tac toe'
 
 export default Usage

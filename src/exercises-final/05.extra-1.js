@@ -1,4 +1,4 @@
-// Interact with the DOM with useEffect and useRef
+// useRef and useEffect: DOM interaction
 // 💯 Make a custom hook
 // http://localhost:3000/isolated/exercises-final/05.extra-1
 
@@ -38,6 +38,6 @@ function Usage() {
     </Tilt>
   )
 }
-Usage.title = 'Interact with the DOM with useEffect and useRef'
+Usage.title = 'useRef and useEffect: DOM interaction'
 
 export default Usage

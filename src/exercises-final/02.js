@@ -1,4 +1,4 @@
-// Counter: custom hooks
+// useCounter: custom hooks
 import React from 'react'
 
 function useCounter({step = 1, initialCount = 0} = {}) {
@@ -15,6 +15,6 @@ function Counter({step, initialCount}) {
 function Usage() {
   return <Counter />
 }
-Usage.title = 'Counter: custom hooks'
+Usage.title = 'useCounter: custom hooks'
 
 export default Usage

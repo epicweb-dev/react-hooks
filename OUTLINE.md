@@ -33,16 +33,16 @@
 ## Schedule
 
 - 😴 Logistics
-- 🏋 01. Counter: hooks and simple state
-- 🏋 02. Counter: custom hooks
+- 🏋 01. useState: couter
+- 🏋 02. useCounter: custom hooks
 - 😴 10 Minutes
-- 🏋 03. Counter: useEffect
+- 🏋 03. useEffect: persistent state
 - 😴 30 Minutes
-- 🏋 04. Tic Tac Toe: Advanced State
+- 🏋 04. useState: tic tac toe
 - 😴 10 Minutes
-- 🏋 05. Interact with the DOM with useEffect and useRef
+- 🏋 05. useRef and useEffect: DOM interaction
 - 😴 10 Minutes
-- 🏋 06. Making HTTP requests with useEffect
+- 🏋 06. useEffect: HTTP requests
 - ❓ Q&A
 
 ## Scripts

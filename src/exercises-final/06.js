@@ -1,4 +1,4 @@
-// Making HTTP requests with useEffect
+// useEffect: HTTP requests
 
 import React from 'react'
 import fetchPokemon from '../fetch-pokemon'
@@ -133,6 +133,6 @@ function Usage() {
     </div>
   )
 }
-Usage.title = 'Making HTTP requests with useEffect'
+Usage.title = 'useEffect: HTTP requests'
 
 export default Usage

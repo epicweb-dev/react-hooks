@@ -1,4 +1,4 @@
-// Making HTTP requests with useEffect
+// useEffect: HTTP requests
 
 import React from 'react'
 import fetchPokemon from '../fetch-pokemon'
@@ -43,7 +43,7 @@ function PokemonInfo({pokemonName}) {
 /*
 🦉 Elaboration & Feedback
 After the instruction, copy the URL below into your browser and fill out the form:
-http://ws.kcd.im/?ws=React%20Hooks&e=Making%20HTTP%20requests%20with%20useEffect&em=
+http://ws.kcd.im/?ws=React%20Hooks&e=useEffect%3A%20HTTP%20requests&em=
 */
 
 ////////////////////////////////////////////////////////////////////
@@ -133,7 +133,7 @@ function Usage() {
     </div>
   )
 }
-Usage.title = 'Making HTTP requests with useEffect'
+Usage.title = 'useEffect: HTTP requests'
 
 export default Usage
 

@@ -1,4 +1,4 @@
-// Interact with the DOM with useEffect and useRef
+// useRef and useEffect: DOM interaction
 
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
@@ -37,7 +37,7 @@ function Tilt({children}) {
 /*
 🦉 Elaboration & Feedback
 After the instruction, copy the URL below into your browser and fill out the form:
-http://ws.kcd.im/?ws=React%20Hooks&e=Interact%20with%20the%20DOM%20with%20useEffect&em=
+http://ws.kcd.im/?ws=React%20Hooks&e=useRef%20and%20useEffect%3A%20DOM%20interaction&em=
 */
 
 ////////////////////////////////////////////////////////////////////
@@ -54,6 +54,6 @@ function Usage() {
     </Tilt>
   )
 }
-Usage.title = 'Interact with the DOM with useEffect and useRef'
+Usage.title = 'useRef and useEffect: DOM interaction'
 
 export default Usage

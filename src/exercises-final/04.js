@@ -1,4 +1,4 @@
-// Tic Tac Toe: Advanced State
+// useState: tic tac toe
 
 import React from 'react'
 
@@ -104,6 +104,6 @@ function calculateWinner(squares) {
 function Usage() {
   return <Game />
 }
-Usage.title = 'Tic Tac Toe: Advanced State'
+Usage.title = 'useState: tic tac toe'
 
 export default Usage

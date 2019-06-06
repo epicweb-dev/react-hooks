@@ -1,4 +1,4 @@
-// Counter: hooks and simple state
+// useState: couter
 
 import React from 'react'
 
@@ -14,7 +14,7 @@ function Counter() {
 /*
 🦉 Elaboration & Feedback
 After the instruction, copy the URL below into your browser and fill out the form:
-http://ws.kcd.im/?ws=React%20Hooks&e=Counter%3A%20hooks%20and%20simple%20state&em=
+http://ws.kcd.im/?ws=React%20Hooks&e=useState%3A%20couter&em=
 */
 
 ////////////////////////////////////////////////////////////////////
@@ -27,6 +27,6 @@ http://ws.kcd.im/?ws=React%20Hooks&e=Counter%3A%20hooks%20and%20simple%20state&e
 function Usage() {
   return <Counter />
 }
-Usage.title = 'Counter: hooks and simple state'
+Usage.title = 'useState: couter'
 
 export default Usage

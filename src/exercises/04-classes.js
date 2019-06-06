@@ -1,4 +1,4 @@
-// Tic Tac Toe: Refactor to hooks
+// useState: tic tac toe
 import React from 'react'
 
 // If you'd rather practice refactoring a class component to a function
@@ -79,7 +79,7 @@ function Game() {
 /*
 🦉 Elaboration & Feedback
 After the instruction, copy the URL below into your browser and fill out the form:
-http://ws.kcd.im/?ws=React%20Hooks&e=Tick%20Tac%20Toe%3A%20Refactor%20to%20Hooks&em=
+http://ws.kcd.im/?ws=React%20Hooks&e=useState%3A%20tic%20tac%20toe&em=
 */
 
 ////////////////////////////////////////////////////////////////////
@@ -118,6 +118,6 @@ function calculateWinner(squares) {
 function Usage() {
   return <Game />
 }
-Usage.title = 'Tic Tac Toe: Advanced State'
+Usage.title = 'useState: tic tac toe'
 
 export default Usage

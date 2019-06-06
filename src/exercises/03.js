@@ -1,4 +1,4 @@
-// Counter: useEffect
+// useEffect: persistent state
 import React from 'react'
 
 function Counter({step = 1, initialCount = 0}) {
@@ -14,7 +14,7 @@ function Counter({step = 1, initialCount = 0}) {
 /*
 🦉 Elaboration & Feedback
 After the instruction, copy the URL below into your browser and fill out the form:
-http://ws.kcd.im/?ws=React%20Hooks&e=Counter%3A%20useEffect&em=
+http://ws.kcd.im/?ws=React%20Hooks&e=useEffect%3A%20persistent%20state&em=
 */
 
 ////////////////////////////////////////////////////////////////////
@@ -27,6 +27,6 @@ http://ws.kcd.im/?ws=React%20Hooks&e=Counter%3A%20useEffect&em=
 function Usage() {
   return <Counter />
 }
-Usage.title = 'Counter: useEffect'
+Usage.title = 'useEffect: persistent state'
 
 export default Usage

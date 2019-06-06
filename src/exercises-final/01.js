@@ -1,4 +1,4 @@
-// Counter: hooks and simple state
+// useState: couter
 import React from 'react'
 
 function Counter() {
@@ -10,6 +10,6 @@ function Counter() {
 function Usage() {
   return <Counter />
 }
-Usage.title = 'Counter: hooks and simple state'
+Usage.title = 'useState: couter'
 
 export default Usage

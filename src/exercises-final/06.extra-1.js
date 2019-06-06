@@ -1,4 +1,4 @@
-// Making HTTP requests with useEffect
+// useEffect: HTTP requests
 // 💯 store the state in an object
 
 import React from 'react'
@@ -131,6 +131,6 @@ function Usage() {
     </div>
   )
 }
-Usage.title = 'Making HTTP requests with useEffect'
+Usage.title = 'useEffect: HTTP requests'
 
 export default Usage

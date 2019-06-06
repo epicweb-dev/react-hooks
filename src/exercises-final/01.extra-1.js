@@ -1,4 +1,4 @@
-// Counter: hooks and simple state
+// useState: couter
 // 💯 accept a step and initialCount
 // http://localhost:3000/isolated/exercises-final/01.extra-1
 
@@ -13,6 +13,6 @@ function Counter({step = 1, initialCount = 0}) {
 function Usage() {
   return <Counter />
 }
-Usage.title = 'Counter: hooks and simple state'
+Usage.title = 'useState: couter'
 
 export default Usage

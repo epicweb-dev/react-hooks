@@ -1,4 +1,4 @@
-// Counter: useEffect
+// useEffect: persistent state
 // 💯 advanced custom hooks
 // http://localhost:3000/isolated/exercises-final/03.extra-2
 import React from 'react'

@@ -1,4 +1,4 @@
-// Counter: custom hooks
+// useCounter: custom hooks
 import React from 'react'
 
 // 🐨 Make a custom hook called useCounter that accepts the step and
@@ -15,7 +15,7 @@ function Counter({step = 1, initialCount = 0}) {
 /*
 🦉 Elaboration & Feedback
 After the instruction, copy the URL below into your browser and fill out the form:
-http://ws.kcd.im/?ws=React%20Hooks&e=Counter%3A%20custom%20hooks&em=
+http://ws.kcd.im/?ws=React%20Hooks&e=useCounter%3A%20custom%20hooks&em=
 */
 
 ////////////////////////////////////////////////////////////////////
@@ -28,6 +28,6 @@ http://ws.kcd.im/?ws=React%20Hooks&e=Counter%3A%20custom%20hooks&em=
 function Usage() {
   return <Counter />
 }
-Usage.title = 'Counter: custom hooks'
+Usage.title = 'useCounter: custom hooks'
 
 export default Usage

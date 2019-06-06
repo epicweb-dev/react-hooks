@@ -1,4 +1,4 @@
-// Counter: useEffect
+// useEffect: persistent state
 // 💯 lazy state initialization
 // http://localhost:3000/isolated/exercises-final/03.extra-1
 import React from 'react'
