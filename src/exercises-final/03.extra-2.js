@@ -1,5 +1,5 @@
 // Counter: advanced custom hooks
-// http://localhost:3000/isolated/exercises-final/03-extra.1
+// http://localhost:3000/isolated/exercises-final/03.extra-2
 import React from 'react'
 
 function useLocalStorageCounter({step = 1, initialCount = 0, key = 'count'}) {

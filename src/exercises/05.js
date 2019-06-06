@@ -40,8 +40,7 @@ function Tilt({children}) {
 /*
 🦉 Elaboration & Feedback
 After the instruction, copy the URL below into your browser and fill out the form:
-
-http://ws.kcd.im/?ws=learn%20react%20hooks&e=05&em=
+http://ws.kcd.im/?ws=React%20Hooks&e=Interact%20with%20the%20DOM%20with%20useEffect&em=
 */
 
 ////////////////////////////////////////////////////////////////////

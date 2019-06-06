@@ -1,10 +1,12 @@
 // Counter: hooks and simple state
-// http://localhost:3000/isolated/exercises-final/01-extra.1
+// 💯 accept a step and initialCount
+// http://localhost:3000/isolated/exercises-final/01.extra-1
+
 import React from 'react'
 
 function Counter({step = 1, initialCount = 0}) {
   const [count, setCount] = React.useState(initialCount)
-  const increment = () => setCount(c => c + step)
+  const increment = () => setCount(count + step)
   return <button onClick={increment}>{count}</button>
 }
 

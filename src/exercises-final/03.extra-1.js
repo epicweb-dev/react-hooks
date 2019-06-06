@@ -1,5 +1,5 @@
 // Counter: optimizations
-// http://localhost:3000/isolated/exercises-final/03-extra.0
+// http://localhost:3000/isolated/exercises-final/03.extra-1
 import React from 'react'
 
 function Counter({step = 1, initialCount = 0}) {

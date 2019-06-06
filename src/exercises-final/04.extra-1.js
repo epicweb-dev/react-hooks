@@ -1,5 +1,5 @@
 // Tic Tac Toe: Advanced State
-// http://localhost:3000/isolated/exercises-final/04-extra.0
+// http://localhost:3000/isolated/exercises-final/04.extra-1
 import React from 'react'
 
 function Board({squares, onClick}) {

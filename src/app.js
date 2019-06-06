@@ -1,16 +1,19 @@
 import React from 'react'
 import {Router, Link} from '@reach/router'
+import {createBrowserHistory} from 'history'
+
+const history = createBrowserHistory()
 
 const files = ['01', '02', '03', '04', '05', '06']
 
 const pages = files.reduce((p, filename, index, fullArray) => {
-  const final = require(`./exercises-final/${filename}`)
+  const final = require(`./exercises-final/${filename}.js`)
   Object.assign(final, {
     previous: fullArray[index - 1],
     next: fullArray[index + 1],
     isolatedPath: `/isolated/exercises-final/${filename}`,
   })
-  const exercise = require(`./exercises/${filename}`)
+  const exercise = require(`./exercises/${filename}.js`)
   Object.assign(exercise, {
     previous: fullArray[index - 1],
     next: fullArray[index + 1],
@@ -145,7 +148,7 @@ function FullPage({type, exerciseId}) {
           </span>
           Exercise Page
         </Link>
-        <Link to={isolatedPath}>isolated</Link>
+        <a href={isolatedPath}>isolated</a>
       </div>
       <div style={{textAlign: 'center'}}>
         <h1>{page.title}</h1>
@@ -189,8 +192,8 @@ function Isolated({loader}) {
 
 function Home() {
   return (
-    <div>
-      <h1 style={{textAlign: 'center'}}>Learn React</h1>
+    <div style={{maxWidth: 800, margin: '50px auto 0px auto'}}>
+      <h1 style={{textAlign: 'center'}}>React Fundamentals</h1>
       <div>
         {filesAndTitles.map(({title, filename}) => {
           return (
@@ -231,27 +234,40 @@ function NotFound() {
   )
 }
 
-const IsolatedExercise = ({moduleName}) => (
-  <Isolated loader={() => import(`./exercises/${moduleName}`)} />
-)
-const IsolatedFinal = ({moduleName}) => (
-  <Isolated loader={() => import(`./exercises-final/${moduleName}`)} />
-)
-
-function App() {
+function Routes() {
   return (
-    <React.Suspense fallback={<div>Loading...</div>}>
-      <Router>
-        <Home path="/" />
-        <ExerciseContainer path="/:exerciseId" />
-        <FullPage path="/:exerciseId/exercise" type="exercise" />
-        <FullPage path="/:exerciseId/final" type="final" />
-        <IsolatedExercise path="/isolated/exercises/:moduleName" />
-        <IsolatedFinal path="/isolated/exercises-final/:moduleName" />
-        <NotFound default />
-      </Router>
-    </React.Suspense>
+    <Router>
+      <Home path="/" />
+      <ExerciseContainer path="/:exerciseId" />
+      <FullPage path="/:exerciseId/exercise" type="exercise" />
+      <FullPage path="/:exerciseId/final" type="final" />
+      <NotFound default />
+    </Router>
   )
+}
+
+// The reason we don't put the Isolated components as regular routes
+// and do all this complex stuff instead is so the React DevTools component
+// tree is as small as possible to make it easier for people to figure
+// out what is relevant to the example.
+function App() {
+  const [location, setLocation] = React.useState(history.location)
+  React.useEffect(() => {
+    return history.listen(l => setLocation(l))
+  }, [])
+  const {pathname} = location
+  let ui = <Routes />
+  if (pathname.startsWith('/isolated')) {
+    const moduleName = pathname.split('/').slice(-1)[0]
+    if (pathname.includes('-final')) {
+      ui = (
+        <Isolated loader={() => import(`./exercises-final/${moduleName}.js`)} />
+      )
+    } else {
+      ui = <Isolated loader={() => import(`./exercises/${moduleName}.js`)} />
+    }
+  }
+  return <React.Suspense fallback={<div>Loading...</div>}>{ui}</React.Suspense>
 }
 
 export default App

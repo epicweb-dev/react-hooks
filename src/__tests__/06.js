@@ -1,6 +1,6 @@
 import React from 'react'
 import chalk from 'chalk'
-import {render, fireEvent, wait} from 'react-testing-library'
+import {render, fireEvent, waitForDomChange} from '@testing-library/react'
 import Usage from '../exercises-final/06'
 // import Usage from '../exercises/06'
 
@@ -28,13 +28,14 @@ test('displays the pokemon', async () => {
   )
   const {getByLabelText, getByText, getByTestId} = render(<Usage />)
   const input = getByLabelText(/pokemon/i)
-  const submit = getByText(/submit/i)
+  const submit = getByText(/^submit$/i)
 
   // verify that an initial request is made when mounted
   fireEvent.change(input, {target: {value: 'jeffry'}})
   fireEvent.click(submit)
-  await wait(() =>
-    expect(getByTestId('pokemon-display')).toHaveTextContent('fake-id'),
+  await waitForDomChange(
+    () => expect(getByTestId('pokemon-display')).toHaveTextContent('fake-id'),
+    {timeout: 100},
   )
   expect(window.fetch).toHaveBeenCalledTimes(1)
   expect(window.fetch).toHaveBeenCalledWith('https://graphql-pokemon.now.sh', {
@@ -53,8 +54,12 @@ test('displays the pokemon', async () => {
   )
   fireEvent.change(input, {target: {value: 'fred'}})
   fireEvent.click(submit)
-  await wait(() =>
-    expect(getByTestId('pokemon-display')).toHaveTextContent('id-that-is-fake'),
+  await waitForDomChange(
+    () =>
+      expect(getByTestId('pokemon-display')).toHaveTextContent(
+        'id-that-is-fake',
+      ),
+    {timeout: 100},
   )
   expect(window.fetch).toHaveBeenCalledTimes(1)
   expect(window.fetch).toHaveBeenCalledWith('https://graphql-pokemon.now.sh', {
@@ -88,7 +93,8 @@ test('displays the pokemon', async () => {
 
   fireEvent.change(input, {target: {value: 'george'}})
   fireEvent.click(submit)
-  await wait(() =>
-    expect(getByTestId('pokemon-display')).toHaveTextContent(/error/i),
+  await waitForDomChange(
+    () => expect(getByTestId('pokemon-display')).toHaveTextContent(/error/i),
+    {timeout: 100},
   )
 })

@@ -1,5 +1,5 @@
 import React from 'react'
-import {render} from 'react-testing-library'
+import {render} from '@testing-library/react'
 import Usage from '../exercises-final/05'
 // import Usage from '../exercises/05'
 

@@ -1,5 +1,7 @@
 // Making HTTP requests with useEffect
+
 import React from 'react'
+import fetchPokemon from '../fetch-pokemon'
 
 // In this exercise, we'll be doing data fetching directly in a useEffect hook
 // callback within our component.
@@ -11,36 +13,42 @@ import React from 'react'
 function PokemonInfo({pokemonName}) {
   // 🐨 Have state for the pokemon (null), the error state (null), and the
   // loading state (false).
-  // 🐨 Use the `fetchPokemon` function below to fetch a pokemon by its name:
+
+  // 🐨 use React.useEffect where the callback should be called whenever the
+  // pokemon name changes.
+  // 💰 DON'T FORGET THE DEPENDENCIES ARRAY!
+  // 💰 if the pokemonName is falsy (an empty string) then don't bother making the request (exit early).
+  // 🐨 before calling `fetchPokemon`, make sure to update the loading state
+  // 🐨 Use the `fetchPokemon` function to fetch a pokemon by its name:
   //   fetchPokemon('Pikachu').then(
   //     pokemon => { /* update all the state here */},
   //     error => {/* update all the state here */},
   //   )
 
-  // 🐨 use React.useEffect where the callback should be called whenever the
-  // pokemon name changes.
-  // 💰 DON'T FORGET THE DEPENDENCIES ARRAY!
-  // 🐨 before calling `fetchPokemon`, make sure to update the loading state
-  // 🐨 when the promise resolves, update the loading and pokemon state
-  // 🐨 if the promise rejects, update the loading and error state
-
   // 🐨 Render the appropriate content based on the state:
   //    1. loading: '...'
   //    2. error: 'ERROR!'
   //    3. pokemon: the JSON.stringified pokemon in a <pre></pre>
-  return 'todo'
+  return (
+    <div
+      style={{
+        height: 300,
+        width: 300,
+        overflow: 'scroll',
+        backgroundColor: '#eee',
+        borderRadius: 4,
+        padding: 10,
+      }}
+    >
+      TODO
+    </div>
+  )
 }
-
-// 💯 With the way that PokemonInfo is written, it's only rendered when there's
-// a pokemon to fetch. Go ahead and rewrite it to allow people to render it
-// before a pokemon is presented (and you can change the implementation) below
-// to render <PokemonInfo /> without the ternary.
 
 /*
 🦉 Elaboration & Feedback
 After the instruction, copy the URL below into your browser and fill out the form:
-
-http://ws.kcd.im/?ws=learn%20react%20hooks&e=06&em=
+http://ws.kcd.im/?ws=React%20Hooks&e=Making%20HTTP%20requests%20with%20useEffect&em=
 */
 
 ////////////////////////////////////////////////////////////////////
@@ -50,66 +58,85 @@ http://ws.kcd.im/?ws=learn%20react%20hooks&e=06&em=
 //                                                                //
 ////////////////////////////////////////////////////////////////////
 
-function fetchPokemon(name) {
-  const pokemonQuery = `
-    query ($name: String) {
-      pokemon(name: $name) {
-        id
-        number
-        name
-        attacks {
-          special {
-            name
-            type
-            damage
-          }
-        }
-      }
-    }
-  `
-
-  return window
-    .fetch('https://graphql-pokemon.now.sh', {
-      // learn more about this API here: https://graphql-pokemon.now.sh/
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json;charset=UTF-8',
-      },
-      body: JSON.stringify({
-        query: pokemonQuery,
-        variables: {name},
-      }),
-    })
-    .then(r => r.json())
-    .then(response => response.data.pokemon)
+function InvisibleButton(props) {
+  return (
+    <button
+      type="button"
+      style={{
+        border: 'none',
+        padding: 'inherit',
+        fontSize: 'inherit',
+        fontFamily: 'inherit',
+        cursor: 'pointer',
+        fontWeight: 'inherit',
+      }}
+      {...props}
+    />
+  )
 }
 
-class Usage extends React.Component {
-  state = {pokemonName: null}
-  inputRef = React.createRef()
-  handleSubmit = e => {
-    e.preventDefault()
-    this.setState({
-      pokemonName: this.inputRef.current.value,
-    })
+function Usage() {
+  const [{submittedPokemon, pokemonName}, setState] = React.useReducer(
+    (state, action) => ({...state, ...action}),
+    {submittedPokemon: '', pokemonName: ''},
+  )
+
+  function handleChange(e) {
+    setState({pokemonName: e.target.value})
   }
-  render() {
-    const {pokemonName} = this.state
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="pokemonName-input">Pokemon Name (ie Pikachu)</label>
-          <input id="pokemonName-input" ref={this.inputRef} />
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    setState({submittedPokemon: pokemonName.toLowerCase()})
+  }
+
+  function handleSelect(pokemonName) {
+    setState({pokemonName, submittedPokemon: pokemonName})
+  }
+
+  return (
+    <div style={{display: 'flex', flexDirection: 'column'}}>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <label htmlFor="pokemonName-input">Pokemon Name</label>
+        <small>
+          Try{' '}
+          <InvisibleButton onClick={() => handleSelect('pikachu')}>
+            "pikachu"
+          </InvisibleButton>
+          {', '}
+          <InvisibleButton onClick={() => handleSelect('charizard')}>
+            "charizard"
+          </InvisibleButton>
+          {', or '}
+          <InvisibleButton onClick={() => handleSelect('mew')}>
+            "mew"
+          </InvisibleButton>
+        </small>
+        <div>
+          <input
+            id="pokemonName-input"
+            name="pokemonName"
+            value={pokemonName}
+            onChange={handleChange}
+          />
           <button type="submit">Submit</button>
-        </form>
-        PokemonInfo
-        <div data-testid="pokemon-display">
-          {/* 💯 I, Hannah Hundred, give you permission to edit this for the extra credit */}
-          {pokemonName ? <PokemonInfo pokemonName={pokemonName} /> : null}
+        </div>
+      </form>
+      <hr />
+      <div style={{display: 'flex'}}>
+        <div style={{marginLeft: 10}} data-testid="pokemon-display">
+          <PokemonInfo pokemonName={submittedPokemon} />
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 Usage.title = 'Making HTTP requests with useEffect'
 

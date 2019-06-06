@@ -1,30 +1,28 @@
 // Making HTTP requests with useEffect
+// 💯 store the state in an object
 
 import React from 'react'
 import fetchPokemon from '../fetch-pokemon'
 
 function PokemonInfo({pokemonName}) {
-  const [pokemon, setPokemon] = React.useState(null)
-  const [loading, setLoading] = React.useState(false)
-  const [error, setError] = React.useState(null)
+  const [state, setState] = React.useState({
+    pokemon: null,
+    loading: false,
+    error: null,
+  })
+  const {pokemon, loading, error} = state
 
   React.useEffect(() => {
     if (!pokemonName) {
       return
     }
-    setLoading(true)
-    setError(null)
-    setPokemon(null)
+    setState({loading: true, error: null, pokemon: null})
     fetchPokemon(pokemonName).then(
       pokemon => {
-        setLoading(false)
-        setError(null)
-        setPokemon(pokemon)
+        setState({loading: false, error: null, pokemon})
       },
       error => {
-        setLoading(false)
-        setError(error)
-        setPokemon(null)
+        setState({loading: false, error, pokemon: null})
       },
     )
   }, [pokemonName])

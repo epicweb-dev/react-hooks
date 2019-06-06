@@ -91,8 +91,7 @@ function Game() {
 /*
 🦉 Elaboration & Feedback
 After the instruction, copy the URL below into your browser and fill out the form:
-
-http://ws.kcd.im/?ws=learn%20react%20hooks&e=04&em=
+http://ws.kcd.im/?ws=React%20Hooks&e=Tick%20Tac%20Toe%3A%20Advanced%20State&em=
 */
 
 ////////////////////////////////////////////////////////////////////
