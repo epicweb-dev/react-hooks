@@ -1,16 +1,41 @@
 // Tic Tac Toe: Advanced State
+// 💯 reduce repetition
 // http://localhost:3000/isolated/exercises-final/04.extra-1
+
 import React from 'react'
 
-function Board({squares, onClick}) {
+function Board() {
+  const [squares, setSquares] = React.useState(Array(9).fill(null))
+  const nextValue = calculateWhoIsNext(squares)
+  const winner = calculateWinner(squares)
+
+  function selectSquare(square) {
+    if (winner || squares[square]) {
+      return
+    }
+    const squaresCopy = [...squares]
+    squaresCopy[square] = nextValue
+    setSquares(squaresCopy)
+  }
+
   const renderSquare = i => (
-    <button className="square" onClick={() => onClick(i)}>
+    <button className="square" onClick={() => selectSquare(i)}>
       {squares[i]}
     </button>
   )
 
+  let status
+  if (winner) {
+    status = `Winner: ${winner}`
+  } else if (squares.every(Boolean)) {
+    status = `Scratch: Cat's game`
+  } else {
+    status = `Next player: ${nextValue}`
+  }
+
   return (
     <div>
+      <div className="status">{status}</div>
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
@@ -31,55 +56,19 @@ function Board({squares, onClick}) {
 }
 
 function Game() {
-  const [history, setHistory] = React.useState([{squares: Array(9).fill(null)}])
-  const [stepNumber, setStepNumber] = React.useState(0)
-  const xIsNext = stepNumber % 2 === 0
-
-  function selectSquare(square) {
-    const newHistory = history.slice(0, stepNumber + 1)
-    const current = newHistory[newHistory.length - 1]
-    const squares = [...current.squares]
-
-    if (calculateWinner(squares) || squares[square]) {
-      return
-    }
-
-    squares[square] = xIsNext ? 'X' : 'O'
-    setHistory([...newHistory, {squares}])
-    setStepNumber(newHistory.length)
-  }
-
-  const current = history[stepNumber]
-  const winner = calculateWinner(current.squares)
-  let status
-  if (winner) {
-    status = `Winner: ${winner}`
-  } else if (current.squares.every(Boolean)) {
-    status = `Scratch: Cat's game`
-  } else {
-    status = `Next player: ${xIsNext ? 'X' : 'O'}`
-  }
-
-  const moves = history.map((step, stepNumber) => {
-    const desc = stepNumber ? `Go to move #${stepNumber}` : 'Go to game start'
-    return (
-      <li key={stepNumber}>
-        <button onClick={() => setStepNumber(stepNumber)}>{desc}</button>
-      </li>
-    )
-  })
-
   return (
     <div className="game">
       <div className="game-board">
-        <Board onClick={selectSquare} squares={current.squares} />
-      </div>
-      <div className="game-info">
-        <div>{status}</div>
-        <ol>{moves}</ol>
+        <Board />
       </div>
     </div>
   )
+}
+
+function calculateWhoIsNext(squares) {
+  const xSquaresCount = squares.filter(r => r === 'X').length
+  const oSquaresCount = squares.filter(r => r === 'O').length
+  return oSquaresCount === xSquaresCount ? 'X' : 'O'
 }
 
 function calculateWinner(squares) {

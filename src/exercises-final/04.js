@@ -1,53 +1,65 @@
 // Tic Tac Toe: Advanced State
+
 import React from 'react'
 
 function Board() {
   const [squares, setSquares] = React.useState(Array(9).fill(null))
-  const [xIsNext, setXIsNext] = React.useState(true)
+  const nextValue = calculateWhoIsNext(squares)
+  const winner = calculateWinner(squares)
 
   function selectSquare(square) {
-    if (calculateWinner(squares) || squares[square]) {
+    if (winner || squares[square]) {
       return
     }
     const squaresCopy = [...squares]
-    squaresCopy[square] = xIsNext ? 'X' : 'O'
-    setXIsNext(x => !x)
+    squaresCopy[square] = nextValue
     setSquares(squaresCopy)
   }
 
-  const renderSquare = i => (
-    <button className="square" onClick={() => selectSquare(i)}>
-      {squares[i]}
-    </button>
-  )
-
-  const winner = calculateWinner(squares)
   let status
   if (winner) {
     status = `Winner: ${winner}`
   } else if (squares.every(Boolean)) {
     status = `Scratch: Cat's game`
   } else {
-    status = `Next player: ${xIsNext ? 'X' : 'O'}`
+    status = `Next player: ${nextValue}`
   }
 
   return (
     <div>
       <div className="status">{status}</div>
       <div className="board-row">
-        {renderSquare(0)}
-        {renderSquare(1)}
-        {renderSquare(2)}
+        <button className="square" onClick={() => selectSquare(0)}>
+          {squares[0]}
+        </button>
+        <button className="square" onClick={() => selectSquare(1)}>
+          {squares[1]}
+        </button>
+        <button className="square" onClick={() => selectSquare(2)}>
+          {squares[2]}
+        </button>
       </div>
       <div className="board-row">
-        {renderSquare(3)}
-        {renderSquare(4)}
-        {renderSquare(5)}
+        <button className="square" onClick={() => selectSquare(3)}>
+          {squares[3]}
+        </button>
+        <button className="square" onClick={() => selectSquare(4)}>
+          {squares[4]}
+        </button>
+        <button className="square" onClick={() => selectSquare(5)}>
+          {squares[5]}
+        </button>
       </div>
       <div className="board-row">
-        {renderSquare(6)}
-        {renderSquare(7)}
-        {renderSquare(8)}
+        <button className="square" onClick={() => selectSquare(6)}>
+          {squares[6]}
+        </button>
+        <button className="square" onClick={() => selectSquare(7)}>
+          {squares[7]}
+        </button>
+        <button className="square" onClick={() => selectSquare(8)}>
+          {squares[8]}
+        </button>
       </div>
     </div>
   )
@@ -61,6 +73,12 @@ function Game() {
       </div>
     </div>
   )
+}
+
+function calculateWhoIsNext(squares) {
+  const xSquaresCount = squares.filter(r => r === 'X').length
+  const oSquaresCount = squares.filter(r => r === 'O').length
+  return oSquaresCount === xSquaresCount ? 'X' : 'O'
 }
 
 function calculateWinner(squares) {

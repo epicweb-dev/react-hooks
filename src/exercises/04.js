@@ -1,82 +1,57 @@
 // Tic Tac Toe: Advanced State
+
 import React from 'react'
 
-// If you'd rather practice refactoring a class component to a function
-// component with hooks, then go ahead and do 04.classes.js instead.
-
-// We're going to build tic-tac-toe! If you've gone through React's official
-// tutorial, this was lifted from that (except that example still uses classes).
-//
-// You're going to need two bits of state:
-// squares - The state of the board in a single-dimensional array:
-// [
-//   'X', 'O', 'X',
-//   'X', 'O', 'O',
-//   'X', 'X', 'O'
-// ]
-// (Naturally this will start out as an empty array.)
-//
-// xIsNext - Whether the "X" player is next. This will allow you to know who it
-// was that clicked on a square and allow you to display who the next player is.
-
 function Board() {
-  // 🐨 Use React.useState for both the elements of state you need
+  // 🐨 Use React.useState for the `squares` state you need
   // 💰 To create an empty array with 9 slots, you can use: `Array(9).fill(null)`
+
+  // 🐨 create your derived state variable here for the nextValue
+  // 💰 call it "nextValue" and get it by calling calculateWhoIsNext with the squares
+
+  // 🐨 create your derived state variable here for the winner
+  // 💰 call it "winner" and get it by calling calculateWinner with the squares
 
   // This is the function your square click handler will call. `square` should
   // be an index. So if they click the center square, this will be `5`.
   // eslint-disable-next-line no-unused-vars
   function selectSquare(square) {
-    // 🐨 first determine if there's already a winner, return early if there is.
-    // 💰 there's a `calculateWinner` function already written for you at the
-    //    bottom of this file. Fee free to use `calculateWinner(squares)`.
-    //
-    // 🐨 If there's already a value at the square index, then return early.
-    // 💰 you can combine this check with the previous using `||`.
+    // 🐨 first, if there's already winner or there's already a value at the
+    // given square index (like someone clicked a square that's already been
+    // clicked), then return early so we don't make any state changes
     //
     // 🦉 It's typically a bad idea to manipulate state in React
     // 🐨 make a copy of the squares array (💰 `[...squares]` will do it!)
     // 🐨 Set the value of the square that was selected
-    // 💰 `squaresCopy[square] = xIsNext ? 'X' : 'O'`
+    // 💰 `squaresCopy[square] = nextValue`
     //
-    // 🐨 toggle the xIsNext state
     // 🐨 set the squares to your copy
   }
 
-  // let's calculate the status we'll display at the top of the board.
-  // 🐨 determine whether there's a winner (💰 `calculateWinner(squares)`).
-  //
+  // Here we'll determine the status we'll display at the top of the board.
   // We can have the following statuses:
   // `Winner: ${winner}`
   // `Scratch: Cat's game` (💰 if every square in squares is truthy and there's no winner, then it's a scratch)
-  // `Next player: ${xIsNext ? 'X' : 'O'}`
+  // `Next player: ${nextValue}`
   //
   // 🐨 assign a `status` variable to one of these, and render it above the
   //    board in a div with the className "status"
   //
   // 🐨 return your JSX with this basic structure:
-  // return (
-  //   <div>
-  //     <div className="status">{/* put the status here */}</div>
-  //     {/* you'll need 3 board-rows and each will have 3 squares */}
-  //     <div className="board-row">
-  //       <button className="square" onClick={() => selectSquare(0)}>
-  //         {squares[0]}
-  //       </button>
-  //       {/* etc... */}
-  //     </div>
-  //     {/* etc... */}
-  //   </div>
-  // )
-  return 'todo'
+  return (
+    <div>
+      <div className="status">{/* put the status here */}</div>
+      {/* you'll need 3 board-rows and each will have 3 squares */}
+      <div className="board-row">
+        <button className="square" onClick={() => selectSquare(0)}>
+          {/* squares[0] */}
+        </button>
+        {/* etc... */}
+      </div>
+      {/* etc... */}
+    </div>
+  )
 }
-
-// 💯 See if you can figure out a nice way to avoid all the repetition in the square buttons
-
-// 💯 Open /isolated/exercises-final/09-extra-0 and see that the extra version
-//    supports keeping a history of the game and allows you to go backward and
-//    forward in time. See if you can implement that! (Tip, in the final
-//    example, we separate the state management from the board and that helps).
 
 function Game() {
   return (
@@ -100,6 +75,13 @@ http://ws.kcd.im/?ws=React%20Hooks&e=Tick%20Tac%20Toe%3A%20Advanced%20State&em=
 // But do look at it to see how your code is intended to be used. //
 //                                                                //
 ////////////////////////////////////////////////////////////////////
+
+// eslint-disable-next-line no-unused-vars
+function calculateWhoIsNext(squares) {
+  const xSquaresCount = squares.filter(r => r === 'X').length
+  const oSquaresCount = squares.filter(r => r === 'O').length
+  return oSquaresCount === xSquaresCount ? 'X' : 'O'
+}
 
 // eslint-disable-next-line no-unused-vars
 function calculateWinner(squares) {

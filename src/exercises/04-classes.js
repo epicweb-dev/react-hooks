@@ -12,19 +12,17 @@ import React from 'react'
 // component to hooks. So, let's make it happen!
 
 class Board extends React.Component {
-  state = {squares: Array(9).fill(null), xIsNext: true}
+  state = {squares: Array(9).fill(null)}
 
   selectSquare(square) {
-    const {squares, xIsNext} = this.state
+    const {squares} = this.state
+    const nextValue = calculateWhoIsNext(squares)
     if (calculateWinner(squares) || squares[square]) {
       return
     }
     const squaresCopy = [...squares]
-    squaresCopy[square] = xIsNext ? 'X' : 'O'
-    this.setState(prevState => ({
-      xIsNext: !prevState.xIsNext,
-      squares: squaresCopy,
-    }))
+    squaresCopy[square] = nextValue
+    this.setState({squares: squaresCopy})
   }
   renderSquare = i => (
     <button className="square" onClick={() => this.selectSquare(i)}>
@@ -33,7 +31,8 @@ class Board extends React.Component {
   )
 
   render() {
-    const {squares, xIsNext} = this.state
+    const {squares} = this.state
+    const nextValue = calculateWhoIsNext(squares)
     const winner = calculateWinner(squares)
     let status
     if (winner) {
@@ -41,7 +40,7 @@ class Board extends React.Component {
     } else if (squares.every(Boolean)) {
       status = `Scratch: Cat's game`
     } else {
-      status = `Next player: ${xIsNext ? 'X' : 'O'}`
+      status = `Next player: ${nextValue}`
     }
 
     return (
@@ -89,6 +88,12 @@ http://ws.kcd.im/?ws=React%20Hooks&e=Tick%20Tac%20Toe%3A%20Refactor%20to%20Hooks
 // But do look at it to see how your code is intended to be used. //
 //                                                                //
 ////////////////////////////////////////////////////////////////////
+
+function calculateWhoIsNext(squares) {
+  const xSquaresCount = squares.filter(r => r === 'X').length
+  const oSquaresCount = squares.filter(r => r === 'O').length
+  return oSquaresCount === xSquaresCount ? 'X' : 'O'
+}
 
 function calculateWinner(squares) {
   const lines = [
