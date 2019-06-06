@@ -1,6 +1,6 @@
-# React Fundamentals
+# React Hooks
 
-> And so it begins 🐣
+> State, Effects, Refs. Oh My! 😱
 
 👋 I'm Kent C. Dodds
 
