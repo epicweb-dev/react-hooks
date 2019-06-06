@@ -1,9 +1,8 @@
 // Interact with the DOM with useEffect
+
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import VanillaTilt from 'vanilla-tilt'
-
-// Let's make this Tilt component render a div that's super fancy.
 
 function Tilt({children}) {
   // 🐨 create a ref here with React.useRef()
@@ -34,8 +33,6 @@ function Tilt({children}) {
     </div>
   )
 }
-
-// 💯 Make a custom hook that I can call like this: `useTilt(ref, options)`
 
 /*
 🦉 Elaboration & Feedback

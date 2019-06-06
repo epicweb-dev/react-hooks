@@ -1,5 +1,7 @@
 // Interact with the DOM with useEffect
+// 💯 Make a custom hook
 // http://localhost:3000/isolated/exercises-final/05.extra-1
+
 import React from 'react'
 import VanillaTilt from 'vanilla-tilt'
 
@@ -11,17 +13,16 @@ function useTilt(ref, options) {
   }, [options, ref])
 }
 
+const options = {
+  max: 25,
+  speed: 400,
+  glare: true,
+  'max-glare': 0.5,
+}
+
 function Tilt({children}) {
   const tiltRef = React.useRef()
-  useTilt(
-    tiltRef,
-    React.useState(() => ({
-      max: 25,
-      speed: 400,
-      glare: true,
-      'max-glare': 0.5,
-    }))[0],
-  )
+  useTilt(tiltRef, options)
 
   return (
     <div ref={tiltRef} className="tilt-root">
