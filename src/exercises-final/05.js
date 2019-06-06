@@ -1,4 +1,4 @@
-// Interact with the DOM with useEffect
+// Interact with the DOM with useEffect and useRef
 
 import React from 'react'
 import VanillaTilt from 'vanilla-tilt'
@@ -32,6 +32,6 @@ function Usage() {
     </Tilt>
   )
 }
-Usage.title = 'Interact with the DOM with useEffect'
+Usage.title = 'Interact with the DOM with useEffect and useRef'
 
 export default Usage
