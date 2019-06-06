@@ -3,13 +3,6 @@
 import React from 'react'
 import fetchPokemon from '../fetch-pokemon'
 
-// In this exercise, we'll be doing data fetching directly in a useEffect hook
-// callback within our component.
-//
-// Here we have a form where users can enter the name of a pokemon and fetch
-// data about that pokemon. Your job will be to create a component which makes
-// that fetch request.
-
 function PokemonInfo({pokemonName}) {
   // 🐨 Have state for the pokemon (null), the error state (null), and the
   // loading state (false).
@@ -25,10 +18,6 @@ function PokemonInfo({pokemonName}) {
   //     error => {/* update all the state here */},
   //   )
 
-  // 🐨 Render the appropriate content based on the state:
-  //    1. loading: '...'
-  //    2. error: 'ERROR!'
-  //    3. pokemon: the JSON.stringified pokemon in a <pre></pre>
   return (
     <div
       style={{
@@ -40,6 +29,12 @@ function PokemonInfo({pokemonName}) {
         padding: 10,
       }}
     >
+      {/*
+        🐨 Render the appropriate content based on the state:
+            1. loading: '...'
+            2. error: 'ERROR!'
+            3. pokemon: the JSON.stringified pokemon in a <pre></pre>
+      */}
       TODO
     </div>
   )
