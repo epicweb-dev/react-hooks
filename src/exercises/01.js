@@ -1,4 +1,4 @@
-// useState: couter
+// useState: counter
 
 import React from 'react'
 
@@ -14,7 +14,7 @@ function Counter() {
 /*
 🦉 Elaboration & Feedback
 After the instruction, copy the URL below into your browser and fill out the form:
-http://ws.kcd.im/?ws=React%20Hooks&e=useState%3A%20couter&em=
+http://ws.kcd.im/?ws=React%20Hooks&e=useState%3A%20counter&em=
 */
 
 ////////////////////////////////////////////////////////////////////
@@ -27,6 +27,6 @@ http://ws.kcd.im/?ws=React%20Hooks&e=useState%3A%20couter&em=
 function Usage() {
   return <Counter />
 }
-Usage.title = 'useState: couter'
+Usage.title = 'useState: counter'
 
 export default Usage

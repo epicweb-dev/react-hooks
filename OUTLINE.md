@@ -33,7 +33,7 @@
 ## Schedule
 
 - 😴 Logistics
-- 🏋 01. useState: couter
+- 🏋 01. useState: counter
 - 🏋 02. useCounter: custom hooks
 - 😴 10 Minutes
 - 🏋 03. useEffect: persistent state
@@ -89,4 +89,3 @@ the exercise and instruction.
 
 At the end of the workshop, please go to this URL to give overall feedback.
 Thank you! https://kcd.im/rh-ws-feedback
-

@@ -1,4 +1,4 @@
-// useState: couter
+// useState: counter
 import React from 'react'
 
 function Counter() {
@@ -10,6 +10,6 @@ function Counter() {
 function Usage() {
   return <Counter />
 }
-Usage.title = 'useState: couter'
+Usage.title = 'useState: counter'
 
 export default Usage
