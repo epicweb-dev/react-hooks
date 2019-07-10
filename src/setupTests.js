@@ -1,4 +1,4 @@
-import 'jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect'
 import '@testing-library/react/cleanup-after-each'
 
 // this is just a little hack to silence a warning that we'll get until react
