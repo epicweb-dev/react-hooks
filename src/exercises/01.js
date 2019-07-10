@@ -11,12 +11,6 @@ function Counter() {
   return <button />
 }
 
-/*
-🦉 Elaboration & Feedback
-After the instruction, copy the URL below into your browser and fill out the form:
-http://ws.kcd.im/?ws=React%20Hooks&e=useState%3A%20counter&em=
-*/
-
 ////////////////////////////////////////////////////////////////////
 //                                                                //
 //                 Don't make changes below here.                 //

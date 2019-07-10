@@ -40,12 +40,6 @@ function PokemonInfo({pokemonName}) {
   )
 }
 
-/*
-🦉 Elaboration & Feedback
-After the instruction, copy the URL below into your browser and fill out the form:
-http://ws.kcd.im/?ws=React%20Hooks&e=useEffect%3A%20HTTP%20requests&em=
-*/
-
 ////////////////////////////////////////////////////////////////////
 //                                                                //
 //                 Don't make changes below here.                 //
