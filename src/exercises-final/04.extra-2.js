@@ -5,11 +5,13 @@
 import React from 'react'
 
 function Board({squares, onClick}) {
-  const renderSquare = i => (
-    <button className="square" onClick={() => onClick(i)}>
-      {squares[i]}
-    </button>
-  )
+  function renderSquare(i) {
+    return (
+      <button className="square" onClick={() => onClick(i)}>
+        {squares[i]}
+      </button>
+    )
+  }
 
   return (
     <div>

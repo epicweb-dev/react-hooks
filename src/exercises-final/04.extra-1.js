@@ -18,11 +18,13 @@ function Board() {
     setSquares(squaresCopy)
   }
 
-  const renderSquare = i => (
-    <button className="square" onClick={() => selectSquare(i)}>
-      {squares[i]}
-    </button>
-  )
+  function renderSquare(i) {
+    return (
+      <button className="square" onClick={() => selectSquare(i)}>
+        {squares[i]}
+      </button>
+    )
+  }
 
   let status
   if (winner) {
