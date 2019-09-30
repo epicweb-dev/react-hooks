@@ -16,7 +16,7 @@ class Board extends React.Component {
 
   selectSquare(square) {
     const {squares} = this.state
-    const nextValue = calculateWhoIsNext(squares)
+    const nextValue = calculateNextValue(squares)
     if (calculateWinner(squares) || squares[square]) {
       return
     }
@@ -32,7 +32,7 @@ class Board extends React.Component {
 
   render() {
     const {squares} = this.state
-    const nextValue = calculateWhoIsNext(squares)
+    const nextValue = calculateNextValue(squares)
     const winner = calculateWinner(squares)
     let status
     if (winner) {
@@ -83,7 +83,7 @@ function Game() {
 //                                                                //
 ////////////////////////////////////////////////////////////////////
 
-function calculateWhoIsNext(squares) {
+function calculateNextValue(squares) {
   const xSquaresCount = squares.filter(r => r === 'X').length
   const oSquaresCount = squares.filter(r => r === 'O').length
   return oSquaresCount === xSquaresCount ? 'X' : 'O'

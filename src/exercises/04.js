@@ -7,10 +7,20 @@ function Board() {
   // 💰 To create an empty array with 9 slots, you can use: `Array(9).fill(null)`
 
   // 🐨 create your derived state variable here for the nextValue
-  // 💰 call it "nextValue" and get it by calling calculateWhoIsNext with the squares
+  // 💰 call it "nextValue" and get it by calling calculateNextValue with the squares
 
   // 🐨 create your derived state variable here for the winner
   // 💰 call it "winner" and get it by calling calculateWinner with the squares
+
+  // Here we'll determine the status we'll display at the top of the board.
+  // We can have the following statuses:
+  // `Winner: ${winner}`
+  // `Scratch: Cat's game` (💰 if every square in squares is truthy and there's no winner, then it's a scratch)
+  // `Next player: ${nextValue}`
+  // 🐨 assign a `status` variable to one of these
+  //
+  // 💯 as a quick extra-credit, `status` is another form of derived state.
+  // so you could write a `calculateStatus` function and put your logic in there
 
   // This is the function your square click handler will call. `square` should
   // be an index. So if they click the center square, this will be `5`.
@@ -28,15 +38,6 @@ function Board() {
     // 🐨 set the squares to your copy
   }
 
-  // Here we'll determine the status we'll display at the top of the board.
-  // We can have the following statuses:
-  // `Winner: ${winner}`
-  // `Scratch: Cat's game` (💰 if every square in squares is truthy and there's no winner, then it's a scratch)
-  // `Next player: ${nextValue}`
-  //
-  // 🐨 assign a `status` variable to one of these, and render it above the
-  //    board in a div with the className "status"
-  //
   // 🐨 return your JSX with this basic structure:
   return (
     <div>
@@ -71,7 +72,7 @@ function Game() {
 ////////////////////////////////////////////////////////////////////
 
 // eslint-disable-next-line no-unused-vars
-function calculateWhoIsNext(squares) {
+function calculateNextValue(squares) {
   const xSquaresCount = squares.filter(r => r === 'X').length
   const oSquaresCount = squares.filter(r => r === 'O').length
   return oSquaresCount === xSquaresCount ? 'X' : 'O'

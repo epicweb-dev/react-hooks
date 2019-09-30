@@ -40,7 +40,8 @@ function Game() {
 
   const currentSquares = history[stepNumber]
   const winner = calculateWinner(currentSquares)
-  const nextValue = calculateWhoIsNext(currentSquares)
+  const nextValue = calculateNextValue(currentSquares)
+  const status = calculateStatus(winner, currentSquares, nextValue)
 
   function selectSquare(square) {
     if (winner || currentSquares[square]) {
@@ -53,15 +54,6 @@ function Game() {
     squares[square] = nextValue
     setHistory([...newHistory, squares])
     setStepNumber(newHistory.length)
-  }
-
-  let status
-  if (winner) {
-    status = `Winner: ${winner}`
-  } else if (currentSquares.every(Boolean)) {
-    status = `Scratch: Cat's game`
-  } else {
-    status = `Next player: ${nextValue}`
   }
 
   const moves = history.map((step, stepNumber) => {
@@ -86,7 +78,15 @@ function Game() {
   )
 }
 
-function calculateWhoIsNext(squares) {
+function calculateStatus(winner, squares, nextValue) {
+  return winner
+    ? `Winner: ${winner}`
+    : squares.every(Boolean)
+    ? `Scratch: Cat's game`
+    : `Next player: ${nextValue}`
+}
+
+function calculateNextValue(squares) {
   const xSquaresCount = squares.filter(r => r === 'X').length
   const oSquaresCount = squares.filter(r => r === 'O').length
   return oSquaresCount === xSquaresCount ? 'X' : 'O'

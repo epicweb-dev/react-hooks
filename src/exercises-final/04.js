@@ -4,8 +4,9 @@ import React from 'react'
 
 function Board() {
   const [squares, setSquares] = React.useState(Array(9).fill(null))
-  const nextValue = calculateWhoIsNext(squares)
+  const nextValue = calculateNextValue(squares)
   const winner = calculateWinner(squares)
+  const status = calculateStatus(winner, squares, nextValue)
 
   function selectSquare(square) {
     if (winner || squares[square]) {
@@ -14,15 +15,6 @@ function Board() {
     const squaresCopy = [...squares]
     squaresCopy[square] = nextValue
     setSquares(squaresCopy)
-  }
-
-  let status
-  if (winner) {
-    status = `Winner: ${winner}`
-  } else if (squares.every(Boolean)) {
-    status = `Scratch: Cat's game`
-  } else {
-    status = `Next player: ${nextValue}`
   }
 
   return (
@@ -75,7 +67,15 @@ function Game() {
   )
 }
 
-function calculateWhoIsNext(squares) {
+function calculateStatus(winner, squares, nextValue) {
+  return winner
+    ? `Winner: ${winner}`
+    : squares.every(Boolean)
+    ? `Scratch: Cat's game`
+    : `Next player: ${nextValue}`
+}
+
+function calculateNextValue(squares) {
   const xSquaresCount = squares.filter(r => r === 'X').length
   const oSquaresCount = squares.filter(r => r === 'O').length
   return oSquaresCount === xSquaresCount ? 'X' : 'O'
