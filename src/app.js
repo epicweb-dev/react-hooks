@@ -1,36 +1,26 @@
 import React from 'react'
 import {Router, Link} from '@reach/router'
 import {createBrowserHistory} from 'history'
+import preval from 'preval.macro'
+import pkg from '../package.json'
+
+const {title} = pkg
+
+if (!title) {
+  throw new Error('The package.json must have a title!')
+}
+
+const exerciseInfo = preval`module.exports = require('./load-exercises')`
+
+for (const infoKey in exerciseInfo) {
+  const info = exerciseInfo[infoKey]
+  info.exercise.Component = React.lazy(() => import(`./exercises/${infoKey}`))
+  info.final.Component = React.lazy(() =>
+    import(`./exercises-final/${infoKey}`),
+  )
+}
 
 const history = createBrowserHistory()
-
-const files = ['01', '02', '03', '04', '05', '06']
-
-const pages = files.reduce((p, filename, index, fullArray) => {
-  const final = require(`./exercises-final/${filename}.js`)
-  Object.assign(final, {
-    previous: fullArray[index - 1],
-    next: fullArray[index + 1],
-    isolatedPath: `/isolated/exercises-final/${filename}`,
-  })
-  const exercise = require(`./exercises/${filename}.js`)
-  Object.assign(exercise, {
-    previous: fullArray[index - 1],
-    next: fullArray[index + 1],
-    isolatedPath: `/isolated/exercises/${filename}`,
-  })
-  p[filename] = {
-    exercise,
-    final,
-    title: final.default.title,
-  }
-  return p
-}, {})
-
-const filesAndTitles = files.map(filename => ({
-  title: pages[filename].title,
-  filename,
-}))
 
 function ComponentContainer({label, ...props}) {
   return (
@@ -51,16 +41,37 @@ function ComponentContainer({label, ...props}) {
   )
 }
 
+function ExtraCreditLinks({exerciseId}) {
+  const {extraCreditTitles} = exerciseInfo[exerciseId]
+  if (!extraCreditTitles) {
+    return null
+  }
+
+  return (
+    <div style={{gridColumn: 'span 2'}}>
+      {`Extra Credits: `}
+      {Object.entries(extraCreditTitles).map(([id, title]) => (
+        <span key={id}>
+          <a href={`/isolated/exercises-final/${exerciseId}-extra.${id}`}>
+            {title}
+          </a>
+          {' | '}
+        </span>
+      ))}
+    </div>
+  )
+}
+
 function ExerciseContainer({exerciseId}) {
   const {
-    exercise: {default: Exercise},
-    final: {default: Final},
-  } = pages[exerciseId]
+    exercise: {Component: Exercise},
+    final: {Component: Final},
+  } = exerciseInfo[exerciseId]
   return (
     <div
       style={{
-        padding: 20,
-        height: '100%',
+        padding: '20px 20px 40px 20px',
+        minHeight: '100%',
         display: 'grid',
         gridGap: '20px',
         gridTemplateColumns: '1fr 1fr',
@@ -79,17 +90,18 @@ function ExerciseContainer({exerciseId}) {
         <Final />
       </ComponentContainer>
       <NavigationFooter exerciseId={exerciseId} type="page" />
+      <ExtraCreditLinks exerciseId={exerciseId} />
     </div>
   )
 }
 
 function NavigationFooter({exerciseId, type}) {
-  const current = pages[exerciseId]
+  const current = exerciseInfo[exerciseId]
   let suffix = ''
-  let Usage = current.final
+  let info = current.final
   if (type === 'exercise') {
     suffix = '/exercise'
-    Usage = current.exercise
+    info = current.exercise
   } else if (type === 'final') {
     suffix = '/final'
   }
@@ -102,9 +114,9 @@ function NavigationFooter({exerciseId, type}) {
       }}
     >
       <div style={{flex: 1}}>
-        {Usage.previous ? (
-          <Link to={`/${Usage.previous}${suffix}`}>
-            {pages[Usage.previous].title}{' '}
+        {info.previous ? (
+          <Link to={`/${info.previous}${suffix}`}>
+            {exerciseInfo[info.previous].title}{' '}
             <span role="img" aria-label="previous">
               👈
             </span>
@@ -115,12 +127,12 @@ function NavigationFooter({exerciseId, type}) {
         <Link to="/">Home</Link>
       </div>
       <div style={{flex: 1, textAlign: 'right'}}>
-        {Usage.next ? (
-          <Link to={`/${Usage.next}${suffix}`}>
+        {info.next ? (
+          <Link to={`/${info.next}${suffix}`}>
             <span role="img" aria-label="next">
               👉
             </span>{' '}
-            {pages[Usage.next].title}
+            {exerciseInfo[info.next].title}
           </Link>
         ) : null}
       </div>
@@ -129,8 +141,8 @@ function NavigationFooter({exerciseId, type}) {
 }
 
 function FullPage({type, exerciseId}) {
-  const page = pages[exerciseId]
-  const {default: Usage, isolatedPath} = pages[exerciseId][type]
+  const page = exerciseInfo[exerciseId]
+  const {Component, isolatedPath} = exerciseInfo[exerciseId][type]
   return (
     <div>
       <div
@@ -164,7 +176,7 @@ function FullPage({type, exerciseId}) {
           justifyContent: 'center',
         }}
       >
-        <Usage />
+        <Component />
       </div>
       <NavigationFooter exerciseId={exerciseId} type={type} />
     </div>
@@ -193,9 +205,9 @@ function Isolated({loader}) {
 function Home() {
   return (
     <div style={{maxWidth: 800, margin: '50px auto 0px auto'}}>
-      <h1 style={{textAlign: 'center'}}>React Hooks</h1>
+      <h1 style={{textAlign: 'center'}}>{title}</h1>
       <div>
-        {filesAndTitles.map(({title, filename}) => {
+        {Object.entries(exerciseInfo).map(([filename, {title}]) => {
           return (
             <div key={filename} style={{margin: 10}}>
               {filename}
@@ -259,15 +271,19 @@ function App() {
   let ui = <Routes />
   if (pathname.startsWith('/isolated')) {
     const moduleName = pathname.split('/').slice(-1)[0]
-    if (pathname.includes('-final')) {
-      ui = (
-        <Isolated loader={() => import(`./exercises-final/${moduleName}.js`)} />
-      )
-    } else {
-      ui = <Isolated loader={() => import(`./exercises/${moduleName}.js`)} />
+    if (pathname.includes('/exercises-final/')) {
+      ui = <Isolated loader={() => import(`./exercises-final/${moduleName}`)} />
+    } else if (pathname.includes('/exercises/')) {
+      ui = <Isolated loader={() => import(`./exercises/${moduleName}`)} />
     }
   }
-  return <React.Suspense fallback={<div>Loading...</div>}>{ui}</React.Suspense>
+  return (
+    <React.Suspense
+      fallback={<div className="totally-centered">Loading...</div>}
+    >
+      {ui}
+    </React.Suspense>
+  )
 }
 
 export default App

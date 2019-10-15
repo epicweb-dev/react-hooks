@@ -1,5 +1,6 @@
 {
   "name": "learn-react-hooks",
+  "title": "React Hooks",
   "private": true,
   "version": "1.0.0",
   "description": "The best resources for you to learn React Hooks",
@@ -14,21 +15,22 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "@testing-library/jest-dom": "^4.1.0",
-    "@testing-library/react": "^9.2.0",
+    "@testing-library/jest-dom": "^4.1.2",
+    "@testing-library/react": "^9.3.0",
     "history": "^4.10.1",
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
+    "preval.macro": "^3.0.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "vanilla-tilt": "^1.7.0"
   },
   "devDependencies": {
-    "cross-spawn": "^7.0.0",
-    "husky": "^3.0.7",
+    "cross-spawn": "^7.0.1",
+    "husky": "^3.0.9",
     "inquirer": "^7.0.0",
     "is-ci": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
-    "react-scripts": "3.0.1",
+    "react-scripts": "3.2.0",
     "replace-in-file": "^4.1.3"
   },
   "scripts": {
