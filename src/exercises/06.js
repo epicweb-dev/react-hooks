@@ -12,7 +12,7 @@ function PokemonInfo({pokemonName}) {
   // 💰 DON'T FORGET THE DEPENDENCIES ARRAY!
   // 💰 if the pokemonName is falsy (an empty string) then don't bother making the request (exit early).
   // 🐨 before calling `fetchPokemon`, make sure to update the loading state
-  // 🐨 Use the `fetchPokemon` function to fetch a pokemon by its name:
+  // 💰 Use the `fetchPokemon` function to fetch a pokemon by its name:
   //   fetchPokemon('Pikachu').then(
   //     pokemon => { /* update all the state here */},
   //     error => {/* update all the state here */},
