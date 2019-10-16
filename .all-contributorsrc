@@ -48,6 +48,15 @@
       "contributions": [
         "fundingFinding"
       ]
+    },
+    {
+      "login": "AlgusDark",
+      "name": "Carlos Pérez Gutiérrez",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/818856?v=4",
+      "profile": "http://algus.ninja",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
