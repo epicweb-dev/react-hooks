@@ -5,30 +5,28 @@
 
 import React from 'react'
 
-function useLocalStorageState({
+function useLocalStorageState(
   key,
-  initialValue,
-  serialize = v => v,
-  deserialize = v => v,
-}) {
-  const [state, setState] = React.useState(
-    () => deserialize(window.localStorage.getItem(key)) || initialValue,
-  )
+  defaultValue,
+  {serialize = JSON.stringify, deserialize = JSON.parse} = {},
+) {
+  const [state, setState] = React.useState(() => {
+    const valueInLocalStorage = window.localStorage.getItem(key)
+    if (valueInLocalStorage) {
+      return deserialize(valueInLocalStorage)
+    }
+    return typeof defaultValue === 'function' ? defaultValue() : defaultValue
+  })
 
-  const serializedState = serialize(state)
   React.useEffect(() => {
-    window.localStorage.setItem(key, serializedState)
-  }, [key, serializedState])
+    window.localStorage.setItem(key, serialize(state))
+  }, [key, state, serialize])
 
   return [state, setState]
 }
 
 function useLocalStorageCounter({step = 1, initialCount = 0, key = 'count'}) {
-  const [count, setCount] = useLocalStorageState({
-    key,
-    initialValue: initialCount,
-    deserialize: v => Number(v),
-  })
+  const [count, setCount] = useLocalStorageState(key, initialCount)
 
   const increment = () => setCount(c => c + step)
 

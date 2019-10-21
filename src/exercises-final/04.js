@@ -5,7 +5,15 @@
 import React from 'react'
 
 function Board() {
-  const [squares, setSquares] = React.useState(Array(9).fill(null))
+  const [squares, setSquares] = React.useState(
+    () =>
+      JSON.parse(window.localStorage.getItem('squares')) || Array(9).fill(null),
+  )
+
+  React.useEffect(() => {
+    window.localStorage.setItem('squares', JSON.stringify(squares))
+  }, [squares])
+
   const nextValue = calculateNextValue(squares)
   const winner = calculateWinner(squares)
   const status = calculateStatus(winner, squares, nextValue)
@@ -19,42 +27,39 @@ function Board() {
     setSquares(squaresCopy)
   }
 
+  function restart() {
+    setSquares(Array(9).fill(null))
+  }
+
+  function renderSquare(i) {
+    return (
+      <button className="square" onClick={() => selectSquare(i)}>
+        {squares[i]}
+      </button>
+    )
+  }
+
   return (
     <div>
       <div className="status">{status}</div>
       <div className="board-row">
-        <button className="square" onClick={() => selectSquare(0)}>
-          {squares[0]}
-        </button>
-        <button className="square" onClick={() => selectSquare(1)}>
-          {squares[1]}
-        </button>
-        <button className="square" onClick={() => selectSquare(2)}>
-          {squares[2]}
-        </button>
+        {renderSquare(0)}
+        {renderSquare(1)}
+        {renderSquare(2)}
       </div>
       <div className="board-row">
-        <button className="square" onClick={() => selectSquare(3)}>
-          {squares[3]}
-        </button>
-        <button className="square" onClick={() => selectSquare(4)}>
-          {squares[4]}
-        </button>
-        <button className="square" onClick={() => selectSquare(5)}>
-          {squares[5]}
-        </button>
+        {renderSquare(3)}
+        {renderSquare(4)}
+        {renderSquare(5)}
       </div>
       <div className="board-row">
-        <button className="square" onClick={() => selectSquare(6)}>
-          {squares[6]}
-        </button>
-        <button className="square" onClick={() => selectSquare(7)}>
-          {squares[7]}
-        </button>
-        <button className="square" onClick={() => selectSquare(8)}>
-          {squares[8]}
-        </button>
+        {renderSquare(6)}
+        {renderSquare(7)}
+        {renderSquare(8)}
       </div>
+      <button className="restart" onClick={restart}>
+        restart
+      </button>
     </div>
   )
 }

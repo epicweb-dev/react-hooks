@@ -5,34 +5,29 @@
 import React from 'react'
 
 function Board() {
-  // 🐨 Use React.useState for the `squares` state you need
-  // 💰 To create an empty array with 9 slots, you can use: `Array(9).fill(null)`
+  // 🐨 squares is the state for this component. Add useState for squares
+  // 🐨 we'll also need to initialize the state from localStorage if it's there
+  // 💰 JSON.parse(window.localStorage.getItem('squares'))
+  const squares = Array(9).fill(null)
 
-  // 🐨 create your derived state variable here for the nextValue
-  // 💰 call it "nextValue" and get it by calling calculateNextValue with the squares
+  // 🐨 add a React.useEffect here to keep localStorage updated as squares change
 
-  // 🐨 create your derived state variable here for the winner
-  // 💰 call it "winner" and get it by calling calculateWinner with the squares
-
-  // Here we'll determine the status we'll display at the top of the board.
-  // We can have the following statuses:
-  // `Winner: ${winner}`
-  // `Scratch: Cat's game` (💰 if every square in squares is truthy and there's no winner, then it's a scratch)
-  // `Next player: ${nextValue}`
-  // 🐨 assign a `status` variable to one of these
-  //
-  // 💯 as a quick extra-credit, `status` is another form of derived state.
-  // so you could write a `calculateStatus` function and put your logic in there
+  // 🐨 We'll need the following bits of derived state:
+  // - nextValue ('X' or 'O')
+  // - winner ('X', 'O', or null)
+  // - status (`Winner: ${winner}`, `Scratch: Cat's game`, or `Next player: ${nextValue}`)
+  // 💰 I've written the calculations for you! So you can use my utilities
+  // below to create these variables
 
   // This is the function your square click handler will call. `square` should
   // be an index. So if they click the center square, this will be `5`.
-  // eslint-disable-next-line no-unused-vars
   function selectSquare(square) {
     // 🐨 first, if there's already winner or there's already a value at the
     // given square index (like someone clicked a square that's already been
     // clicked), then return early so we don't make any state changes
     //
-    // 🦉 It's typically a bad idea to manipulate state in React
+    // 🦉 It's typically a bad idea to manipulate state in React because that
+    // can lead to subtle bugs that can easily slip into productions.
     // 🐨 make a copy of the squares array (💰 `[...squares]` will do it!)
     // 🐨 Set the value of the square that was selected
     // 💰 `squaresCopy[square] = nextValue`
@@ -40,18 +35,40 @@ function Board() {
     // 🐨 set the squares to your copy
   }
 
-  // 🐨 return your JSX with this basic structure:
+  function restart() {
+    // 🐨 set the squares to `Array(9).fill(null)`
+  }
+
+  function renderSquare(i) {
+    return (
+      <button className="square" onClick={() => selectSquare(i)}>
+        {squares[i]}
+      </button>
+    )
+  }
+
   return (
     <div>
-      <div className="status">{/* put the status here */}</div>
-      {/* you'll need 3 board-rows and each will have 3 squares */}
+      {/* 🐨 put the status here */}
+      <div className="status">STATUS</div>
       <div className="board-row">
-        <button className="square" onClick={() => selectSquare(0)}>
-          {/* squares[0] */}
-        </button>
-        {/* etc... */}
+        {renderSquare(0)}
+        {renderSquare(1)}
+        {renderSquare(2)}
       </div>
-      {/* etc... */}
+      <div className="board-row">
+        {renderSquare(3)}
+        {renderSquare(4)}
+        {renderSquare(5)}
+      </div>
+      <div className="board-row">
+        {renderSquare(6)}
+        {renderSquare(7)}
+        {renderSquare(8)}
+      </div>
+      <button className="restart" onClick={restart}>
+        restart
+      </button>
     </div>
   )
 }
@@ -72,6 +89,15 @@ function Game() {
 // But do look at it to see how your code is intended to be used. //
 //                                                                //
 ////////////////////////////////////////////////////////////////////
+
+// eslint-disable-next-line no-unused-vars
+function calculateStatus(winner, squares, nextValue) {
+  return winner
+    ? `Winner: ${winner}`
+    : squares.every(Boolean)
+    ? `Scratch: Cat's game`
+    : `Next player: ${nextValue}`
+}
 
 // eslint-disable-next-line no-unused-vars
 function calculateNextValue(squares) {

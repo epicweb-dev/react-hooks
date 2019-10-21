@@ -51,6 +51,10 @@ https://micku7zu.github.io/vanilla-tilt.js/index.html
   margin-bottom: 10px;
 }
 
+.restart {
+  margin-top: 10px;
+}
+
 .square {
   background: #fff;
   border: 1px solid #999;
@@ -78,4 +82,5 @@ https://micku7zu.github.io/vanilla-tilt.js/index.html
 
 .game-info {
   margin-left: 20px;
+  min-width: 190px;
 }

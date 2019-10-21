@@ -11,7 +11,10 @@ import React from 'react'
 // component to hooks. So, let's make it happen!
 
 class Board extends React.Component {
-  state = {squares: Array(9).fill(null)}
+  state = {
+    squares:
+      JSON.parse(window.localStorage.getItem('squares')) || Array(9).fill(null),
+  }
 
   selectSquare(square) {
     const {squares} = this.state
@@ -28,6 +31,25 @@ class Board extends React.Component {
       {this.state.squares[i]}
     </button>
   )
+
+  restart = () => {
+    this.setState({squares: Array(9).fill(null)})
+    this.updateLocalStorage()
+  }
+
+  componentDidMount() {
+    this.updateLocalStorage()
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.squares !== this.state.squares) {
+      this.updateLocalStorage()
+    }
+  }
+
+  updateLocalStorage() {
+    window.localStorage.setItem('squares', JSON.stringify(this.state.squares))
+  }
 
   render() {
     const {squares} = this.state
@@ -60,6 +82,9 @@ class Board extends React.Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
+        <button className="restart" onClick={this.restart}>
+          restart
+        </button>
       </div>
     )
   }

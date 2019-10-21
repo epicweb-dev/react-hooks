@@ -1,12 +1,17 @@
 // useState: tic tac toe
-// 💯 reduce repetition
+// 💯 useLocalStorageState
 
 // http://localhost:3000/isolated/exercises-final/04.extra-1
 
 import React from 'react'
+import {useLocalStorageState} from '../utils'
 
 function Board() {
-  const [squares, setSquares] = React.useState(Array(9).fill(null))
+  const [squares, setSquares] = useLocalStorageState(
+    'squares',
+    Array(9).fill(null),
+  )
+
   const nextValue = calculateNextValue(squares)
   const winner = calculateWinner(squares)
   const status = calculateStatus(winner, squares, nextValue)
@@ -18,6 +23,10 @@ function Board() {
     const squaresCopy = [...squares]
     squaresCopy[square] = nextValue
     setSquares(squaresCopy)
+  }
+
+  function restart() {
+    setSquares(Array(9).fill(null))
   }
 
   function renderSquare(i) {
@@ -46,6 +55,9 @@ function Board() {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
+      <button className="restart" onClick={restart}>
+        restart
+      </button>
     </div>
   )
 }

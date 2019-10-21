@@ -3,7 +3,7 @@ const fs = require('fs')
 const glob = require('glob')
 
 const exerciseInfo = glob
-  .sync(path.join(__dirname, './exercises*/[0-9][0-9].js'))
+  .sync('src/exercises*/[0-9][0-9].js')
   .reduce((acc, filePath) => {
     const contents = String(fs.readFileSync(filePath))
     const {dir, name} = path.parse(filePath)
