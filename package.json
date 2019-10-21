@@ -17,6 +17,7 @@
     "@reach/router": "^1.2.1",
     "@testing-library/jest-dom": "^4.1.2",
     "@testing-library/react": "^9.3.0",
+    "chalk": "^2.4.2",
     "glob": "^7.1.5",
     "history": "^4.10.1",
     "preval.macro": "^3.0.0",

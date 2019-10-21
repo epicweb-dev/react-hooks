@@ -1,4 +1,5 @@
 import React from 'react'
+import chalk from 'chalk'
 import {render, fireEvent} from '@testing-library/react'
 import Usage from '../exercises-final/04'
 // import Usage from '../exercises/04'
@@ -44,4 +45,24 @@ test('can play a game of tic tac toe', () => {
   expect(getByText('Winner: X')).toBeInTheDocument()
   fireEvent.click(s4)
   expect(s4).toHaveTextContent('')
+
+  try {
+    // prettier-ignore
+    expect(JSON.parse(window.localStorage.getItem('squares'))).toEqual([
+      'X', 'O', 'X',
+      null, 'O', 'X',
+      'O', null, 'X',
+    ])
+  } catch (error) {
+    //
+    //
+    //
+    // these comment lines are just here to keep the next line out of the codeframe
+    // so it doesn't confuse people when they see the error message twice.
+    error.message = `🚨  ${chalk.red(
+      'Make sure that the "squares" localStorage item is updated with the JSON.stringified squares',
+    )}`
+
+    throw error
+  }
 })
