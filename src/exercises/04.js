@@ -1,5 +1,7 @@
 // useState: tic tac toe
 
+// http://localhost:3000/isolated/exercises/04
+
 import React from 'react'
 
 function Board() {
@@ -102,6 +104,5 @@ function calculateWinner(squares) {
 function Usage() {
   return <Game />
 }
-Usage.title = 'useState: tic tac toe'
 
 export default Usage

@@ -1,4 +1,7 @@
 // useCounter: custom hooks
+
+// http://localhost:3000/isolated/exercises/02
+
 import React from 'react'
 
 // 🐨 Make a custom hook called useCounter that accepts the step and
@@ -22,6 +25,5 @@ function Counter({step = 1, initialCount = 0}) {
 function Usage() {
   return <Counter />
 }
-Usage.title = 'useCounter: custom hooks'
 
 export default Usage

@@ -1,5 +1,7 @@
 // useState: counter
 
+// http://localhost:3000/isolated/exercises/01
+
 import React from 'react'
 
 function Counter() {
@@ -21,6 +23,5 @@ function Counter() {
 function Usage() {
   return <Counter />
 }
-Usage.title = 'useState: counter'
 
 export default Usage

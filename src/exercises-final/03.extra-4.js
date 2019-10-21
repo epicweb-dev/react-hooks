@@ -1,6 +1,8 @@
 // useEffect: persistent state
 // 💯 composed custom hooks
+
 // http://localhost:3000/isolated/exercises-final/03.extra-3
+
 import React from 'react'
 
 function useLocalStorageState({
@@ -44,6 +46,5 @@ function Counter({step, initialCount}) {
 function Usage() {
   return <Counter />
 }
-Usage.title = 'Counter: advanced custom hooks'
 
 export default Usage

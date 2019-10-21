@@ -1,12 +1,11 @@
 // useState: tic tac toe
+
+// http://localhost:3000/isolated/exercises/04-classes
+
 import React from 'react'
 
 // If you'd rather practice refactoring a class component to a function
 // component with hooks, then go ahead and do this exercise.
-//
-// This one's not rendered to the exercise, page, so you can go to this
-// component's isolated page here:
-// http://localhost:3000/isolated/exercises/04-classes
 
 // 🦉 You've learned all the hooks you need to know to refactor this Board
 // component to hooks. So, let's make it happen!
@@ -112,6 +111,5 @@ function calculateWinner(squares) {
 function Usage() {
   return <Game />
 }
-Usage.title = 'useState: tic tac toe'
 
 export default Usage

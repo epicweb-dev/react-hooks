@@ -1,5 +1,7 @@
 // useEffect: HTTP requests
 
+// http://localhost:3000/isolated/exercises/06
+
 import React from 'react'
 import fetchPokemon from '../fetch-pokemon'
 
@@ -127,7 +129,6 @@ function Usage() {
     </div>
   )
 }
-Usage.title = 'useEffect: HTTP requests'
 
 export default Usage
 

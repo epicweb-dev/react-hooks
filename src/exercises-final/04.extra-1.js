@@ -1,5 +1,6 @@
 // useState: tic tac toe
 // 💯 reduce repetition
+
 // http://localhost:3000/isolated/exercises-final/04.extra-1
 
 import React from 'react'
@@ -96,6 +97,5 @@ function calculateWinner(squares) {
 function Usage() {
   return <Game />
 }
-Usage.title = 'useState: tic tac toe'
 
 export default Usage

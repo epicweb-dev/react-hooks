@@ -1,4 +1,7 @@
 // useEffect: persistent state
+
+// http://localhost:3000/isolated/exercises-final/03
+
 import React from 'react'
 
 function Counter({step = 1, initialCount = 0}) {
@@ -18,6 +21,5 @@ function Counter({step = 1, initialCount = 0}) {
 function Usage() {
   return <Counter />
 }
-Usage.title = 'useEffect: persistent state'
 
 export default Usage

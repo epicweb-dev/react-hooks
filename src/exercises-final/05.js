@@ -1,5 +1,7 @@
 // useRef and useEffect: DOM interaction
 
+// http://localhost:3000/isolated/exercises-final/05
+
 import React from 'react'
 import VanillaTilt from 'vanilla-tilt'
 
@@ -32,6 +34,5 @@ function Usage() {
     </Tilt>
   )
 }
-Usage.title = 'useRef and useEffect: DOM interaction'
 
 export default Usage

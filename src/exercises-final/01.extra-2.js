@@ -1,5 +1,6 @@
 // useState: counter
 // 💯 use the function updater
+
 // http://localhost:3000/isolated/exercises-final/01.extra-2
 
 import React from 'react'
@@ -13,6 +14,5 @@ function Counter({step = 1, initialCount = 0}) {
 function Usage() {
   return <Counter />
 }
-Usage.title = 'useState: counter'
 
 export default Usage

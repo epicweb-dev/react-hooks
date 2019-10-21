@@ -1,5 +1,7 @@
 // useRef and useEffect: DOM interaction
 
+// http://localhost:3000/isolated/exercises/05
+
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import VanillaTilt from 'vanilla-tilt'
@@ -48,6 +50,5 @@ function Usage() {
     </Tilt>
   )
 }
-Usage.title = 'useRef and useEffect: DOM interaction'
 
 export default Usage

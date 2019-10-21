@@ -1,6 +1,8 @@
 // useEffect: persistent state
 // 💯 lazy state initialization
+
 // http://localhost:3000/isolated/exercises-final/03.extra-1
+
 import React from 'react'
 
 function Counter({step = 1, initialCount = 0}) {
@@ -20,6 +22,5 @@ function Counter({step = 1, initialCount = 0}) {
 function Usage() {
   return <Counter />
 }
-Usage.title = 'Counter: optimizations'
 
 export default Usage
