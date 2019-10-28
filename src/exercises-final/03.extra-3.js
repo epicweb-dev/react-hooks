@@ -7,12 +7,12 @@ import React from 'react'
 
 function useLocalStorageCounter({step = 1, initialCount = 0, key = 'count'}) {
   const [count, setCount] = React.useState(() =>
-    Number(window.localStorage.getItem('count') || initialCount),
+    Number(window.localStorage.getItem(key) || initialCount),
   )
 
   React.useEffect(() => {
-    window.localStorage.setItem('count', count)
-  }, [count])
+    window.localStorage.setItem(key, count)
+  }, [key, count])
 
   const increment = () => setCount(c => c + step)
 

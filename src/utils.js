@@ -27,6 +27,9 @@ function useLocalStorageState(
       window.localStorage.removeItem(prevKey)
     }
     prevKeyRef.current = key
+  }, [key])
+
+  React.useEffect(() => {
     window.localStorage.setItem(key, serialize(state))
   }, [key, state, serialize])
 
