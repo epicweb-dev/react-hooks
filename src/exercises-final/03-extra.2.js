@@ -1,7 +1,7 @@
 // useEffect: persistent state
-// 💯 lazy state initialization
+// 💯 effect dependencies
 
-// http://localhost:3000/isolated/exercises-final/03.extra-1
+// http://localhost:3000/isolated/exercises-final/03-extra.2
 
 import React from 'react'
 
@@ -12,7 +12,7 @@ function Counter({step = 1, initialCount = 0}) {
 
   React.useEffect(() => {
     window.localStorage.setItem('count', count)
-  })
+  }, [count])
 
   const increment = () => setCount(c => c + step)
 

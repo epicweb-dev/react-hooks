@@ -9,31 +9,32 @@
   "main": "src/index.js",
   "license": "GPLv3",
   "engines": {
-    "node": ">=8",
-    "npm": ">=6",
-    "yarn": ">=1"
+    "node": ">=10",
+    "npm": ">=6"
   },
   "dependencies": {
-    "@reach/router": "^1.2.1",
-    "@testing-library/jest-dom": "^4.2.0",
-    "@testing-library/react": "^9.3.0",
-    "chalk": "^2.4.2",
-    "glob": "^7.1.5",
+    "@testing-library/jest-dom": "^5.0.2",
+    "@testing-library/react": "^9.4.0",
+    "chalk": "^3.0.0",
+    "glob": "^7.1.6",
     "history": "^4.10.1",
-    "preval.macro": "^3.0.0",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "normalize.css": "^8.0.1",
+    "preval.macro": "^4.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "stop-runaway-react-effects": "^1.2.1",
     "vanilla-tilt": "^1.7.0"
   },
   "devDependencies": {
     "cross-spawn": "^7.0.1",
-    "husky": "^3.0.9",
-    "inquirer": "^7.0.0",
+    "husky": "^4.2.1",
+    "inquirer": "^7.0.4",
     "is-ci": "^2.0.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.18.2",
-    "react-scripts": "3.2.0",
-    "replace-in-file": "^4.2.0"
+    "prettier": "^1.19.1",
+    "react-scripts": "3.3.0",
+    "replace-in-file": "^5.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

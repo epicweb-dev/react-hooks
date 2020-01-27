@@ -1,7 +1,7 @@
 // useState: tic tac toe
 // 💯 useLocalStorageState
 
-// http://localhost:3000/isolated/exercises-final/04.extra-1
+// http://localhost:3000/isolated/exercises-final/04-extra.1
 
 import React from 'react'
 import {useLocalStorageState} from '../utils'

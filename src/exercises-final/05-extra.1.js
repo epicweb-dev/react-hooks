@@ -1,7 +1,7 @@
 // useRef and useEffect: DOM interaction
 // 💯 Make a custom hook
 
-// http://localhost:3000/isolated/exercises-final/05.extra-1
+// http://localhost:3000/isolated/exercises-final/05-extra.1
 
 import React from 'react'
 import VanillaTilt from 'vanilla-tilt'

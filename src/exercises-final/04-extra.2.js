@@ -1,7 +1,7 @@
 // useState: tic tac toe
 // 💯 add game history feature
 
-// http://localhost:3000/isolated/exercises-final/04.extra-2
+// http://localhost:3000/isolated/exercises-final/04-extra.2
 
 import React from 'react'
 import {useLocalStorageState} from '../utils'

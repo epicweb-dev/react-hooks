@@ -1,7 +1,7 @@
 // useState: counter
 // 💯 accept a step and initialCount
 
-// http://localhost:3000/isolated/exercises-final/01.extra-1
+// http://localhost:3000/isolated/exercises-final/01-extra.1
 
 import React from 'react'
 

@@ -1,7 +1,7 @@
 // useState: counter
 // 💯 use the function updater
 
-// http://localhost:3000/isolated/exercises-final/01.extra-2
+// http://localhost:3000/isolated/exercises-final/01-extra.2
 
 import React from 'react'
 
