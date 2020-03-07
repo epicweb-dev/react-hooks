@@ -14,13 +14,6 @@ function Counter({step = 1, initialCount = 0}) {
   return <button onClick={increment}>{count}</button>
 }
 
-////////////////////////////////////////////////////////////////////
-//                                                                //
-//                 Don't make changes below here.                 //
-// But do look at it to see how your code is intended to be used. //
-//                                                                //
-////////////////////////////////////////////////////////////////////
-
 function Usage() {
   return <Counter />
 }
