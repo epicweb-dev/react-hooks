@@ -1,23 +1,12 @@
 import React from 'react'
-import chalk from 'chalk'
-import {render, fireEvent, waitForDomChange} from '@testing-library/react'
-import Usage from '../exercises-final/06'
-// import Usage from '../exercises/06'
+import {render, screen, fireEvent, wait} from '@testing-library/react'
+import Usage from '../final/06'
+// import Usage from '../exercise/06'
 
 beforeAll(() => {
-  jest
-    .spyOn(window, 'fetch')
-    .mockImplementation(() =>
-      Promise.resolve({json: () => Promise.resolve({data: {pokemon: {}}})}),
-    )
-})
-
-afterAll(() => {
-  window.fetch.mockRestore()
-})
-
-beforeEach(() => {
-  window.fetch.mockClear()
+  window.fetch.mockImplementation(() =>
+    Promise.resolve({json: () => Promise.resolve({data: {pokemon: {}}})}),
+  )
 })
 
 test('displays the pokemon', async () => {
@@ -26,15 +15,18 @@ test('displays the pokemon', async () => {
       json: () => Promise.resolve({data: {pokemon: {id: 'fake-id'}}}),
     }),
   )
-  const {getByLabelText, getByText, getByTestId} = render(<Usage />)
-  const input = getByLabelText(/pokemon/i)
-  const submit = getByText(/^submit$/i)
+  render(<Usage />)
+  const input = screen.getByLabelText(/pokemon/i)
+  const submit = screen.getByText(/^submit$/i)
 
   // verify that an initial request is made when mounted
   fireEvent.change(input, {target: {value: 'jeffry'}})
   fireEvent.click(submit)
-  await waitForDomChange(
-    () => expect(getByTestId('pokemon-display')).toHaveTextContent('fake-id'),
+  await wait(
+    () =>
+      expect(screen.getByTestId('pokemon-display')).toHaveTextContent(
+        'fake-id',
+      ),
     {timeout: 100},
   )
   expect(window.fetch).toHaveBeenCalledTimes(1)
@@ -54,9 +46,9 @@ test('displays the pokemon', async () => {
   )
   fireEvent.change(input, {target: {value: 'fred'}})
   fireEvent.click(submit)
-  await waitForDomChange(
+  await wait(
     () =>
-      expect(getByTestId('pokemon-display')).toHaveTextContent(
+      expect(screen.getByTestId('pokemon-display')).toHaveTextContent(
         'id-that-is-fake',
       ),
     {timeout: 100},
@@ -72,17 +64,10 @@ test('displays the pokemon', async () => {
 
   // verify that when props remain the same a request is not made
   fireEvent.click(submit)
-  try {
-    expect(window.fetch).not.toHaveBeenCalled()
-  } catch (error) {
-    error.message = [
-      chalk.red(
-        `🚨  Make certain that you are providing a dependencies list in useEffect! 🚨`,
-      ),
-      error.message,
-    ].join('\n')
-    throw error
-  }
+  expect(
+    window.fetch,
+    'Make certain that you are providing a dependencies list in useEffect!',
+  ).not.toHaveBeenCalled()
 
   // verify that an error renders an error
   window.fetch.mockImplementationOnce(() =>
@@ -93,8 +78,9 @@ test('displays the pokemon', async () => {
 
   fireEvent.change(input, {target: {value: 'george'}})
   fireEvent.click(submit)
-  await waitForDomChange(
-    () => expect(getByTestId('pokemon-display')).toHaveTextContent(/error/i),
+  await wait(
+    () =>
+      expect(screen.getByTestId('pokemon-display')).toHaveTextContent(/error/i),
     {timeout: 100},
   )
 })

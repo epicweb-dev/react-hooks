@@ -1,1 +1,1 @@
-import '@testing-library/jest-dom/extend-expect'
+import '@kentcdodds/react-workshop-app/setup-tests'

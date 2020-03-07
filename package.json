@@ -1,40 +1,31 @@
 {
   "name": "learn-react-hooks",
-  "title": "React Hooks",
+  "title": "React Hooks 🎣",
   "private": true,
   "version": "1.0.0",
   "description": "The best resources for you to learn React Hooks",
   "keywords": [],
   "homepage": "https://learn-react-hooks.netlify.com/",
+  "license": "GPL-3.0-only",
   "main": "src/index.js",
-  "license": "GPLv3",
   "engines": {
     "node": ">=10",
     "npm": ">=6"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.0.2",
-    "@testing-library/react": "^9.4.0",
+    "@kentcdodds/react-workshop-app": "^2.5.1",
+    "@testing-library/react": "^9.5.0",
     "chalk": "^3.0.0",
-    "glob": "^7.1.6",
-    "history": "^4.10.1",
-    "normalize.css": "^8.0.1",
-    "preval.macro": "^4.0.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-router-dom": "^5.1.2",
-    "stop-runaway-react-effects": "^1.2.1",
+    "codegen.macro": "^3.0.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "vanilla-tilt": "^1.7.0"
   },
   "devDependencies": {
-    "cross-spawn": "^7.0.1",
-    "husky": "^4.2.1",
-    "inquirer": "^7.0.4",
-    "is-ci": "^2.0.0",
+    "husky": "^4.2.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
-    "react-scripts": "3.3.0",
-    "replace-in-file": "^5.0.2"
+    "react-scripts": "^3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,7 +33,7 @@
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "npm run test -- --watchAll=false --coverage",
     "test:exercises": "npm run test -- testing.*exercises\\/ --onlyChanged",
-    "setup": "node ./scripts/setup && npm run validate && node ./scripts/autofill-feedback-email.js",
+    "setup": "node ./scripts/setup",
     "lint": "eslint .",
     "validate": "npm-run-all --parallel build test:coverage lint"
   },
@@ -53,11 +44,16 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/exercises-final/**/*.js"
+      "src/final/**/*.js"
     ]
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-react-app"
+    ]
   },
   "browserslist": {
     "development": [
