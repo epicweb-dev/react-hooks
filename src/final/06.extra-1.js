@@ -1,7 +1,6 @@
 // useEffect: HTTP requests
 // 💯 store the state in an object
-
-// http://localhost:3000/isolated/final/06.extra-1
+// http://localhost:3000/isolated/final/06.extra-1.js
 
 import React from 'react'
 import fetchPokemon from '../fetch-pokemon'

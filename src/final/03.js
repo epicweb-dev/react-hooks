@@ -1,6 +1,5 @@
 // useEffect: persistent state
-
-// http://localhost:3000/isolated/final/03
+// http://localhost:3000/isolated/final/03.js
 
 import React from 'react'
 

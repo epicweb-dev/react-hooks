@@ -1,6 +1,5 @@
 // useEffect: HTTP requests
-
-// http://localhost:3000/isolated/final/06
+// http://localhost:3000/isolated/final/06.js
 
 import React from 'react'
 import fetchPokemon from '../fetch-pokemon'

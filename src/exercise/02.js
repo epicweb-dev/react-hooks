@@ -1,6 +1,5 @@
 // useCounter: custom hooks
-
-// http://localhost:3000/isolated/exercise/02
+// http://localhost:3000/isolated/exercise/02.js
 
 import React from 'react'
 

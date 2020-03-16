@@ -1,5 +1,5 @@
 import React from 'react'
-import {render, screen, fireEvent, wait} from '@testing-library/react'
+import {render, screen, fireEvent, waitFor} from '@testing-library/react'
 import Usage from '../final/06'
 // import Usage from '../exercise/06'
 
@@ -22,12 +22,8 @@ test('displays the pokemon', async () => {
   // verify that an initial request is made when mounted
   fireEvent.change(input, {target: {value: 'jeffry'}})
   fireEvent.click(submit)
-  await wait(
-    () =>
-      expect(screen.getByTestId('pokemon-display')).toHaveTextContent(
-        'fake-id',
-      ),
-    {timeout: 100},
+  await waitFor(() =>
+    expect(screen.getByTestId('pokemon-display')).toHaveTextContent('fake-id'),
   )
   expect(window.fetch).toHaveBeenCalledTimes(1)
   expect(window.fetch).toHaveBeenCalledWith('https://graphql-pokemon.now.sh', {
@@ -46,12 +42,10 @@ test('displays the pokemon', async () => {
   )
   fireEvent.change(input, {target: {value: 'fred'}})
   fireEvent.click(submit)
-  await wait(
-    () =>
-      expect(screen.getByTestId('pokemon-display')).toHaveTextContent(
-        'id-that-is-fake',
-      ),
-    {timeout: 100},
+  await waitFor(() =>
+    expect(screen.getByTestId('pokemon-display')).toHaveTextContent(
+      'id-that-is-fake',
+    ),
   )
   expect(window.fetch).toHaveBeenCalledTimes(1)
   expect(window.fetch).toHaveBeenCalledWith('https://graphql-pokemon.now.sh', {
@@ -78,9 +72,7 @@ test('displays the pokemon', async () => {
 
   fireEvent.change(input, {target: {value: 'george'}})
   fireEvent.click(submit)
-  await wait(
-    () =>
-      expect(screen.getByTestId('pokemon-display')).toHaveTextContent(/error/i),
-    {timeout: 100},
+  await waitFor(() =>
+    expect(screen.getByTestId('pokemon-display')).toHaveTextContent(/error/i),
   )
 })

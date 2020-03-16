@@ -1,6 +1,5 @@
 // useState: counter
-
-// http://localhost:3000/isolated/final/01
+// http://localhost:3000/isolated/final/01.js
 
 import React from 'react'
 

@@ -1,7 +1,6 @@
 // useEffect: persistent state
 // 💯 lazy state initialization
-
-// http://localhost:3000/isolated/final/03.extra-1
+// http://localhost:3000/isolated/final/03.extra-1.js
 
 import React from 'react'
 

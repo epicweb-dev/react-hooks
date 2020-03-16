@@ -1,6 +1,5 @@
 // useRef and useEffect: DOM interaction
-
-// http://localhost:3000/isolated/exercise/05-classes
+// http://localhost:3000/isolated/exercise/05-classes.js
 
 import React from 'react'
 import VanillaTilt from 'vanilla-tilt'

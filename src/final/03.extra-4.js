@@ -1,7 +1,6 @@
 // useEffect: persistent state
 // 💯 composed custom hooks
-
-// http://localhost:3000/isolated/final/03.extra-4
+// http://localhost:3000/isolated/final/03.extra-4.js
 
 import React from 'react'
 
