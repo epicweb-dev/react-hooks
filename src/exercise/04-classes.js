@@ -1,5 +1,6 @@
 // useState: tic tac toe
 // http://localhost:3000/isolated/exercise/04-classes.js
+// http://localhost:3000/isolated/exercise/04-classes.js
 
 import React from 'react'
 

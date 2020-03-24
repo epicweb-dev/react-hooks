@@ -1,25 +1,43 @@
 // useEffect: HTTP requests
 // 💯 handle errors
 // http://localhost:3000/isolated/final/06.js
-// http://localhost:3000/isolated/final/06.extra-1.js
-// http://localhost:3000/isolated/final/06.extra-1.js
+// http://localhost:3000/isolated/final/06.extra-3.js
+// http://localhost:3000/isolated/final/06.extra-3.js
 
 import React from 'react'
 import fetchPokemon from '../fetch-pokemon'
 
 function PokemonInfo({pokemonName}) {
-  const [pokemon, setPokemon] = React.useState(null)
-  const [error, setError] = React.useState(null)
+  const [state, setState] = React.useState({
+    status: 'idle',
+    pokemon: null,
+    error: null,
+  })
+  const {status, pokemon, error} = state
 
   React.useEffect(() => {
     if (!pokemonName) {
       return
     }
-    setPokemon(null)
-    setError(null)
+    setState(currentState => ({
+      status: 'pending',
+      ...currentState,
+    }))
     fetchPokemon(pokemonName).then(
-      pokemon => setPokemon(pokemon),
-      error => setError(error),
+      pokemon => {
+        setState(currentState => ({
+          status: 'resolved',
+          pokemon,
+          ...currentState,
+        }))
+      },
+      error => {
+        setState(currentState => ({
+          status: 'resolved',
+          error,
+          ...currentState,
+        }))
+      },
     )
   }, [pokemonName])
 
@@ -34,17 +52,17 @@ function PokemonInfo({pokemonName}) {
         padding: 10,
       }}
     >
-      {!pokemonName ? (
+      {status === 'idle' ? (
         'Submit a pokemon'
-      ) : error ? (
+      ) : status === 'pending' ? (
+        '...'
+      ) : status === 'rejected' ? (
         <div>
           There was an error: <pre>{error.message}</pre>
         </div>
-      ) : pokemon ? (
+      ) : status === 'resolved' ? (
         <pre>{JSON.stringify(pokemon || 'Unknown', null, 2)}</pre>
-      ) : (
-        '...'
-      )}
+      ) : null}
     </div>
   )
 }

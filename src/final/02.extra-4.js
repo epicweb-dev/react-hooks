@@ -1,6 +1,7 @@
 // useEffect: persistent state
-// 💯 composed custom hooks
-// http://localhost:3000/isolated/final/03.extra-4.js
+// 💯 flexible localStorage hook
+// http://localhost:3000/isolated/final/02.extra-4.js
+// http://localhost:3000/isolated/final/02.extra-4.js
 
 import React from 'react'
 
@@ -31,24 +32,24 @@ function useLocalStorageState(
   return [state, setState]
 }
 
-function useLocalStorageCounter({step = 1, initialCount = 0, key = 'count'}) {
-  const [count, setCount] = useLocalStorageState(key, initialCount)
+function Greeting({initialName = ''}) {
+  const [name, setName] = useLocalStorageState('name', initialName)
 
-  const increment = () => setCount(c => c + step)
+  const handleChange = event => setName(event.target.value)
 
-  return [count, increment]
-}
-
-function Counter({step, initialCount}) {
-  const [count, increment] = useLocalStorageCounter({
-    step,
-    initialCount,
-  })
-  return <button onClick={increment}>{count}</button>
+  return (
+    <div>
+      <form>
+        <label htmlFor="name">Name: </label>
+        <input value={name} onChange={handleChange} id="name" />
+      </form>
+      {name ? <strong>Hello {name}</strong> : 'Please type your name'}
+    </div>
+  )
 }
 
 function App() {
-  return <Counter />
+  return <Greeting />
 }
 
 export default App

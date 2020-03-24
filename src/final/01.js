@@ -1,16 +1,25 @@
 // useState: counter
 // http://localhost:3000/isolated/final/01.js
+// http://localhost:3000/isolated/final/01.js
 
 import React from 'react'
 
-function Counter() {
-  const [count, setCount] = React.useState(0)
-  const increment = () => setCount(count + 1)
-  return <button onClick={increment}>{count}</button>
+function Greeting() {
+  const [name, setName] = React.useState('')
+  const handleChange = event => setName(event.target.value)
+  return (
+    <div>
+      <form>
+        <label htmlFor="name">Name: </label>
+        <input onChange={handleChange} id="name" />
+      </form>
+      {name ? <strong>Hello {name}</strong> : 'Please type your name'}
+    </div>
+  )
 }
 
 function App() {
-  return <Counter />
+  return <Greeting />
 }
 
 export default App

@@ -1,17 +1,26 @@
 // useState: counter
-// 💯 accept a step and initialCount
+// 💯 accept an initialName
+// http://localhost:3000/isolated/final/01.extra-1.js
 // http://localhost:3000/isolated/final/01.extra-1.js
 
 import React from 'react'
 
-function Counter({step = 1, initialCount = 0}) {
-  const [count, setCount] = React.useState(initialCount)
-  const increment = () => setCount(count + step)
-  return <button onClick={increment}>{count}</button>
+function Greeting({initialName = ''}) {
+  const [name, setName] = React.useState(initialName)
+  const handleChange = event => setName(event.target.value)
+  return (
+    <div>
+      <form>
+        <label htmlFor="name">Name: </label>
+        <input onChange={handleChange} id="name" />
+      </form>
+      {name ? <strong>Hello {name}</strong> : 'Please type your name'}
+    </div>
+  )
 }
 
 function App() {
-  return <Counter />
+  return <Greeting />
 }
 
 export default App

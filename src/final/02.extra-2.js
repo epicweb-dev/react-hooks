@@ -1,17 +1,18 @@
 // useEffect: persistent state
-// http://localhost:3000/isolated/final/02.js
-// http://localhost:3000/isolated/final/02.js
+// 💯 effect dependencies
+// http://localhost:3000/isolated/final/02.extra-2.js
+// http://localhost:3000/isolated/final/02.extra-2.js
 
 import React from 'react'
 
 function Greeting({initialName = ''}) {
   const [name, setName] = React.useState(
-    window.localStorage.getItem('name') || initialName,
+    () => window.localStorage.getItem('name') || initialName,
   )
 
   React.useEffect(() => {
     window.localStorage.setItem('name', name)
-  })
+  }, [name])
 
   const handleChange = event => setName(event.target.value)
 

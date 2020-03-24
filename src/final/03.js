@@ -1,24 +1,44 @@
-// useEffect: persistent state
+// Lifting state
+// http://localhost:3000/isolated/final/03.js
 // http://localhost:3000/isolated/final/03.js
 
 import React from 'react'
 
-function Counter({step = 1, initialCount = 0}) {
-  const [count, setCount] = React.useState(
-    Number(window.localStorage.getItem('count') || initialCount),
+function Name({name, onNameChange}) {
+  return (
+    <div>
+      <label>Name: </label>
+      <input value={name} onChange={onNameChange} />
+    </div>
   )
+}
 
-  React.useEffect(() => {
-    window.localStorage.setItem('count', count)
-  })
+function FavoriteAnimal({animal, onAnimalChange}) {
+  return (
+    <div>
+      <label>Favorite Animal: </label>
+      <input value={animal} onChange={onAnimalChange} />
+    </div>
+  )
+}
 
-  const increment = () => setCount(c => c + step)
-
-  return <button onClick={increment}>{count}</button>
+function Display({name, animal}) {
+  return <div>{`Hey ${name}, your favorite animal is: ${animal}!`}</div>
 }
 
 function App() {
-  return <Counter />
+  const [animal, setAnimal] = React.useState('')
+  const [name, setName] = React.useState('')
+  return (
+    <form>
+      <Name name={name} onNameChange={event => setName(event.target.value)} />
+      <FavoriteAnimal
+        animal={animal}
+        onAnimalChange={event => setAnimal(event.target.value)}
+      />
+      <Display name={name} animal={animal} />
+    </form>
+  )
 }
 
 export default App

@@ -1,25 +1,42 @@
-// useEffect: persistent state
-// 💯 lazy state initialization
+// Lifting state
+// 💯 colocating state
+// http://localhost:3000/isolated/final/03.extra-1.js
 // http://localhost:3000/isolated/final/03.extra-1.js
 
 import React from 'react'
 
-function Counter({step = 1, initialCount = 0}) {
-  const [count, setCount] = React.useState(() =>
-    Number(window.localStorage.getItem('count') || initialCount),
+function Name({name, onNameChange}) {
+  return (
+    <div>
+      <label>Name: </label>
+      <input value={name} onChange={onNameChange} />
+    </div>
   )
+}
 
-  React.useEffect(() => {
-    window.localStorage.setItem('count', count)
-  })
+function FavoriteAnimal() {
+  const [animal, setAnimal] = React.useState('')
+  return (
+    <div>
+      <label>Favorite Animal: </label>
+      <input value={animal} onChange={event => setAnimal(event.target.value)} />
+    </div>
+  )
+}
 
-  const increment = () => setCount(c => c + step)
-
-  return <button onClick={increment}>{count}</button>
+function Display({name}) {
+  return <div>{`Hey ${name}, you are great!`}</div>
 }
 
 function App() {
-  return <Counter />
+  const [name, setName] = React.useState('')
+  return (
+    <form>
+      <Name name={name} onNameChange={event => setName(event.target.value)} />
+      <FavoriteAnimal />
+      <Display name={name} />
+    </form>
+  )
 }
 
 export default App

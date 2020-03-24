@@ -1,33 +1,19 @@
 // useEffect: HTTP requests
 // http://localhost:3000/isolated/final/06.js
+// http://localhost:3000/isolated/final/06.js
 
 import React from 'react'
 import fetchPokemon from '../fetch-pokemon'
 
 function PokemonInfo({pokemonName}) {
   const [pokemon, setPokemon] = React.useState(null)
-  const [loading, setLoading] = React.useState(false)
-  const [error, setError] = React.useState(null)
 
   React.useEffect(() => {
     if (!pokemonName) {
       return
     }
-    setLoading(true)
-    setError(null)
     setPokemon(null)
-    fetchPokemon(pokemonName).then(
-      pokemon => {
-        setLoading(false)
-        setError(null)
-        setPokemon(pokemon)
-      },
-      error => {
-        setLoading(false)
-        setError(error)
-        setPokemon(null)
-      },
-    )
+    fetchPokemon(pokemonName).then(pokemon => setPokemon(pokemon))
   }, [pokemonName])
 
   return (
@@ -41,14 +27,12 @@ function PokemonInfo({pokemonName}) {
         padding: 10,
       }}
     >
-      {loading ? (
-        '...'
-      ) : error ? (
-        'ERROR (check your developer tools network tab)'
-      ) : pokemonName ? (
+      {!pokemonName ? (
+        'Submit a pokemon'
+      ) : pokemon ? (
         <pre>{JSON.stringify(pokemon || 'Unknown', null, 2)}</pre>
       ) : (
-        'Submit a pokemon'
+        '...'
       )}
     </div>
   )
