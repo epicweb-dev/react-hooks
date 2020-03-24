@@ -12,8 +12,8 @@ function Counter() {
   return <button />
 }
 
-function Usage() {
+function App() {
   return <Counter />
 }
 
-export default Usage
+export default App

@@ -1,10 +1,10 @@
 import React from 'react'
 import {render, fireEvent} from '@testing-library/react'
-import Usage from '../final/02'
-// import Usage from '../exercise/02'
+import App from '../final/02'
+// import App from '../exercise/02'
 
 test('clicking the button increments the count', () => {
-  const {container} = render(<Usage />)
+  const {container} = render(<App />)
   const button = container.querySelector('button')
   fireEvent.click(button)
   expect(button).toHaveTextContent('1')
@@ -24,7 +24,7 @@ test('using a custom hook called useCounter', () => {
     }
     return createElement(...args)
   }
-  render(<Usage />)
+  render(<App />)
   React.createElement = createElement
   try {
     expect(counterFn.toString()).toContain('useCounter(')

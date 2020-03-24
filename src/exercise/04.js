@@ -119,8 +119,8 @@ function calculateWinner(squares) {
   return null
 }
 
-function Usage() {
+function App() {
   return <Game />
 }
 
-export default Usage
+export default App

@@ -31,7 +31,7 @@ function Tilt({children}) {
   )
 }
 
-function Usage() {
+function App() {
   return (
     <Tilt>
       <div className="totally-centered">vanilla-tilt.js</div>
@@ -39,4 +39,4 @@ function Usage() {
   )
 }
 
-export default Usage
+export default App

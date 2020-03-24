@@ -1,15 +1,15 @@
 import React from 'react'
 import {render, fireEvent} from '@testing-library/react'
-import Usage from '../final/03'
-// import Usage from '../exercise/03'
+import App from '../final/03'
+// import App from '../exercise/03'
 
 afterEach(() => {
   window.localStorage.removeItem('count')
 })
 
-test('Usage works', () => {
+test('App works', () => {
   window.localStorage.setItem('count', 3)
-  const {container} = render(<Usage />)
+  const {container} = render(<App />)
   const button = container.getElementsByTagName('button')[0]
   expect(button).toHaveTextContent(/3/)
   fireEvent.click(button)

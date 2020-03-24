@@ -1,7 +1,7 @@
 import React from 'react'
 import {render, screen, fireEvent, waitFor} from '@testing-library/react'
-import Usage from '../final/06'
-// import Usage from '../exercise/06'
+import App from '../final/06'
+// import App from '../exercise/06'
 
 beforeAll(() => {
   window.fetch.mockImplementation(() =>
@@ -15,7 +15,7 @@ test('displays the pokemon', async () => {
       json: () => Promise.resolve({data: {pokemon: {id: 'fake-id'}}}),
     }),
   )
-  render(<Usage />)
+  render(<App />)
   const input = screen.getByLabelText(/pokemon/i)
   const submit = screen.getByText(/^submit$/i)
 

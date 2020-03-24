@@ -69,7 +69,7 @@ function InvisibleButton(props) {
   )
 }
 
-function Usage() {
+function App() {
   const [{submittedPokemon, pokemonName}, setState] = React.useReducer(
     (state, action) => ({...state, ...action}),
     {submittedPokemon: '', pokemonName: ''},
@@ -133,4 +133,4 @@ function Usage() {
   )
 }
 
-export default Usage
+export default App

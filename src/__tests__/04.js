@@ -1,10 +1,10 @@
 import React from 'react'
 import {render, screen, fireEvent} from '@testing-library/react'
-import Usage from '../final/04'
-// import Usage from '../exercise/04'
+import App from '../final/04'
+// import App from '../exercise/04'
 
 test('can play a game of tic tac toe', () => {
-  const {container} = render(<Usage />)
+  const {container} = render(<App />)
   // prettier-ignore
   const [
     s1, s2, s3,
