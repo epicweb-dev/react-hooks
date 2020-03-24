@@ -1,7 +1,6 @@
 // useEffect: persistent state
 // 💯 flexible localStorage hook
 // http://localhost:3000/isolated/final/02.extra-4.js
-// http://localhost:3000/isolated/final/02.extra-4.js
 
 import React from 'react'
 

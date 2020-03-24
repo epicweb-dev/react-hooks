@@ -1,7 +1,6 @@
 // Hook flow
 // https://github.com/donavon/hook-flow
 // http://localhost:3000/isolated/examples/hook-flow.js
-// http://localhost:3000/isolated/examples/hook-flow.js
 
 import React from 'react'
 

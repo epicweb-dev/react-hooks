@@ -1,6 +1,5 @@
 // Lifting state
 // http://localhost:3000/isolated/exercise/03.js
-// http://localhost:3000/isolated/exercise/03.js
 
 import React from 'react'
 

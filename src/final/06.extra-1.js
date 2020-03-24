@@ -1,7 +1,5 @@
 // useEffect: HTTP requests
 // 💯 handle errors
-// http://localhost:3000/isolated/final/06.js
-// http://localhost:3000/isolated/final/06.extra-1.js
 // http://localhost:3000/isolated/final/06.extra-1.js
 
 import React from 'react'

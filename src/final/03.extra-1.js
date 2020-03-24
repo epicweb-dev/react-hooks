@@ -1,7 +1,6 @@
 // Lifting state
 // 💯 colocating state
 // http://localhost:3000/isolated/final/03.extra-1.js
-// http://localhost:3000/isolated/final/03.extra-1.js
 
 import React from 'react'
 

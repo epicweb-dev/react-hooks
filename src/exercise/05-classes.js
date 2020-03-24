@@ -1,6 +1,5 @@
 // useRef and useEffect: DOM interaction
 // http://localhost:3000/isolated/exercise/05-classes.js
-// http://localhost:3000/isolated/exercise/05-classes.js
 
 import React from 'react'
 import VanillaTilt from 'vanilla-tilt'
@@ -10,7 +9,6 @@ import VanillaTilt from 'vanilla-tilt'
 //
 // This one's not rendered to the exercise, page, so you can go to this
 // component's isolated page here:
-// http://localhost:3000/isolated/exercise/05-classes
 
 class Tilt extends React.Component {
   tiltRef = React.createRef()

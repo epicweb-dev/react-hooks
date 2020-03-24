@@ -1,7 +1,6 @@
 // useEffect: persistent state
 // 💯 effect dependencies
 // http://localhost:3000/isolated/final/02.extra-2.js
-// http://localhost:3000/isolated/final/02.extra-2.js
 
 import React from 'react'
 

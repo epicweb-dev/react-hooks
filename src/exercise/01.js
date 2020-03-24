@@ -1,6 +1,5 @@
 // useState: counter
 // http://localhost:3000/isolated/exercise/01.js
-// http://localhost:3000/isolated/exercise/01.js
 
 import React from 'react'
 
