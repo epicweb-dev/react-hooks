@@ -1,19 +1,29 @@
-// useState: counter
+// useState: greeting
 // http://localhost:3000/isolated/exercise/01.js
 
 import React from 'react'
 
-function Counter() {
-  // 🐨 use React.useState here
-  // 🐨 create an increment function that calls the state updater you get from
-  //    React.useState to increment the count
-  // 🐨 render the count you get from React.useState inside the button and use
-  //    your increment function as the onClick handler.
-  return <button />
+function Greeting() {
+  // 💣 delete this variable declaration and replace it with a React.useState call
+  const name = ''
+
+  function handleChange(event) {
+    // 🐨 update the name here based on event.target.value
+  }
+
+  return (
+    <div>
+      <form>
+        <label htmlFor="name">Name: </label>
+        <input onChange={handleChange} id="name" />
+      </form>
+      {name ? <strong>Hello {name}</strong> : 'Please type your name'}
+    </div>
+  )
 }
 
 function App() {
-  return <Counter />
+  return <Greeting />
 }
 
 export default App

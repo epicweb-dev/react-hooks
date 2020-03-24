@@ -3,18 +3,31 @@
 
 import React from 'react'
 
-function Counter({step = 1, initialCount = 0}) {
+function Greeting({initialName = ''}) {
   // 🐨 initialize the state to the value from localStorage
-  // 💰 Number(window.localStorage.getItem('count') || initialCount)
-  const [count, setCount] = React.useState(initialCount)
-  const increment = () => setCount(c => c + step)
+  // 💰 window.localStorage.getItem('name') || initialName
+  const [name, setName] = React.useState(initialName)
+
   // 🐨 Here's where you'll use `React.useEffect`.
   // The callback should set the `count` in localStorage.
-  return <button onClick={increment}>{count}</button>
+  // 💰 window.localStorage.setItem('name', name)
+
+  function handleChange(event) {
+    setName(event.target.value)
+  }
+  return (
+    <div>
+      <form>
+        <label htmlFor="name">Name: </label>
+        <input onChange={handleChange} id="name" />
+      </form>
+      {name ? <strong>Hello {name}</strong> : 'Please type your name'}
+    </div>
+  )
 }
 
 function App() {
-  return <Counter />
+  return <Greeting />
 }
 
 export default App

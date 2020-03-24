@@ -13,11 +13,13 @@ source material for [Learn React Hooks](https://kentcdodds.com/workshops/hooks)!
 [![Code of Conduct][coc-badge]][coc]
 <!-- prettier-ignore-end -->
 
+## Pre-Workshop Instructions/Requirements
+
 In order for us to maximize our efforts during the workshop, please complete the
 following things to prepare.
 
-- 📺 indicates steps that are only necessary if the workshop is remote via Zoom
-- 👋 indicates steps that are specific to the material for this workshop
+- 📺 only necessary if the workshop is remote via Zoom
+- 👋 specific to the material for this workshop
 
 - [ ] 👋 Setup the project (follow the setup instructions below) (~5 minutes)
 - [ ] 📺 Install and setup [Zoom](https://zoom.us) on the computer you will be
@@ -46,7 +48,7 @@ The more prepared you are for the workshop, the better it will go for you.
 All of these must be available in your `PATH`. To verify things are set up
 properly, you can run this:
 
-```
+```shell
 git --version
 node --version
 npm --version
@@ -69,7 +71,7 @@ npm run setup --silent
 
 This may take a few minutes. **It will ask you for your email.** This is
 optional and just automatically adds your email to the links in the project to
-make filling out some forms easier If you get any errors, please read through
+make filling out some forms easier. If you get any errors, please read through
 them and see if you can find out what the problem is. If you can't work it out
 on your own then please [file an issue][issue] and provide _all_ the output from
 the commands you ran (even if it's a lot).
@@ -93,7 +95,7 @@ This should start up your browser. If you're familiar, this is a standard
 [react-scripts](https://create-react-app.dev/) application.
 
 You can also open
-[the deployment of the app on Netlify](https://learn-react-hooks.netlify.com/).
+[the deployment of the app on Netlify](https://learn-react-hooks.netlify.app/).
 
 ## Running the tests
 
@@ -107,7 +109,66 @@ however _sometimes_ you can accomplish the task and the tests still fail if you
 implement things differently than I do in my solution, so don't look to them as
 a complete authority.
 
-## Helpful Emoji 🐨 💪 🏁 💰 💯 🦉 📜 💣 👨‍💼 🚨
+## Workshop Outline
+
+> State, Effects, Refs. Oh My! 😱
+
+👋 I'm Kent C. Dodds
+
+- 🏡 Utah
+- 👩 👧 👦 👦 👦 🐕
+- 🏢 kentcdodds.com
+- 🐦/🐙 @kentcdodds
+- 🏆 testingjavascript.com
+- 🥚 kcd.im/egghead
+- 🥋 kcd.im/fem
+- 💌 kcd.im/news
+- 📝 kcd.im/blog
+- 📺 kcd.im/devtips
+- 💻 kcd.im/coding
+- 📽 kcd.im/youtube
+- 🎙 kcd.im/3-mins
+- ❓ kcd.im/ama
+
+### Schedule
+
+- 😴 Logistics
+- 💪 01. useState: greeting
+- 💪 02. useEffect: persistent state
+- 😴 10 Minutes
+- 💪 03. Lifting state
+- 😴 30 Minutes
+- 💪 04. useState: tic tac toe
+- 😴 10 Minutes
+- 💪 05. useRef and useEffect: DOM interaction
+- 😴 10 Minutes
+- 💪 06. useEffect: HTTP requests
+- ❓ Q&A
+
+### Questions
+
+Please do ask! Interrupt me. If you have an unrelated question, please ask on
+[my AMA](https://kcd.im/ama).
+
+### Zoom (for remote workshops)
+
+- Help us make this more human by keeping your video on if possible
+- Keep microphone muted unless speaking
+- Breakout rooms
+
+### Exercises
+
+- `src/exercise/00.md`: Background, Exercise Instructions, Extra Credit
+- `src/exercise/00.js`: Exercise with Emoji helpers
+- `src/__tests__/00.js`: Tests
+- `src/final/00.js`: Final version
+- `src/final/00.extra-0.js`: Final version of extra credit
+
+The purpose of the exercise is **not** for you to work through all the material.
+It's intended to get your brain thinking about the right questions to ask me as
+_I_ walk through the material.
+
+### Helpful Emoji 🐨 💪 🏁 💰 💯 🦉 📜 💣 👨‍💼 🚨
 
 Each exercise has comments in it to help you get through the exercise. These fun
 emoji characters are here to help you.

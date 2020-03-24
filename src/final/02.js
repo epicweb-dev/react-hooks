@@ -12,7 +12,9 @@ function Greeting({initialName = ''}) {
     window.localStorage.setItem('name', name)
   })
 
-  const handleChange = event => setName(event.target.value)
+  function handleChange(event) {
+    setName(event.target.value)
+  }
 
   return (
     <div>
