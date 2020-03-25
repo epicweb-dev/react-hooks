@@ -1,6 +1,6 @@
 import React from 'react'
 import {render, screen, fireEvent} from '@testing-library/react'
-import App from '../final/04'
+import App from '../final/04.extra-1'
 // import App from '../exercise/04'
 
 test('can play a game of tic tac toe', () => {
@@ -44,4 +44,14 @@ test('can play a game of tic tac toe', () => {
   expect(screen.getByText('Winner: X')).toBeInTheDocument()
   fireEvent.click(s4)
   expect(s4).toHaveTextContent('')
+
+  // prettier-ignore
+  expect(
+    JSON.parse(window.localStorage.getItem('squares')),
+    'Make sure that the "squares" localStorage item is updated with the JSON.stringified squares',
+  ).toEqual([
+    'X', 'O', 'X',
+    null, 'O', 'X',
+    'O', null, 'X'
+  ])
 })

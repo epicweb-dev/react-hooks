@@ -1,15 +1,18 @@
 // useState: tic tac toe
-// 💯 useLocalStorageState
-// http://localhost:3000/isolated/final/04.extra-1.js
+// 💯 preserve state in localStorage
+// http://localhost:3000/isolated/final/04.js
 
 import React from 'react'
-import {useLocalStorageState} from '../utils'
 
 function Board() {
-  const [squares, setSquares] = useLocalStorageState(
-    'squares',
-    Array(9).fill(null),
+  const [squares, setSquares] = React.useState(
+    () =>
+      JSON.parse(window.localStorage.getItem('squares')) || Array(9).fill(null),
   )
+
+  React.useEffect(() => {
+    window.localStorage.setItem('squares', JSON.stringify(squares))
+  }, [squares])
 
   const nextValue = calculateNextValue(squares)
   const winner = calculateWinner(squares)

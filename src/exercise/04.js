@@ -5,11 +5,7 @@ import React from 'react'
 
 function Board() {
   // 🐨 squares is the state for this component. Add useState for squares
-  // 🐨 we'll also need to initialize the state from localStorage if it's there
-  // 💰 JSON.parse(window.localStorage.getItem('squares'))
   const squares = Array(9).fill(null)
-
-  // 🐨 add a React.useEffect here to keep localStorage updated as squares change
 
   // 🐨 We'll need the following bits of derived state:
   // - nextValue ('X' or 'O')
