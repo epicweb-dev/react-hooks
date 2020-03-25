@@ -1,6 +1,6 @@
 import React from 'react'
 import {render, screen, fireEvent, waitFor} from '@testing-library/react'
-import App from '../final/06'
+import App from '../final/06.extra-1'
 // import App from '../exercise/06'
 
 beforeAll(() => {
@@ -62,4 +62,17 @@ test('displays the pokemon', async () => {
     window.fetch,
     'Make certain that you are providing a dependencies list in useEffect!',
   ).not.toHaveBeenCalled()
+
+  // verify that an error renders an error
+  window.fetch.mockImplementationOnce(() =>
+    Promise.reject({
+      error: 'some fake error',
+    }),
+  )
+
+  fireEvent.change(input, {target: {value: 'george'}})
+  fireEvent.click(submit)
+  await waitFor(() =>
+    expect(screen.getByTestId('pokemon-display')).toHaveTextContent(/error/i),
+  )
 })
