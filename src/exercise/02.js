@@ -9,7 +9,7 @@ function Greeting({initialName = ''}) {
   const [name, setName] = React.useState(initialName)
 
   // 🐨 Here's where you'll use `React.useEffect`.
-  // The callback should set the `count` in localStorage.
+  // The callback should set the `name` in localStorage.
   // 💰 window.localStorage.setItem('name', name)
 
   function handleChange(event) {
