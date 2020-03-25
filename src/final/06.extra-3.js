@@ -1,5 +1,5 @@
 // useEffect: HTTP requests
-// 💯 handle errors
+// 💯 store the state in an object
 // http://localhost:3000/isolated/final/06.extra-3.js
 
 import React from 'react'

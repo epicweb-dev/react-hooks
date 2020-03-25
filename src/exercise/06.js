@@ -15,8 +15,7 @@ function PokemonInfo({pokemonName}) {
   // 🐨 before calling `fetchPokemon`, make sure to update the loading state
   // 💰 Use the `fetchPokemon` function to fetch a pokemon by its name:
   //   fetchPokemon('Pikachu').then(
-  //     pokemon => { /* update all the state here */},
-  //     error => {/* update all the state here */},
+  //     pokemonData => { /* update all the state here */},
   //   )
 
   return (
@@ -32,8 +31,8 @@ function PokemonInfo({pokemonName}) {
     >
       {/*
         🐨 Render the appropriate content based on the state:
-            1. loading: '...'
-            2. error: 'ERROR!'
+            1. no pokemon name: 'Submit a pokemon'
+            2. pokemon name but no pokemon: '...'
             3. pokemon: the JSON.stringified pokemon in a <pre></pre>
       */}
       TODO

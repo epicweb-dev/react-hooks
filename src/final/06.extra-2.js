@@ -1,5 +1,5 @@
 // useEffect: HTTP requests
-// 💯 handle errors
+// 💯 use a status
 // http://localhost:3000/isolated/final/06.extra-2.js
 
 import React from 'react'
