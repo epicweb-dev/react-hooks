@@ -8,31 +8,40 @@ function Child() {
   console.log('%c    Child: render start', 'color: MediumSpringGreen')
 
   const [count, setCount] = React.useState(() => {
-    console.log('%c    Child: useState callback', 'color: tomato')
+    console.log('%c    Child: useState(() => 0)', 'color: tomato')
     return 0
   })
 
   React.useEffect(() => {
-    console.log('%c    Child: useEffect no deps', 'color: LightCoral')
+    console.log('%c    Child: useEffect(() => {})', 'color: LightCoral')
     return () => {
-      console.log('%c    Child: useEffect no deps cleanup', 'color: LightCoral')
+      console.log(
+        '%c    Child: useEffect(() => {}) cleanup 🧹',
+        'color: LightCoral',
+      )
     }
   })
 
   React.useEffect(() => {
-    console.log('%c    Child: useEffect empty deps', 'color: MediumTurquoise')
+    console.log(
+      '%c    Child: useEffect(() => {}, [])',
+      'color: MediumTurquoise',
+    )
     return () => {
       console.log(
-        '%c    Child: useEffect empty deps cleanup',
+        '%c    Child: useEffect(() => {}, []) cleanup 🧹',
         'color: MediumTurquoise',
       )
     }
   }, [])
 
   React.useEffect(() => {
-    console.log('%c    Child: useEffect with dep', 'color: HotPink')
+    console.log('%c    Child: useEffect(() => {}, [count])', 'color: HotPink')
     return () => {
-      console.log('%c    Child: useEffect with dep cleanup', 'color: HotPink')
+      console.log(
+        '%c    Child: useEffect(() => {}, [count]) cleanup 🧹',
+        'color: HotPink',
+      )
     }
   }, [count])
 
@@ -51,31 +60,34 @@ function App() {
   console.log('%cApp: render start', 'color: MediumSpringGreen')
 
   const [showChild, setShowChild] = React.useState(() => {
-    console.log('%cApp: useState callback', 'color: tomato')
+    console.log('%cApp: useState(() => false)', 'color: tomato')
     return false
   })
 
   React.useEffect(() => {
-    console.log('%cApp: useEffect no deps', 'color: LightCoral')
+    console.log('%cApp: useEffect(() => {})', 'color: LightCoral')
     return () => {
-      console.log('%cApp: useEffect no deps cleanup', 'color: LightCoral')
+      console.log('%cApp: useEffect(() => {}) cleanup 🧹', 'color: LightCoral')
     }
   })
 
   React.useEffect(() => {
-    console.log('%cApp: useEffect empty deps', 'color: MediumTurquoise')
+    console.log('%cApp: useEffect(() => {}, [])', 'color: MediumTurquoise')
     return () => {
       console.log(
-        '%cApp: useEffect empty deps cleanup',
+        '%cApp: useEffect(() => {}, []) cleanup 🧹',
         'color: MediumTurquoise',
       )
     }
   }, [])
 
   React.useEffect(() => {
-    console.log('%cApp: useEffect with dep', 'color: HotPink')
+    console.log('%cApp: useEffect(() => {}, [showChild])', 'color: HotPink')
     return () => {
-      console.log('%cApp: useEffect with dep cleanup', 'color: HotPink')
+      console.log(
+        '%cApp: useEffect(() => {}, [showChild]) cleanup 🧹',
+        'color: HotPink',
+      )
     }
   }, [showChild])
 
