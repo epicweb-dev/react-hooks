@@ -6,9 +6,6 @@ import VanillaTilt from 'vanilla-tilt'
 
 // If you'd rather practice refactoring a class component to a function
 // component with hooks, then go ahead and do this exercise.
-//
-// This one's not rendered to the exercise, page, so you can go to this
-// component's isolated page here:
 
 class Tilt extends React.Component {
   tiltRef = React.createRef()
