@@ -21,6 +21,21 @@ function PokemonInfo({pokemonName}) {
     )
   }, [pokemonName])
 
+  let info
+  if (error) {
+    info = (
+      <div>
+        There was an error: <pre>{error.message}</pre>
+      </div>
+    )
+  } else if (!pokemonName) {
+    info = 'Submit a pokemon'
+  } else if (!pokemon) {
+    info = '...'
+  } else {
+    info = <pre>{JSON.stringify(pokemon || 'Unknown', null, 2)}</pre>
+  }
+
   return (
     <div
       style={{
@@ -32,17 +47,7 @@ function PokemonInfo({pokemonName}) {
         padding: 10,
       }}
     >
-      {!pokemonName ? (
-        'Submit a pokemon'
-      ) : error ? (
-        <div>
-          There was an error: <pre>{error.message}</pre>
-        </div>
-      ) : pokemon ? (
-        <pre>{JSON.stringify(pokemon || 'Unknown', null, 2)}</pre>
-      ) : (
-        '...'
-      )}
+      {info}
     </div>
   )
 }
@@ -104,8 +109,8 @@ function App() {
             "charizard"
           </InvisibleButton>
           {', or '}
-          <InvisibleButton onClick={() => handleSelect('mew')}>
-            "mew"
+          <InvisibleButton onClick={() => handleSelect('fail')}>
+            "fail"
           </InvisibleButton>
         </small>
         <div>

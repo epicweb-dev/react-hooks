@@ -5,8 +5,7 @@ import React from 'react'
 import fetchPokemon from '../fetch-pokemon'
 
 function PokemonInfo({pokemonName}) {
-  // 🐨 Have state for the pokemon (null), the error state (null), and the
-  // loading state (false).
+  // 🐨 Have state for the pokemon (null)
 
   // 🐨 use React.useEffect where the callback should be called whenever the
   // pokemon name changes.
@@ -17,6 +16,13 @@ function PokemonInfo({pokemonName}) {
   //   fetchPokemon('Pikachu').then(
   //     pokemonData => { /* update all the state here */},
   //   )
+
+  let info = 'TODO'
+  // 🐨 set `info` to the appropriate content based on the state:
+  //   1. no pokemon name: 'Submit a pokemon'
+  //   2. pokemon name but no pokemon: '...'
+  //   3. pokemon: the JSON.stringified pokemon in a <pre></pre>
+  //      💰 <pre>{JSON.stringify(pokemon, null, 2)}</pre>
 
   return (
     <div
@@ -29,13 +35,7 @@ function PokemonInfo({pokemonName}) {
         padding: 10,
       }}
     >
-      {/*
-        🐨 Render the appropriate content based on the state:
-            1. no pokemon name: 'Submit a pokemon'
-            2. pokemon name but no pokemon: '...'
-            3. pokemon: the JSON.stringified pokemon in a <pre></pre>
-      */}
-      TODO
+      {info}
     </div>
   )
 }

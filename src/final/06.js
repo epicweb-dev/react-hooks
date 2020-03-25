@@ -15,6 +15,15 @@ function PokemonInfo({pokemonName}) {
     fetchPokemon(pokemonName).then(pokemon => setPokemon(pokemon))
   }, [pokemonName])
 
+  let info
+  if (!pokemonName) {
+    info = 'Submit a pokemon'
+  } else if (!pokemon) {
+    info = '...'
+  } else {
+    info = <pre>{JSON.stringify(pokemon || 'Unknown', null, 2)}</pre>
+  }
+
   return (
     <div
       style={{
@@ -26,13 +35,7 @@ function PokemonInfo({pokemonName}) {
         padding: 10,
       }}
     >
-      {!pokemonName ? (
-        'Submit a pokemon'
-      ) : pokemon ? (
-        <pre>{JSON.stringify(pokemon || 'Unknown', null, 2)}</pre>
-      ) : (
-        '...'
-      )}
+      {info}
     </div>
   )
 }
@@ -94,8 +97,8 @@ function App() {
             "charizard"
           </InvisibleButton>
           {', or '}
-          <InvisibleButton onClick={() => handleSelect('mew')}>
-            "mew"
+          <InvisibleButton onClick={() => handleSelect('fail')}>
+            "fail"
           </InvisibleButton>
         </small>
         <div>

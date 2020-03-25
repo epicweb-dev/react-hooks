@@ -18,26 +18,41 @@ function PokemonInfo({pokemonName}) {
       return
     }
     setState(currentState => ({
-      status: 'pending',
       ...currentState,
+      status: 'pending',
     }))
     fetchPokemon(pokemonName).then(
       pokemon => {
         setState(currentState => ({
+          ...currentState,
           status: 'resolved',
           pokemon,
-          ...currentState,
         }))
       },
       error => {
         setState(currentState => ({
+          ...currentState,
           status: 'resolved',
           error,
-          ...currentState,
         }))
       },
     )
   }, [pokemonName])
+
+  let info
+  if (status === 'idle') {
+    info = 'Submit a pokemon'
+  } else if (status === 'pending') {
+    info = '...'
+  } else if (status === 'rejected') {
+    info = (
+      <div>
+        There was an error: <pre>{error.message}</pre>
+      </div>
+    )
+  } else if (status === 'resolved') {
+    info = <pre>{JSON.stringify(pokemon, null, 2)}</pre>
+  }
 
   return (
     <div
@@ -50,17 +65,7 @@ function PokemonInfo({pokemonName}) {
         padding: 10,
       }}
     >
-      {status === 'idle' ? (
-        'Submit a pokemon'
-      ) : status === 'pending' ? (
-        '...'
-      ) : status === 'rejected' ? (
-        <div>
-          There was an error: <pre>{error.message}</pre>
-        </div>
-      ) : status === 'resolved' ? (
-        <pre>{JSON.stringify(pokemon || 'Unknown', null, 2)}</pre>
-      ) : null}
+      {info}
     </div>
   )
 }
@@ -122,8 +127,8 @@ function App() {
             "charizard"
           </InvisibleButton>
           {', or '}
-          <InvisibleButton onClick={() => handleSelect('mew')}>
-            "mew"
+          <InvisibleButton onClick={() => handleSelect('fail')}>
+            "fail"
           </InvisibleButton>
         </small>
         <div>

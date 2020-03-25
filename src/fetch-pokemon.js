@@ -1,4 +1,7 @@
 function fetchPokemon(name) {
+  if (name === 'fail') {
+    return Promise.reject(new Error('A terrible thing just happened'))
+  }
   const pokemonQuery = `
     query ($name: String) {
       pokemon(name: $name) {

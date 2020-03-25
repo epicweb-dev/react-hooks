@@ -27,6 +27,21 @@ function PokemonInfo({pokemonName}) {
     )
   }, [pokemonName])
 
+  let info
+  if (status === 'idle') {
+    info = 'Submit a pokemon'
+  } else if (status === 'pending') {
+    info = '...'
+  } else if (status === 'rejected') {
+    info = (
+      <div>
+        There was an error: <pre>{error.message}</pre>
+      </div>
+    )
+  } else if (status === 'resolved') {
+    info = <pre>{JSON.stringify(pokemon, null, 2)}</pre>
+  }
+
   return (
     <div
       style={{
@@ -38,17 +53,7 @@ function PokemonInfo({pokemonName}) {
         padding: 10,
       }}
     >
-      {status === 'idle' ? (
-        'Submit a pokemon'
-      ) : status === 'pending' ? (
-        '...'
-      ) : status === 'rejected' ? (
-        <div>
-          There was an error: <pre>{error.message}</pre>
-        </div>
-      ) : status === 'resolved' ? (
-        <pre>{JSON.stringify(pokemon || 'Unknown', null, 2)}</pre>
-      ) : null}
+      {info}
     </div>
   )
 }
@@ -110,8 +115,8 @@ function App() {
             "charizard"
           </InvisibleButton>
           {', or '}
-          <InvisibleButton onClick={() => handleSelect('mew')}>
-            "mew"
+          <InvisibleButton onClick={() => handleSelect('fail')}>
+            "fail"
           </InvisibleButton>
         </small>
         <div>
