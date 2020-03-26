@@ -197,17 +197,21 @@ Thanks goes to these wonderful people
 ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars.githubusercontent.com/u/1500684?v=3" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Kent C. Dodds</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=kentcdodds" title="Code">💻</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=kentcdodds" title="Documentation">📖</a> <a href="#infra-kentcdodds" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=kentcdodds" title="Tests">⚠️</a></td>
-    <td align="center"><a href="http://tsnieman.net/"><img src="https://avatars3.githubusercontent.com/u/595711?v=4" width="100px;" alt="Tyler Nieman"/><br /><sub><b>Tyler Nieman</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=tsnieman" title="Code">💻</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=tsnieman" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/mplis"><img src="https://avatars0.githubusercontent.com/u/1382377?v=4" width="100px;" alt="Mike Plis"/><br /><sub><b>Mike Plis</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=mplis" title="Code">💻</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=mplis" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://stackshare.io/jdorfman/decisions"><img src="https://avatars1.githubusercontent.com/u/398230?v=4" width="100px;" alt="Justin Dorfman"/><br /><sub><b>Justin Dorfman</b></sub></a><br /><a href="#fundingFinding-jdorfman" title="Funding Finding">🔍</a></td>
-    <td align="center"><a href="http://algus.ninja"><img src="https://avatars1.githubusercontent.com/u/818856?v=4" width="100px;" alt="Carlos Pérez Gutiérrez"/><br /><sub><b>Carlos Pérez Gutiérrez</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=AlgusDark" title="Code">💻</a></td>
+    <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars.githubusercontent.com/u/1500684?v=3" width="100px;" alt=""/><br /><sub><b>Kent C. Dodds</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=kentcdodds" title="Code">💻</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=kentcdodds" title="Documentation">📖</a> <a href="#infra-kentcdodds" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=kentcdodds" title="Tests">⚠️</a></td>
+    <td align="center"><a href="http://tsnieman.net/"><img src="https://avatars3.githubusercontent.com/u/595711?v=4" width="100px;" alt=""/><br /><sub><b>Tyler Nieman</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=tsnieman" title="Code">💻</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=tsnieman" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/mplis"><img src="https://avatars0.githubusercontent.com/u/1382377?v=4" width="100px;" alt=""/><br /><sub><b>Mike Plis</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=mplis" title="Code">💻</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=mplis" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://stackshare.io/jdorfman/decisions"><img src="https://avatars1.githubusercontent.com/u/398230?v=4" width="100px;" alt=""/><br /><sub><b>Justin Dorfman</b></sub></a><br /><a href="#fundingFinding-jdorfman" title="Funding Finding">🔍</a></td>
+    <td align="center"><a href="http://algus.ninja"><img src="https://avatars1.githubusercontent.com/u/818856?v=4" width="100px;" alt=""/><br /><sub><b>Carlos Pérez Gutiérrez</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=AlgusDark" title="Code">💻</a></td>
+    <td align="center"><a href="http://charliestras.me"><img src="https://avatars2.githubusercontent.com/u/10193500?v=4" width="100px;" alt=""/><br /><sub><b>Charlie Stras</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=CharlieStras" title="Documentation">📖</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the

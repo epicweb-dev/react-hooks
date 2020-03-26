@@ -57,8 +57,18 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "CharlieStras",
+      "name": "Charlie Stras",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10193500?v=4",
+      "profile": "http://charliestras.me",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
