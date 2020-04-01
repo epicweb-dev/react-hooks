@@ -32,7 +32,7 @@ function PokemonInfo({pokemonName}) {
       error => {
         setState(currentState => ({
           ...currentState,
-          status: 'resolved',
+          status: 'rejected',
           error,
         }))
       },
