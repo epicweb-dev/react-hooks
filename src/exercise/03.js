@@ -6,8 +6,8 @@ import React from 'react'
 function Name({name, onNameChange}) {
   return (
     <div>
-      <label>Name: </label>
-      <input value={name} onChange={onNameChange} />
+      <label htmlFor="name">Name: </label>
+      <input id="name" value={name} onChange={onNameChange} />
     </div>
   )
 }
@@ -18,8 +18,12 @@ function FavoriteAnimal() {
   const [animal, setAnimal] = React.useState('')
   return (
     <div>
-      <label>Favorite Animal: </label>
-      <input value={animal} onChange={event => setAnimal(event.target.value)} />
+      <label htmlFor="animal">Favorite Animal: </label>
+      <input
+        id="animal"
+        value={animal}
+        onChange={event => setAnimal(event.target.value)}
+      />
     </div>
   )
 }
