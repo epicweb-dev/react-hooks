@@ -15,7 +15,7 @@ function Board() {
   // below to create these variables
 
   // This is the function your square click handler will call. `square` should
-  // be an index. So if they click the center square, this will be `5`.
+  // be an index. So if they click the center square, this will be `4`.
   function selectSquare(square) {
     // 🐨 first, if there's already winner or there's already a value at the
     // given square index (like someone clicked a square that's already been
