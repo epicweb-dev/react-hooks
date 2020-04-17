@@ -64,8 +64,8 @@ After you've made sure to have the correct things (and versions) installed, you
 should be able to just run a few commands to get set up:
 
 ```
-git clone https://github.com/kentcdodds/learn-react-hooks.git
-cd learn-react-hooks
+git clone https://github.com/kentcdodds/react-hooks.git
+cd react-hooks
 npm run setup --silent
 ```
 
@@ -77,8 +77,8 @@ on your own then please [file an issue][issue] and provide _all_ the output from
 the commands you ran (even if it's a lot).
 
 You may be able to work through the entire workshop in the browser. Go to
-[this codesandbox](https://codesandbox.io/s/github/kentcdodds/learn-react-hooks)
-and you should be good to go. Note that sometimes people have trouble with
+[this codesandbox](https://codesandbox.io/s/github/kentcdodds/react-hooks) and
+you should be good to go. Note that sometimes people have trouble with
 codesandbox not working quite right with tests, but you should be able to work
 around that. If you're concerned, then it would probably be better to just set
 things up locally.
@@ -209,17 +209,18 @@ Thanks goes to these wonderful people
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars.githubusercontent.com/u/1500684?v=3" width="100px;" alt=""/><br /><sub><b>Kent C. Dodds</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=kentcdodds" title="Code">💻</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=kentcdodds" title="Documentation">📖</a> <a href="#infra-kentcdodds" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=kentcdodds" title="Tests">⚠️</a></td>
-    <td align="center"><a href="http://tsnieman.net/"><img src="https://avatars3.githubusercontent.com/u/595711?v=4" width="100px;" alt=""/><br /><sub><b>Tyler Nieman</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=tsnieman" title="Code">💻</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=tsnieman" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/mplis"><img src="https://avatars0.githubusercontent.com/u/1382377?v=4" width="100px;" alt=""/><br /><sub><b>Mike Plis</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=mplis" title="Code">💻</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=mplis" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars.githubusercontent.com/u/1500684?v=3" width="100px;" alt=""/><br /><sub><b>Kent C. Dodds</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=kentcdodds" title="Code">💻</a> <a href="https://github.com/kentcdodds/react-hooks/commits?author=kentcdodds" title="Documentation">📖</a> <a href="#infra-kentcdodds" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/kentcdodds/react-hooks/commits?author=kentcdodds" title="Tests">⚠️</a></td>
+    <td align="center"><a href="http://tsnieman.net/"><img src="https://avatars3.githubusercontent.com/u/595711?v=4" width="100px;" alt=""/><br /><sub><b>Tyler Nieman</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=tsnieman" title="Code">💻</a> <a href="https://github.com/kentcdodds/react-hooks/commits?author=tsnieman" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/mplis"><img src="https://avatars0.githubusercontent.com/u/1382377?v=4" width="100px;" alt=""/><br /><sub><b>Mike Plis</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=mplis" title="Code">💻</a> <a href="https://github.com/kentcdodds/react-hooks/commits?author=mplis" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://stackshare.io/jdorfman/decisions"><img src="https://avatars1.githubusercontent.com/u/398230?v=4" width="100px;" alt=""/><br /><sub><b>Justin Dorfman</b></sub></a><br /><a href="#fundingFinding-jdorfman" title="Funding Finding">🔍</a></td>
-    <td align="center"><a href="http://algus.ninja"><img src="https://avatars1.githubusercontent.com/u/818856?v=4" width="100px;" alt=""/><br /><sub><b>Carlos Pérez Gutiérrez</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=AlgusDark" title="Code">💻</a></td>
-    <td align="center"><a href="http://charliestras.me"><img src="https://avatars2.githubusercontent.com/u/10193500?v=4" width="100px;" alt=""/><br /><sub><b>Charlie Stras</b></sub></a><br /><a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=CharlieStras" title="Documentation">📖</a> <a href="https://github.com/kentcdodds/learn-react-hooks/commits?author=CharlieStras" title="Code">💻</a></td>
+    <td align="center"><a href="http://algus.ninja"><img src="https://avatars1.githubusercontent.com/u/818856?v=4" width="100px;" alt=""/><br /><sub><b>Carlos Pérez Gutiérrez</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=AlgusDark" title="Code">💻</a></td>
+    <td align="center"><a href="http://charliestras.me"><img src="https://avatars2.githubusercontent.com/u/10193500?v=4" width="100px;" alt=""/><br /><sub><b>Charlie Stras</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=CharlieStras" title="Documentation">📖</a> <a href="https://github.com/kentcdodds/react-hooks/commits?author=CharlieStras" title="Code">💻</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the
@@ -237,23 +238,23 @@ at me@kentcdodds.com
 [npm]: https://www.npmjs.com/
 [node]: https://nodejs.org
 [git]: https://git-scm.com/
-[build-badge]: https://img.shields.io/travis/kentcdodds/learn-react-hooks.svg?style=flat-square&logo=travis
-[build]: https://travis-ci.org/kentcdodds/learn-react-hooks
+[build-badge]: https://img.shields.io/travis/kentcdodds/react-hooks.svg?style=flat-square&logo=travis
+[build]: https://travis-ci.org/kentcdodds/react-hooks
 [license-badge]: https://img.shields.io/badge/license-GPL%203.0%20License-blue.svg?style=flat-square
-[license]: https://github.com/kentcdodds/learn-react-hooks/blob/master/README.md#license
+[license]: https://github.com/kentcdodds/react-hooks/blob/master/README.md#license
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
 [donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=flat-square
 [donate]: http://kcd.im/donate
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
-[coc]: https://github.com/kentcdodds/learn-react-hooks/blob/master/CODE_OF_CONDUCT.md
+[coc]: https://github.com/kentcdodds/react-hooks/blob/master/CODE_OF_CONDUCT.md
 [emojis]: https://github.com/kentcdodds/all-contributors#emoji-key
 [all-contributors]: https://github.com/kentcdodds/all-contributors
 [win-path]: https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/
 [mac-path]: http://stackoverflow.com/a/24322978/971592
-[issue]: https://github.com/kentcdodds/learn-react-hooks/issues/new
-[win-build-badge]: https://img.shields.io/appveyor/ci/kentcdodds/learn-react-hooks.svg?style=flat-square&logo=appveyor
-[win-build]: https://ci.appveyor.com/project/kentcdodds/learn-react-hooks
-[coverage-badge]: https://img.shields.io/codecov/c/github/kentcdodds/learn-react-hooks.svg?style=flat-square
-[coverage]: https://codecov.io/github/kentcdodds/learn-react-hooks
+[issue]: https://github.com/kentcdodds/react-hooks/issues/new
+[win-build-badge]: https://img.shields.io/appveyor/ci/kentcdodds/react-hooks.svg?style=flat-square&logo=appveyor
+[win-build]: https://ci.appveyor.com/project/kentcdodds/react-hooks
+[coverage-badge]: https://img.shields.io/codecov/c/github/kentcdodds/react-hooks.svg?style=flat-square
+[coverage]: https://codecov.io/github/kentcdodds/react-hooks
 <!-- prettier-ignore-end -->
