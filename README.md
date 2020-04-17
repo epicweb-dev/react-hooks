@@ -1,7 +1,7 @@
-# Learn React Hooks
+# React Hooks
 
 👋 hi there! My name is [Kent C. Dodds](https://kentcdodds.com) and this is the
-source material for [Learn React Hooks](https://kentcdodds.com/workshops/hooks)!
+source material for [React Hooks](https://kentcdodds.com/workshops/react-hooks)!
 
 <!-- prettier-ignore-start -->
 [![Build Status][build-badge]][build]
