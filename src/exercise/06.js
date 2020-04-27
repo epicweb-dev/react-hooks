@@ -2,11 +2,14 @@
 // http://localhost:3000/isolated/exercise/06.js
 
 import React from 'react'
-import fetchPokemon from '../fetch-pokemon'
+// 🐨 you'll want the following additional components from '../pokemon':
+// PokemonInfoFallback: the thing we show while we're loading the pokemon info
+// PokemonDataView: the stuff we use to display the pokemon info
+import {PokemonForm} from '../pokemon'
+// 🐨 you'll need the fetchPokemon function from '../fetch-pokemon'
 
 function PokemonInfo({pokemonName}) {
   // 🐨 Have state for the pokemon (null)
-
   // 🐨 use React.useEffect where the callback should be called whenever the
   // pokemon name changes.
   // 💰 DON'T FORGET THE DEPENDENCIES ARRAY!
@@ -16,111 +19,31 @@ function PokemonInfo({pokemonName}) {
   //   fetchPokemon('Pikachu').then(
   //     pokemonData => { /* update all the state here */},
   //   )
-
-  let info = 'TODO'
-  // 🐨 set `info` to the appropriate content based on the state:
+  // 🐨 return the following things based on the `pokemon` state and `pokemonName` prop:
   //   1. no pokemon name: 'Submit a pokemon'
-  //   2. pokemon name but no pokemon: '...'
-  //   3. pokemon: the JSON.stringified pokemon in a <pre></pre>
-  //      💰 <pre>{JSON.stringify(pokemon, null, 2)}</pre>
+  //   2. pokemon name but no pokemon: <PokemonInfoFallback name={pokemonName} />
+  //   3. pokemon: <PokemonDataView pokemon={pokemon} />
 
-  return (
-    <div
-      style={{
-        height: 300,
-        width: 300,
-        overflow: 'scroll',
-        backgroundColor: '#eee',
-        borderRadius: 4,
-        padding: 10,
-      }}
-    >
-      {info}
-    </div>
-  )
-}
-
-function InvisibleButton(props) {
-  return (
-    <button
-      type="button"
-      style={{
-        border: 'none',
-        padding: 'inherit',
-        fontSize: 'inherit',
-        fontFamily: 'inherit',
-        cursor: 'pointer',
-        fontWeight: 'inherit',
-      }}
-      {...props}
-    />
-  )
+  // 💣 remove this
+  return 'TODO'
 }
 
 function App() {
-  const [{submittedPokemon, pokemonName}, setState] = React.useReducer(
-    (state, action) => ({...state, ...action}),
-    {submittedPokemon: '', pokemonName: ''},
-  )
+  const [pokemonName, setPokemonName] = React.useState(null)
 
-  function handleChange(e) {
-    setState({pokemonName: e.target.value})
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault()
-    setState({submittedPokemon: pokemonName.toLowerCase()})
-  }
-
-  function handleSelect(pokemonName) {
-    setState({pokemonName, submittedPokemon: pokemonName})
+  function handleSubmit(newPokemonName) {
+    setPokemonName(newPokemonName)
   }
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column'}}>
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        <label htmlFor="pokemonName-input">Pokemon Name</label>
-        <small>
-          Try{' '}
-          <InvisibleButton onClick={() => handleSelect('pikachu')}>
-            "pikachu"
-          </InvisibleButton>
-          {', '}
-          <InvisibleButton onClick={() => handleSelect('charizard')}>
-            "charizard"
-          </InvisibleButton>
-          {', or '}
-          <InvisibleButton onClick={() => handleSelect('mew')}>
-            "mew"
-          </InvisibleButton>
-        </small>
-        <div>
-          <input
-            id="pokemonName-input"
-            name="pokemonName"
-            value={pokemonName}
-            onChange={handleChange}
-          />
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+    <div className="pokemon-info-app">
+      <PokemonForm onSubmit={handleSubmit} />
       <hr />
-      <div style={{display: 'flex'}}>
-        <div style={{marginLeft: 10}} data-testid="pokemon-display">
-          <PokemonInfo pokemonName={submittedPokemon} />
-        </div>
+      <div className="pokemon-info">
+        <PokemonInfo pokemonName={pokemonName} />
       </div>
     </div>
   )
 }
 
 export default App
-
-/* eslint no-unused-vars:0 */

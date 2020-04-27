@@ -117,18 +117,20 @@ a complete authority.
 
 - 🏡 Utah
 - 👩 👧 👦 👦 👦 🐕
-- 🏢 kentcdodds.com
+- 🏢 https://kentcdodds.com
 - 🐦/🐙 @kentcdodds
-- 🏆 testingjavascript.com
-- 🥚 kcd.im/egghead
-- 🥋 kcd.im/fem
-- 💌 kcd.im/news
-- 📝 kcd.im/blog
-- 📺 kcd.im/devtips
-- 💻 kcd.im/coding
-- 📽 kcd.im/youtube
-- 🎙 kcd.im/3-mins
-- ❓ kcd.im/ama
+- 🏆 https://TestingJavaScript.com
+- 👩‍🚀 https://EpicReact.Dev
+- 💻 https://kcd.im/workshops
+- 🎙 https://kcd.im/podcast
+- 🥚 https://kcd.im/egghead
+- 🥋 https://kcd.im/fem
+- 💌 https://kcd.im/news
+- 📝 https://kcd.im/blog
+- 📺 https://kcd.im/devtips
+- 👨‍💻 https://kcd.im/coding
+- 📽 https://kcd.im/youtube
+- ❓ https://kcd.im/ama
 
 ### Schedule
 
