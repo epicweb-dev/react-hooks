@@ -2,8 +2,12 @@
 // http://localhost:3000/isolated/final/06.js
 
 import React from 'react'
-import {PokemonInfoFallback, PokemonForm, PokemonDataView} from '../pokemon'
-import {fetchPokemon} from '../fetch-pokemon'
+import {
+  fetchPokemon,
+  PokemonInfoFallback,
+  PokemonForm,
+  PokemonDataView,
+} from '../pokemon'
 
 function PokemonInfo({pokemonName}) {
   const [pokemon, setPokemon] = React.useState(null)

@@ -2,11 +2,11 @@
 // http://localhost:3000/isolated/exercise/06.js
 
 import React from 'react'
-// 🐨 you'll want the following additional components from '../pokemon':
+// 🐨 you'll want the following additional things from '../pokemon':
+// fetchPokemon: the function we call to get the pokemon info
 // PokemonInfoFallback: the thing we show while we're loading the pokemon info
 // PokemonDataView: the stuff we use to display the pokemon info
 import {PokemonForm} from '../pokemon'
-// 🐨 you'll need the fetchPokemon function from '../fetch-pokemon'
 
 function PokemonInfo({pokemonName}) {
   // 🐨 Have state for the pokemon (null)
