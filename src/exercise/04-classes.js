@@ -54,14 +54,7 @@ class Board extends React.Component {
     const {squares} = this.state
     const nextValue = calculateNextValue(squares)
     const winner = calculateWinner(squares)
-    let status
-    if (winner) {
-      status = `Winner: ${winner}`
-    } else if (squares.every(Boolean)) {
-      status = `Scratch: Cat's game`
-    } else {
-      status = `Next player: ${nextValue}`
-    }
+    let status = calculateStatus(winner, squares, nextValue)
 
     return (
       <div>
@@ -97,6 +90,14 @@ function Game() {
       </div>
     </div>
   )
+}
+
+function calculateStatus(winner, squares, nextValue) {
+  return winner
+    ? `Winner: ${winner}`
+    : squares.every(Boolean)
+    ? `Scratch: Cat's game`
+    : `Next player: ${nextValue}`
 }
 
 function calculateNextValue(squares) {
