@@ -13,7 +13,7 @@ import {
 
 function PokemonInfo({pokemonName}) {
   const [state, setState] = React.useState({
-    status: 'idle',
+    status: pokemonName ? 'pending' : 'idle',
     pokemon: null,
     error: null,
   })
