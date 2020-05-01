@@ -1,6 +1,6 @@
 // useEffect: HTTP requests
-// 💯 recover from errors
-// http://localhost:3000/isolated/final/06.extra-6.js
+// 💯 re-mount the error boundary
+// http://localhost:3000/isolated/final/06.extra-5.js
 
 import React from 'react'
 import {
@@ -14,12 +14,6 @@ class ErrorBoundary extends React.Component {
   state = {error: null}
   static getDerivedStateFromError(error) {
     return {error}
-  }
-  componentDidUpdate(prevProps, prevState) {
-    // we're re-rendering. Let's try to clear our state and render children again
-    if (prevState.error && prevState.error === this.state.error) {
-      this.setState({error: null})
-    }
   }
   render() {
     const {error} = this.state
@@ -78,7 +72,7 @@ function ErrorFallback({error}) {
 }
 
 function App() {
-  const [pokemonName, setPokemonName] = React.useState(null)
+  const [pokemonName, setPokemonName] = React.useState('')
 
   function handleSubmit(newPokemonName) {
     setPokemonName(newPokemonName)
@@ -86,10 +80,10 @@ function App() {
 
   return (
     <div className="pokemon-info-app">
-      <PokemonForm onSubmit={handleSubmit} />
+      <PokemonForm pokemonName={pokemonName} onSubmit={handleSubmit} />
       <hr />
       <div className="pokemon-info">
-        <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <ErrorBoundary key={pokemonName} FallbackComponent={ErrorFallback}>
           <PokemonInfo pokemonName={pokemonName} />
         </ErrorBoundary>
       </div>
