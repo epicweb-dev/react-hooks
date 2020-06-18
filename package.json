@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "description": "The best resources for you to learn React Hooks",
   "keywords": [],
-  "homepage": "https://learn-react-hooks.netlify.app/",
+  "homepage": "https://react-hooks.netlify.app/",
   "license": "GPL-3.0-only",
   "main": "src/index.js",
   "engines": {

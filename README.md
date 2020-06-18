@@ -95,7 +95,7 @@ This should start up your browser. If you're familiar, this is a standard
 [react-scripts](https://create-react-app.dev/) application.
 
 You can also open
-[the deployment of the app on Netlify](https://learn-react-hooks.netlify.app/).
+[the deployment of the app on Netlify](https://react-hooks.netlify.app/).
 
 ## Running the tests
 
@@ -223,6 +223,7 @@ Thanks goes to these wonderful people
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the
