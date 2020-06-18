@@ -1,5 +1,6 @@
 import React from 'react'
-import {render, screen, fireEvent} from '@testing-library/react'
+import {render, screen} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import App from '../final/04'
 // import App from '../exercise/04'
 
@@ -13,35 +14,35 @@ test('can play a game of tic tac toe', () => {
   ] = Array.from(container.querySelectorAll('button'))
   expect(screen.getByText('Next player: X')).toBeInTheDocument()
 
-  fireEvent.click(s1)
+  userEvent.click(s1)
   expect(s1).toHaveTextContent('X')
 
   expect(screen.getByText('Next player: O')).toBeInTheDocument()
-  fireEvent.click(s5)
+  userEvent.click(s5)
   expect(s5).toHaveTextContent('O')
 
   expect(screen.getByText('Next player: X')).toBeInTheDocument()
-  fireEvent.click(s9)
+  userEvent.click(s9)
   expect(s9).toHaveTextContent('X')
 
   expect(screen.getByText('Next player: O')).toBeInTheDocument()
-  fireEvent.click(s7)
+  userEvent.click(s7)
   expect(s7).toHaveTextContent('O')
 
   expect(screen.getByText('Next player: X')).toBeInTheDocument()
-  fireEvent.click(s3)
+  userEvent.click(s3)
   expect(s3).toHaveTextContent('X')
 
   expect(screen.getByText('Next player: O')).toBeInTheDocument()
-  fireEvent.click(s2)
+  userEvent.click(s2)
   expect(s2).toHaveTextContent('O')
 
   expect(screen.getByText('Next player: X')).toBeInTheDocument()
-  fireEvent.click(s6)
+  userEvent.click(s6)
   expect(s6).toHaveTextContent('X')
 
   // game is over so no more moves may be played
   expect(screen.getByText('Winner: X')).toBeInTheDocument()
-  fireEvent.click(s4)
+  userEvent.click(s4)
   expect(s4).toHaveTextContent('')
 })

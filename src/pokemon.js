@@ -1,4 +1,5 @@
 import React from 'react'
+import {ErrorBoundary} from 'react-error-boundary'
 
 window.FETCH_TIME = undefined
 window.MIN_FETCH_TIME = 500
@@ -199,4 +200,24 @@ function PokemonForm({
   )
 }
 
-export {PokemonInfoFallback, PokemonForm, PokemonDataView, fetchPokemon}
+function ErrorFallback({error, resetErrorBoundary}) {
+  return (
+    <div role="alert">
+      There was an error:{' '}
+      <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+  )
+}
+
+function PokemonErrorBoundary(props) {
+  return <ErrorBoundary FallbackComponent={ErrorFallback} {...props} />
+}
+
+export {
+  PokemonInfoFallback,
+  PokemonForm,
+  PokemonDataView,
+  fetchPokemon,
+  PokemonErrorBoundary,
+}
