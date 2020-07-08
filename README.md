@@ -19,7 +19,6 @@ source material for [React Hooks](https://kentcdodds.com/workshops/react-hooks)!
 <!-- prettier-ignore-start -->
 [![Build Status][build-badge]][build]
 [![AppVeyor Build Status][win-build-badge]][win-build]
-[![Code Coverage][coverage-badge]][coverage]
 [![GPL 3.0 License][license-badge]][license]
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome][prs-badge]][prs]
@@ -250,7 +249,7 @@ specification. Contributions of any kind welcome!
 [build-badge]: https://img.shields.io/travis/com/kentcdodds/react-hooks.svg?style=flat-square&logo=travis
 [build]: https://travis-ci.com/kentcdodds/react-hooks
 [license-badge]: https://img.shields.io/badge/license-GPL%203.0%20License-blue.svg?style=flat-square
-[license]: https://github.com/kentcdodds/react-hooks/blob/master/README.md#license
+[license]: https://github.com/kentcdodds/react-fundamentals/blob/master/LICENSE
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
 [donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=flat-square
@@ -264,6 +263,4 @@ specification. Contributions of any kind welcome!
 [issue]: https://github.com/kentcdodds/react-hooks/issues/new
 [win-build-badge]: https://img.shields.io/appveyor/ci/kentcdodds/react-hooks.svg?style=flat-square&logo=appveyor
 [win-build]: https://ci.appveyor.com/project/kentcdodds/react-hooks
-[coverage-badge]: https://img.shields.io/codecov/c/github/kentcdodds/react-hooks.svg?style=flat-square
-[coverage]: https://codecov.io/github/kentcdodds/react-hooks
 <!-- prettier-ignore-end -->
