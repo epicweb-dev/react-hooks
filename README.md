@@ -7,7 +7,6 @@ source material for [React Hooks](https://kentcdodds.com/workshops/react-hooks)!
   <h2><a href="https://epicreact.dev">EpicReact.Dev</a></h2>
   <a href="https://epicreact.dev">
     <img
-      width="500"
       alt="Learn React from Start to Finish"
       src="https://kentcdodds.com/images/epicreact-promo/er-1.gif"
     />
