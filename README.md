@@ -151,11 +151,13 @@ Thanks goes to these wonderful people
     <td align="center"><a href="http://charliestras.me"><img src="https://avatars2.githubusercontent.com/u/10193500?v=4" width="100px;" alt=""/><br /><sub><b>Charlie Stras</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=CharlieStras" title="Documentation">📖</a> <a href="https://github.com/kentcdodds/react-hooks/commits?author=CharlieStras" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/lideo"><img src="https://avatars3.githubusercontent.com/u/1573567?v=4" width="100px;" alt=""/><br /><sub><b>Lide</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=lideo" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/marcosvega91"><img src="https://avatars2.githubusercontent.com/u/5365582?v=4" width="100px;" alt=""/><br /><sub><b>Marco Moretti</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=marcosvega91" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the
