@@ -1,21 +1,6 @@
 import React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
 
-window.FETCH_TIME = undefined
-window.MIN_FETCH_TIME = 500
-window.FETCH_TIME_RANDOM = false
-
-function sleep(t = window.FETCH_TIME) {
-  t = window.FETCH_TIME ?? t
-  if (window.FETCH_TIME_RANDOM) {
-    t = Math.random() * t + window.MIN_FETCH_TIME
-  }
-  if (process.env.NODE_ENV === 'test') {
-    t = 0
-  }
-  return new Promise(resolve => setTimeout(resolve, t))
-}
-
 const formatDate = date =>
   `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')} ${String(
     date.getSeconds(),
@@ -23,9 +8,8 @@ const formatDate = date =>
 
 // the delay argument is for faking things out a bit
 function fetchPokemon(name, delay = 1500) {
-  const endTime = Date.now() + delay
   const pokemonQuery = `
-    query ($name: String) {
+    query PokemonInfo($name: String) {
       pokemon(name: $name) {
         id
         number
@@ -48,6 +32,7 @@ function fetchPokemon(name, delay = 1500) {
       method: 'POST',
       headers: {
         'content-type': 'application/json;charset=UTF-8',
+        delay: delay,
       },
       body: JSON.stringify({
         query: pokemonQuery,
@@ -55,7 +40,6 @@ function fetchPokemon(name, delay = 1500) {
       }),
     })
     .then(async response => {
-      await sleep(endTime - Date.now())
       const {data} = await response.json()
       if (response.ok) {
         const pokemon = data?.pokemon

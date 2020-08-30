@@ -86,7 +86,8 @@ https://micku7zu.github.io/vanilla-tilt.js/index.html
 }
 
 /* For exercise 6, we're handling errors with an error boundary */
-body[class*='6'] iframe {
+body[class*='6'] :not(.render-container) > iframe,
+body[class*='6'] > iframe {
   display: none;
 }
 
