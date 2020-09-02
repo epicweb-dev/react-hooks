@@ -5,7 +5,7 @@ import App from '../final/06'
 // import App from '../exercise/06'
 
 beforeEach(() => jest.spyOn(window, 'fetch'))
-afterEach(() => window.fetch.mockReset())
+afterEach(() => window.fetch.mockRestore())
 
 test('displays the pokemon', async () => {
   render(<App />)
@@ -23,7 +23,7 @@ test('displays the pokemon', async () => {
   userEvent.type(input, 'ditto')
   userEvent.click(submit)
 
-  await screen.findByRole('heading', {name: /pikachu/i})
+  await screen.findByRole('heading', {name: /ditto/i})
 
   // verify that when props remain the same a request is not made
   window.fetch.mockClear()
