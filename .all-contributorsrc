@@ -85,6 +85,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "gugol2",
+      "name": "Watchmaker",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4933016?v=4",
+      "profile": "https://github.com/gugol2",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
