@@ -94,6 +94,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "dschapman",
+      "name": "Daniel Chapman",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/36767987?v=4",
+      "profile": "https://dschapman.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
