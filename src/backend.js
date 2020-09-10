@@ -1,6 +1,6 @@
 import {graphql} from '@kentcdodds/react-workshop-app/server'
 
-const pokemonApi = graphql.link('https://graphql-pokemon.now.sh')
+const pokemonApi = graphql.link('https://graphql-pokemon2.vercel.app/')
 
 export const handlers = [
   pokemonApi.query('PokemonInfo', (req, res, ctx) => {
