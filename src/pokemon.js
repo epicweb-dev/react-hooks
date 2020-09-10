@@ -27,8 +27,8 @@ function fetchPokemon(name, delay = 1500) {
   `
 
   return window
-    .fetch('https://graphql-pokemon.now.sh', {
-      // learn more about this API here: https://graphql-pokemon.now.sh/
+    .fetch('https://graphql-pokemon2.vercel.app/', {
+      // learn more about this API here: https://graphql-pokemon2.vercel.app/
       method: 'POST',
       headers: {
         'content-type': 'application/json;charset=UTF-8',
