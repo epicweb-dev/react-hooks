@@ -112,6 +112,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "PritamSangani",
+      "name": "Pritam Sangani",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/22857896?v=4",
+      "profile": "https://www.linkedin.com/in/pritamsangani/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

@@ -156,12 +156,12 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/gugol2"><img src="https://avatars0.githubusercontent.com/u/4933016?v=4" width="100px;" alt=""/><br /><sub><b>Watchmaker</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/issues?q=author%3Agugol2" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://dschapman.com"><img src="https://avatars3.githubusercontent.com/u/36767987?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Chapman</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=dschapman" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/flofehrenbacher"><img src="https://avatars0.githubusercontent.com/u/18660708?v=4" width="100px;" alt=""/><br /><sub><b>flofehrenbacher</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=flofehrenbacher" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/pritamsangani/"><img src="https://avatars3.githubusercontent.com/u/22857896?v=4" width="100px;" alt=""/><br /><sub><b>Pritam Sangani</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=PritamSangani" title="Code">💻</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the
