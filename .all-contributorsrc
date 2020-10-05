@@ -139,6 +139,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "timobleeker",
+      "name": "Timo",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2723586?v=4",
+      "profile": "https://github.com/timobleeker",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
