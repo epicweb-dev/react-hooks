@@ -9,11 +9,35 @@ afterEach(() => {
 })
 
 test('App works', () => {
-  window.localStorage.setItem('name', 'jill')
-  render(<App />)
-  screen.getByText(/hello.*jill/i)
-  userEvent.clear(screen.getByRole('textbox', {name: /name/i}))
+  const {rerender} = render(<App />)
   userEvent.type(screen.getByRole('textbox', {name: /name/i}), 'bob')
-  screen.getByText(/hello.*bob/i)
-  expect(window.localStorage.getItem('name')).toBe('bob')
+  const lsName = window.localStorage.getItem('name')
+
+  // extra credit 4 serializes the value in localStorage so there's a bit of a
+  // variation here.
+  const isSerialized = lsName === '"bob"'
+  if (isSerialized) {
+    screen.getByText(/hello.*bob/i)
+  } else if (lsName === 'bob') {
+    screen.getByText(/hello.*bob/i)
+  } else {
+    throw new Error(
+      `🚨 localStorage is not getting updated with the text that's typed. Be sure to call window.localStorage.setItem('name', name) in a useEffect callback that runs whenever the name changes.`,
+    )
+  }
+
+  // make sure it's initialized properly
+  window.localStorage.setItem('name', isSerialized ? '"jill"' : 'jill')
+  rerender(<App key="new" />)
+  const greetingText = screen.getByText(/hello/i).textContent
+  if (!greetingText.includes('jill')) {
+    throw new Error(
+      `🚨 the app is not initialized with the name that's in localStorage. Make sure useState is called with the value in localStorage.`,
+    )
+  }
+  if (greetingText.includes('"')) {
+    throw new Error(
+      `🚨 the value in localStorage is not getting deserialized properly. Make sure the value is deserialized when read from localStorage.`,
+    )
+  }
 })
