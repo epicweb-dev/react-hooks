@@ -5,13 +5,13 @@ import App from '../final/04'
 // import App from '../exercise/04'
 
 test('can play a game of tic tac toe', () => {
-  const {container} = render(<App />)
+  render(<App />)
   // prettier-ignore
   const [
     s1, s2, s3,
     s4, s5, s6,
     s7, s8, s9 // eslint-disable-line no-unused-vars
-  ] = Array.from(container.querySelectorAll('button'))
+  ] = Array.from(screen.queryAllByRole('button'))
   expect(screen.getByText('Next player: X')).toBeInTheDocument()
 
   userEvent.click(s1)
