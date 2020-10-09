@@ -174,12 +174,12 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/timobleeker"><img src="https://avatars0.githubusercontent.com/u/2723586?v=4" width="100px;" alt=""/><br /><sub><b>Timo</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=timobleeker" title="Documentation">📖</a></td>
     <td align="center"><a href="http://thacher.co"><img src="https://avatars1.githubusercontent.com/u/12368025?v=4" width="100px;" alt=""/><br /><sub><b>Thacher Hussain</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=thacherhussain" title="Documentation">📖</a></td>
     <td align="center"><a href="https://magrippis.com"><img src="https://avatars0.githubusercontent.com/u/3502800?v=4" width="100px;" alt=""/><br /><sub><b>Johnny Magrippis</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=jmagrippis" title="Code">💻</a></td>
+    <td align="center"><a href="https://twitter.com/apolakipso"><img src="https://avatars2.githubusercontent.com/u/494674?v=4" width="100px;" alt=""/><br /><sub><b>Apola Kipso</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=apolakipso" title="Code">💻</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the
