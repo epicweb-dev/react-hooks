@@ -175,6 +175,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Snaptags",
+      "name": "Markus Lasermann",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1249745?v=4",
+      "profile": "https://github.com/Snaptags",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
