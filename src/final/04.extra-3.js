@@ -54,7 +54,7 @@ function Game() {
       return
     }
 
-    const newHistory = history.slice(0, currentStep + 1)
+    const newHistory = history.map(squares => [...squares])
     const squares = [...currentSquares]
 
     squares[square] = nextValue
