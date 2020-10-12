@@ -1,4 +1,5 @@
 import React from 'react'
+import {alfredTip} from '@kentcdodds/react-workshop-app/test-utils'
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from '../final/06'
@@ -31,8 +32,8 @@ test('displays the pokemon', async () => {
 
   await screen.findByRole('heading', {name: /ditto/i})
 
-  expect(
-    window.fetch,
-    'Make certain that you are providing a dependencies list in useEffect!',
-  ).not.toHaveBeenCalled()
+  alfredTip(
+    () => expect(window.fetch).not.toHaveBeenCalled(),
+    'Make certain that you are providing a dependencies list in useEffect.',
+  )
 })

@@ -1,4 +1,5 @@
 import React from 'react'
+import {alfredTip} from '@kentcdodds/react-workshop-app/test-utils'
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from '../final/04.extra-1'
@@ -46,13 +47,16 @@ test('can play a game of tic tac toe', () => {
   userEvent.click(s4)
   expect(s4).toHaveTextContent('')
 
-  // prettier-ignore
-  expect(
-    JSON.parse(window.localStorage.getItem('squares')),
+  alfredTip(
+    () =>
+      expect(JSON.parse(window.localStorage.getItem('squares'))).toEqual(
+        // prettier-ignore
+        [
+          'X', 'O', 'X',
+          null, 'O', 'X',
+          'O', null, 'X',
+        ],
+      ),
     'Make sure that the "squares" localStorage item is updated with the JSON.stringified squares',
-  ).toEqual([
-    'X', 'O', 'X',
-    null, 'O', 'X',
-    'O', null, 'X'
-  ])
+  )
 })

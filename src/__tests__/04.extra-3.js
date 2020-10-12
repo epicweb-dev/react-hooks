@@ -1,4 +1,5 @@
 import React from 'react'
+import {alfredTip} from '@kentcdodds/react-workshop-app/test-utils'
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from '../final/04.extra-3'
@@ -6,10 +7,11 @@ import App from '../final/04.extra-3'
 
 test('can play a game of tic tac toe', () => {
   render(<App />)
+
   // prettier-ignore
   const [
-    s1, s2, s3,
-    s4, s5, s6,
+    s1, s2, s3, // eslint-disable-line no-unused-vars
+    s4, s5, s6, // eslint-disable-line no-unused-vars
     s7, s8, s9 // eslint-disable-line no-unused-vars
   ] = Array.from(screen.queryAllByRole('button'))
   expect(screen.getByText('Next player: X')).toBeInTheDocument()
@@ -46,21 +48,26 @@ test('can play a game of tic tac toe', () => {
   expect(secondMove).not.toHaveTextContent('current')
   expect(s5).not.toHaveTextContent('O')
 
-  // prettier-ignore
-  expect(
-      JSON.parse(window.localStorage.getItem('tic-tac-toe:history')),
-      'Make sure that the localStorage item is updated with the JSON.stringified squares array',
-  ).toEqual([
-    [null, null, null,
-     null, null, null,
-     null, null, null],
-    ['X',  null, null,
-     null, null, null,
-     null, null, null],
-    ['X',  null, null,
-     null, 'O',  null,
-     null, null, null]
-  ])
+  alfredTip(
+    () =>
+      expect(
+        JSON.parse(window.localStorage.getItem('tic-tac-toe:history')),
+      ).toEqual(
+        // prettier-ignore
+        [
+          [null, null, null,
+          null, null, null,
+          null, null, null],
+          ['X',  null, null,
+          null, null, null,
+          null, null, null],
+          ['X',  null, null,
+          null, 'O',  null,
+          null, null, null]
+        ],
+      ),
+    'Make sure that the localStorage item is updated with the JSON.stringified squares array',
+  )
 
   userEvent.click(gameStart)
   expect(s1).toHaveTextContent('')
@@ -72,13 +79,18 @@ test('can play a game of tic tac toe', () => {
   expect(s5).toHaveTextContent('')
   expect(screen.queryAllByRole('listitem').length).toBe(1)
 
-  // prettier-ignore
-  expect(
-      JSON.parse(window.localStorage.getItem('tic-tac-toe:history')),
-      'Make sure that the localStorage item is updated with the JSON.stringified squares array',
-  ).toEqual([
-    [null, null, null,
-     null, null, null,
-     null, null, null]
-  ])
+  alfredTip(
+    () =>
+      expect(
+        JSON.parse(window.localStorage.getItem('tic-tac-toe:history')),
+      ).toEqual(
+        // prettier-ignore
+        [
+          [null, null, null,
+          null, null, null,
+          null, null, null]
+        ],
+      ),
+    'Make sure that the localStorage item is updated with the JSON.stringified squares array',
+  )
 })
