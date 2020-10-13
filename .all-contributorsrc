@@ -193,6 +193,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "nativedone",
+      "name": "Adeildo Amorim",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/20998754?v=4",
+      "profile": "https://github.com/nativedone",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
