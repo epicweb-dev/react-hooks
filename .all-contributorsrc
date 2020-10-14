@@ -211,6 +211,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "RafaelDavisH",
+      "name": "Rafael D. Hernandez",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6822714?v=4",
+      "profile": "https://rafaeldavis.dev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
