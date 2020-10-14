@@ -187,6 +187,9 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/degeens"><img src="https://avatars2.githubusercontent.com/u/33414262?v=4" width="100px;" alt=""/><br /><sub><b>Stijn Geens</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=degeens" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/nativedone"><img src="https://avatars2.githubusercontent.com/u/20998754?v=4" width="100px;" alt=""/><br /><sub><b>Adeildo Amorim</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=nativedone" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/thegoodsheppard"><img src="https://avatars1.githubusercontent.com/u/13774377?v=4" width="100px;" alt=""/><br /><sub><b>Greg Sheppard</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=thegoodsheppard" title="Documentation">📖</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
