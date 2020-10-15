@@ -13,13 +13,13 @@
     "npm": ">=6"
   },
   "dependencies": {
-    "@kentcdodds/react-workshop-app": "^2.19.0",
-    "@testing-library/react": "^11.0.4",
-    "@testing-library/user-event": "^12.1.7",
+    "@kentcdodds/react-workshop-app": "^2.19.1",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.8",
     "chalk": "^4.1.0",
     "codegen.macro": "^4.0.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-error-boundary": "^3.0.2",
     "vanilla-tilt": "^1.7.0"
   },
