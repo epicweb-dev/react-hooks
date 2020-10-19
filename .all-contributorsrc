@@ -220,6 +220,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "DallasCarraher",
+      "name": "Dallas Carraher",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4131693?v=4",
+      "profile": "http://dallascarraher.dev",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
