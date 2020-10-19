@@ -190,6 +190,7 @@ Thanks goes to these wonderful people
   <tr>
     <td align="center"><a href="https://github.com/thegoodsheppard"><img src="https://avatars1.githubusercontent.com/u/13774377?v=4" width="100px;" alt=""/><br /><sub><b>Greg Sheppard</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=thegoodsheppard" title="Documentation">📖</a></td>
     <td align="center"><a href="https://rafaeldavis.dev"><img src="https://avatars0.githubusercontent.com/u/6822714?v=4" width="100px;" alt=""/><br /><sub><b>Rafael D. Hernandez</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=RafaelDavisH" title="Code">💻</a></td>
+    <td align="center"><a href="http://dallascarraher.dev"><img src="https://avatars2.githubusercontent.com/u/4131693?v=4" width="100px;" alt=""/><br /><sub><b>Dallas Carraher</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=DallasCarraher" title="Documentation">📖</a></td>
   </tr>
 </table>
 
