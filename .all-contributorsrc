@@ -229,6 +229,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "roni-castro",
+      "name": "Roni Castro",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/24610813?v=4",
+      "profile": "https://github.com/roni-castro",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
