@@ -192,6 +192,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://rafaeldavis.dev"><img src="https://avatars0.githubusercontent.com/u/6822714?v=4" width="100px;" alt=""/><br /><sub><b>Rafael D. Hernandez</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=RafaelDavisH" title="Code">💻</a></td>
     <td align="center"><a href="http://dallascarraher.dev"><img src="https://avatars2.githubusercontent.com/u/4131693?v=4" width="100px;" alt=""/><br /><sub><b>Dallas Carraher</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=DallasCarraher" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/roni-castro"><img src="https://avatars3.githubusercontent.com/u/24610813?v=4" width="100px;" alt=""/><br /><sub><b>Roni Castro</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=roni-castro" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/thebrengun"><img src="https://avatars2.githubusercontent.com/u/15270595?v=4" width="100px;" alt=""/><br /><sub><b>Brennan</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=thebrengun" title="Documentation">📖</a></td>
   </tr>
 </table>
 
