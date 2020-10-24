@@ -6,6 +6,6 @@ import App from '../final/01'
 
 test('typing a name shows a greeting', () => {
   render(<App />)
-  userEvent.type(screen.getByLabelText(/name/i), 'bob')
+  userEvent.type(screen.getByRole('textbox', {name: /name/i}), 'bob')
   screen.getByText(/hello.*bob/i)
 })
