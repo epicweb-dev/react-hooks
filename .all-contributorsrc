@@ -220,6 +220,42 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "DallasCarraher",
+      "name": "Dallas Carraher",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4131693?v=4",
+      "profile": "http://dallascarraher.dev",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "roni-castro",
+      "name": "Roni Castro",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/24610813?v=4",
+      "profile": "https://github.com/roni-castro",
+      "contributions": [
+        "test"
+      ]
+    },
+    {
+      "login": "thebrengun",
+      "name": "Brennan",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/15270595?v=4",
+      "profile": "https://github.com/thebrengun",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "DaleSeo",
+      "name": "Dale Seo",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/5466341?v=4",
+      "profile": "https://www.daleseo.com",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
