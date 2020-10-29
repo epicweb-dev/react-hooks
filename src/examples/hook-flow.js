@@ -2,7 +2,7 @@
 // https://github.com/donavon/hook-flow
 // http://localhost:3000/isolated/examples/hook-flow.js
 
-import React from 'react'
+import * as React from 'react'
 
 function Child() {
   console.log('%c    Child: render start', 'color: MediumSpringGreen')

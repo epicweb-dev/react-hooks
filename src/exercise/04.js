@@ -1,7 +1,7 @@
 // useState: tic tac toe
 // http://localhost:3000/isolated/exercise/04.js
 
-import React from 'react'
+import * as React from 'react'
 
 function Board() {
   // 🐨 squares is the state for this component. Add useState for squares
@@ -24,7 +24,7 @@ function Board() {
     // 🦉 It's typically a bad idea to mutate or directly change state in React.
     // Doing so can lead to subtle bugs that can easily slip into production.
     //
-    // 🐨 make a copy of the squares array 
+    // 🐨 make a copy of the squares array
     // 💰 `[...squares]` will do it!)
     //
     // 🐨 set the value of the square that was selected
