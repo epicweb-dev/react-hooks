@@ -2,7 +2,7 @@
 // 💯 accept an initialName
 // http://localhost:3000/isolated/final/01.extra-1.js
 
-import React from 'react'
+import * as React from 'react'
 
 function Greeting({initialName = ''}) {
   const [name, setName] = React.useState(initialName)

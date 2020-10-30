@@ -1,7 +1,7 @@
 // useState: greeting
 // http://localhost:3000/isolated/final/01.js
 
-import React from 'react'
+import * as React from 'react'
 
 function Greeting() {
   const [name, setName] = React.useState('')

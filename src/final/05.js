@@ -1,7 +1,7 @@
 // useRef and useEffect: DOM interaction
 // http://localhost:3000/isolated/final/05.js
 
-import React from 'react'
+import * as React from 'react'
 import VanillaTilt from 'vanilla-tilt'
 
 function Tilt({children}) {

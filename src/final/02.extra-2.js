@@ -2,7 +2,7 @@
 // 💯 effect dependencies
 // http://localhost:3000/isolated/final/02.extra-2.js
 
-import React from 'react'
+import * as React from 'react'
 
 function Greeting({initialName = ''}) {
   const [name, setName] = React.useState(

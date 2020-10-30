@@ -2,7 +2,7 @@
 // 💯 reset the error boundary
 // http://localhost:3000/isolated/final/06.extra-7.js
 
-import React from 'react'
+import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
 import {
   fetchPokemon,

@@ -2,7 +2,7 @@
 // 💯 preserve state in localStorage
 // http://localhost:3000/isolated/final/04.extra-1.js
 
-import React from 'react'
+import * as React from 'react'
 
 function Board() {
   const [squares, setSquares] = React.useState(

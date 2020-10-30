@@ -2,7 +2,7 @@
 // 💯 store the state in an object
 // http://localhost:3000/isolated/final/06.extra-3.js
 
-import React from 'react'
+import * as React from 'react'
 import {
   fetchPokemon,
   PokemonInfoFallback,
