@@ -1,0 +1,15 @@
+name: Validate Workshop
+description: 'Runs "npm run setup" in ${{ matrix.node }}'
+runs:
+  using: 'composite'
+  steps:
+    - name: ⬇️ Checkout repo
+      uses: actions/checkout@v2
+
+    - name: ⎔ Setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+
+    - name: ▶️ Run setup script
+      run: npm run setup
