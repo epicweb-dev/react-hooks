@@ -1,4 +1,4 @@
-name: Validate Windows
+name: Validate
 on: [push, pull_request]
 jobs:
   ubuntu:
