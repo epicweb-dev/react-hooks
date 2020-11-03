@@ -7,7 +7,7 @@ jobs:
       matrix:
         node: [10.13, 12, 14]
     steps:
-      - uses: ./.github
+      - uses: kentcdodds/kcd-workshop-validation-action@v1
 
   macos:
     runs-on: macos-latest
@@ -15,7 +15,7 @@ jobs:
       matrix:
         node: [10.13, 12, 14]
     steps:
-      - uses: ./.github
+      - uses: kentcdodds/kcd-workshop-validation-action@v1
 
   windows:
     runs-on: windows-latest
@@ -23,4 +23,4 @@ jobs:
       matrix:
         node: [10.13, 12, 14]
     steps:
-      - uses: ./.github
+      - uses: kentcdodds/kcd-workshop-validation-action@v1
