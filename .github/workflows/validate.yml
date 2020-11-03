@@ -7,7 +7,7 @@ jobs:
       matrix:
         node: [10.13, 12, 14]
     steps:
-      uses: ./.github
+      - uses: ./.github
 
   macos:
     runs-on: macos-latest
@@ -15,7 +15,7 @@ jobs:
       matrix:
         node: [10.13, 12, 14]
     steps:
-      uses: ./.github
+      - uses: ./.github
 
   windows:
     runs-on: windows-latest
@@ -23,4 +23,4 @@ jobs:
       matrix:
         node: [10.13, 12, 14]
     steps:
-      uses: ./.github
+      - uses: ./.github
