@@ -36,7 +36,7 @@
 ## System Requirements
 
 - [git][git] v2.13 or greater
-- [NodeJS][node] `^10.13 || 12 || 14`
+- [NodeJS][node] `^10.13 || 12 || 14 || 15`
 - [npm][npm] v6 or greater
 
 All of these must be available in your `PATH`. To verify things are set up
@@ -82,6 +82,13 @@ right versions of the requirements listed above, and run the following commands:
 ```
 npm install
 npm run validate
+```
+
+If you are still unable to fix issues and you know how to use Docker 🐳 you can
+setup the project with the following command:
+
+```
+docker-compose up
 ```
 
 It's recommended you run everything locally in the same environment you work in
@@ -196,11 +203,14 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://www.daleseo.com"><img src="https://avatars1.githubusercontent.com/u/5466341?v=4" width="100px;" alt=""/><br /><sub><b>Dale Seo</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=DaleSeo" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://michaeldeboey.be"><img src="https://avatars3.githubusercontent.com/u/6643991?v=4" width="100px;" alt=""/><br /><sub><b>Michaël De Boey</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=MichaelDeBoey" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="http://bobbywarner.com"><img src="https://avatars0.githubusercontent.com/u/554961?v=4" width="100px;" alt=""/><br /><sub><b>Bobby Warner</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=bobbywarner" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/douglance"><img src="https://avatars2.githubusercontent.com/u/4741454?v=4" width="100px;" alt=""/><br /><sub><b>Doug Lance</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=douglance" title="Documentation">📖</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the

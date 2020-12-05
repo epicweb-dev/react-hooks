@@ -265,6 +265,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "bobbywarner",
+      "name": "Bobby Warner",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/554961?v=4",
+      "profile": "http://bobbywarner.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "douglance",
+      "name": "Doug Lance",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4741454?v=4",
+      "profile": "https://github.com/douglance",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

@@ -1,12 +1,20 @@
 name: validate
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
 jobs:
   setup:
-    runs-on: ${{ matrix.os }}
+    # ignore all-contributors PRs
+    if: ${{ !contains(github.head_ref, 'all-contributors') }}
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node: [10.13, 12, 14]
+        node: [10.13, 12, 14, 15]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v2
