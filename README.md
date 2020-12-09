@@ -206,6 +206,7 @@ Thanks goes to these wonderful people
   <tr>
     <td align="center"><a href="http://bobbywarner.com"><img src="https://avatars0.githubusercontent.com/u/554961?v=4" width="100px;" alt=""/><br /><sub><b>Bobby Warner</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=bobbywarner" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/douglance"><img src="https://avatars2.githubusercontent.com/u/4741454?v=4" width="100px;" alt=""/><br /><sub><b>Doug Lance</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=douglance" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/nekhaevskiy"><img src="https://avatars0.githubusercontent.com/u/15379100?v=4" width="100px;" alt=""/><br /><sub><b>Yury Nekhaevskiy</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=nekhaevskiy" title="Documentation">📖</a></td>
   </tr>
 </table>
 
