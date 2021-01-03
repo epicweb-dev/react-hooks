@@ -301,6 +301,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "cwinters8",
+      "name": "Clark Winters",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/40615752?v=4",
+      "profile": "https://clarkwinters.com",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
