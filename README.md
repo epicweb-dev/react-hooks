@@ -1,5 +1,5 @@
 <div>
-  <h1 align="center"><a href="https://epicreact.dev">🎣 React Hooks 🚀 EpicReact.Dev</a></h1>
+  <h1 align="center"><a href="https://epicreact.dev/hooks">🎣 React Hooks 🚀 EpicReact.Dev</a></h1>
   <strong>
     There are better patterns and practices that are an entirely new approach to
     developing components and managing state in your React applications.
