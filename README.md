@@ -127,9 +127,9 @@ a complete authority.
 
 - `src/exercise/00.md`: Background, Exercise Instructions, Extra Credit
 - `src/exercise/00.js`: Exercise with Emoji helpers
-- `src/__tests__/00.js`: Tests
-- `src/final/00.js`: Final version
-- `src/final/00.extra-0.js`: Final version of extra credit
+- `src/__tests__/00.tsx`: Tests
+- `src/final/00.tsx`: Final version
+- `src/final/00.extra-0.tsx`: Final version of extra credit
 
 The purpose of the exercise is **not** for you to work through all the material.
 It's intended to get your brain thinking about the right questions to ask me as
