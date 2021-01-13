@@ -209,6 +209,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/nekhaevskiy"><img src="https://avatars0.githubusercontent.com/u/15379100?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yury Nekhaevskiy</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=nekhaevskiy" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/mansn"><img src="https://avatars0.githubusercontent.com/u/4518977?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Måns Nilsson</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=mansn" title="Documentation">📖</a></td>
     <td align="center"><a href="https://clarkwinters.com"><img src="https://avatars2.githubusercontent.com/u/40615752?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Clark Winters</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/issues?q=author%3Acwinters8" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://omarhoumz.com/"><img src="https://avatars2.githubusercontent.com/u/40954879?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Omar Houmz</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=omarhoumz" title="Code">💻</a></td>
   </tr>
 </table>
 
