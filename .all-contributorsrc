@@ -319,6 +319,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "suddenlyGiovanni",
+      "name": "Giovanni Ravalico",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/15946771?v=4",
+      "profile": "https://suddenlyGiovanni.dev",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
