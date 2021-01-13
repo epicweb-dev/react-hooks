@@ -38,18 +38,7 @@ function useLocalStorageState(
 }
 
 function Greeting({initialName = ''}) {
-  const [key, setKey] = React.useState('name');
-  const [name, setName] = useLocalStorageState(key, initialName)
-
-  function handleClick() {
-    if (key === 'name') {
-      setKey('firstName');
-    } else if (key === 'firstName') {
-      setKey('Name')
-    } else {
-      setKey('name')
-    }
-  }
+  const [name, setName] = useLocalStorageState('name', initialName)
 
   function handleChange(event) {
     setName(event.target.value)
@@ -57,7 +46,6 @@ function Greeting({initialName = ''}) {
 
   return (
     <div>
-      <button type="button" onClick={handleClick}>Change key!</button>
       <form>
         <label htmlFor="name">Name: </label>
         <input value={name} onChange={handleChange} id="name" />
