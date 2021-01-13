@@ -1,6 +1,6 @@
 // useEffect: persistent state
-// 💯 flexible localStorage hook
-// http://localhost:3000/isolated/final/02.extra-4.js
+// 💯 flexible localStorage hook - changing the key in localStorage
+// http://localhost:3000/isolated/examples/local-state-key-change.js
 
 import * as React from 'react'
 
@@ -25,7 +25,6 @@ function useLocalStorageState(
 
   const prevKeyRef = React.useRef(key)
 
-  // Check the example at src/examples/local-state-key-change.js to visualize a key change
   React.useEffect(() => {
     const prevKey = prevKeyRef.current
     if (prevKey !== key) {
@@ -39,7 +38,18 @@ function useLocalStorageState(
 }
 
 function Greeting({initialName = ''}) {
-  const [name, setName] = useLocalStorageState('name', initialName)
+  const [key, setKey] = React.useState('name');
+  const [name, setName] = useLocalStorageState(key, initialName)
+
+  function handleClick() {
+    if (key === 'name') {
+      setKey('firstName');
+    } else if (key === 'firstName') {
+      setKey('Name')
+    } else {
+      setKey('name')
+    }
+  }
 
   function handleChange(event) {
     setName(event.target.value)
@@ -47,6 +57,7 @@ function Greeting({initialName = ''}) {
 
   return (
     <div>
+      <button type="button" onClick={handleClick}>Change key!</button>
       <form>
         <label htmlFor="name">Name: </label>
         <input value={name} onChange={handleChange} id="name" />
