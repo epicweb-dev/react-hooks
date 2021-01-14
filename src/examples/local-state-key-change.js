@@ -1,5 +1,5 @@
 // useEffect: persistent state
-// 💯 flexible localStorage hook - changing the key in localStorage
+// flexible localStorage hook - changing the key in localStorage
 // http://localhost:3000/isolated/examples/local-state-key-change.js
 
 import * as React from 'react'
@@ -67,8 +67,4 @@ function Greeting({initialName = ''}) {
   )
 }
 
-function App() {
-  return <Greeting />
-}
-
-export default App
+export default Greeting
