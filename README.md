@@ -212,6 +212,9 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://omarhoumz.com/"><img src="https://avatars2.githubusercontent.com/u/40954879?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Omar Houmz</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=omarhoumz" title="Code">💻</a></td>
     <td align="center"><a href="https://suddenlyGiovanni.dev"><img src="https://avatars2.githubusercontent.com/u/15946771?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Giovanni Ravalico</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=suddenlyGiovanni" title="Code">💻</a> <a href="#ideas-suddenlyGiovanni" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/Segebre"><img src="https://avatars3.githubusercontent.com/u/10774915?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Juan Enrique Segebre Zaghmout</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=Segebre" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
