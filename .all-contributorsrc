@@ -329,6 +329,15 @@
         "code",
         "ideas"
       ]
+    },
+    {
+      "login": "Segebre",
+      "name": "Juan Enrique Segebre Zaghmout",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10774915?v=4",
+      "profile": "https://github.com/Segebre",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
