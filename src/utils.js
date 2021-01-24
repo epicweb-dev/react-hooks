@@ -26,8 +26,8 @@ function useLocalStorageState(
     const prevKey = prevKeyRef.current
     if (prevKey !== key) {
       window.localStorage.removeItem(prevKey)
+      prevKeyRef.current = key
     }
-    prevKeyRef.current = key
     window.localStorage.setItem(key, serialize(state))
   }, [key, state, serialize])
 
