@@ -16,15 +16,20 @@ class ErrorBoundary extends React.Component {
     const { error } = this.state;
     if (error) {
       // You can render any custom fallback UI
-      return (
-        <div role="alert">
-          There was an error: <pre style={{ whiteSpace: 'normal' }}>{error.message}</pre>
-        </div>
-      );
+      return <this.props.FallbackComponent error={error} />
     }
 
     return this.props.children;
   }
+}
+
+function ErrorFallback({ error }) {
+  return (
+    <div role="alert">
+      There was an error:{' '}
+      <pre style={{ whiteSpace: 'normal' }}>{error.message}</pre>
+    </div>
+  )
 }
 
 function PokemonInfo({ pokemonName }) {
@@ -63,7 +68,7 @@ function App() {
       <PokemonForm pokemonName={pokemonName} onSubmit={handleSubmit} />
       <hr />
       <div className="pokemon-info">
-        <ErrorBoundary>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
           <PokemonInfo pokemonName={pokemonName} />
         </ErrorBoundary>
       </div>
