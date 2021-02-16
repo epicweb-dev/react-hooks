@@ -11,6 +11,7 @@ afterEach(() => {
 test('App works', () => {
   const {rerender} = render(<App />)
   userEvent.type(screen.getByRole('textbox', {name: /name/i}), 'bob')
+
   const lsName = window.localStorage.getItem('name')
 
   // extra credit 4 serializes the value in localStorage so there's a bit of a
@@ -30,6 +31,8 @@ test('App works', () => {
   window.localStorage.setItem('name', isSerialized ? '"jill"' : 'jill')
   rerender(<App key="new" />)
   const greetingText = screen.getByText(/hello/i).textContent
+  const inputBox = screen.getByRole('textbox', {name: /name/i})
+
   if (!greetingText.includes('jill')) {
     throw new Error(
       `🚨 the app is not initialized with the name that's in localStorage. Make sure useState is called with the value in localStorage.`,
@@ -40,4 +43,5 @@ test('App works', () => {
       `🚨 the value in localStorage is not getting deserialized properly. Make sure the value is deserialized when read from localStorage.`,
     )
   }
+  expect(screen.getByRole('textbox', {name: /name/i})).toHaveValue('jill')
 })
