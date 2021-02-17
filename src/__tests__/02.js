@@ -40,4 +40,5 @@ test('App works', () => {
       `🚨 the value in localStorage is not getting deserialized properly. Make sure the value is deserialized when read from localStorage.`,
     )
   }
+  expect(screen.getByRole('textbox', {name: /name/i})).toHaveValue('jill')
 })
