@@ -347,6 +347,15 @@
       "contributions": [
         "test"
       ]
+    },
+    {
+      "login": "trentschnee",
+      "name": "Trent Schneweis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10525549?v=4",
+      "profile": "https://trentschneweis.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
