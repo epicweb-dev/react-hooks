@@ -215,6 +215,7 @@ Thanks goes to these wonderful people
   <tr>
     <td align="center"><a href="https://github.com/Segebre"><img src="https://avatars3.githubusercontent.com/u/10774915?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Juan Enrique Segebre Zaghmout</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=Segebre" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/johnalexanderferguson/"><img src="https://avatars.githubusercontent.com/u/30883573?v=4?s=100" width="100px;" alt=""/><br /><sub><b>John Alexander Ferguson</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=Alferguson" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://trentschneweis.com"><img src="https://avatars.githubusercontent.com/u/10525549?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Trent Schneweis</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=trentschnee" title="Code">💻</a></td>
   </tr>
 </table>
 
