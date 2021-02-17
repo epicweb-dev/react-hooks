@@ -338,6 +338,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Alferguson",
+      "name": "John Alexander Ferguson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30883573?v=4",
+      "profile": "https://www.linkedin.com/in/johnalexanderferguson/",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
