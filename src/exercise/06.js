@@ -35,7 +35,7 @@ function PokemonInfo({pokemonName}) {
       },
     )
   }, [pokemonName]);
-  return pokemon ? <PokemonDataView pokemon={pokemon} /> : null;
+  return pokemon ? <PokemonDataView pokemon={pokemon} /> : <PokemonInfoFallback />;
 }
 
 function App() {
