@@ -1,7 +1,7 @@
 // useEffect: HTTP requests
 // http://localhost:3000/isolated/exercise/06.js
-
 import * as React from 'react'
+import { fetchPokemon, PokemonInfoFallback, PokemonDataView } from '../pokemon';
 // 🐨 you'll want the following additional things from '../pokemon':
 // fetchPokemon: the function we call to get the pokemon info
 // PokemonInfoFallback: the thing we show while we're loading the pokemon info
@@ -23,9 +23,19 @@ function PokemonInfo({pokemonName}) {
   //   1. no pokemonName: 'Submit a pokemon'
   //   2. pokemonName but no pokemon: <PokemonInfoFallback name={pokemonName} />
   //   3. pokemon: <PokemonDataView pokemon={pokemon} />
-
-  // 💣 remove this
-  return 'TODO'
+  const [pokemon, setPokemon] = React.useState(null);
+  React.useEffect(() => {
+    if(!pokemonName) {
+      return;
+    }
+    fetchPokemon(pokemonName).then(
+      pokemonData => {
+        console.log(pokemonData);
+        setPokemon(pokemonData);
+      },
+    )
+  }, [pokemonName]);
+  return pokemon ? <PokemonDataView pokemon={pokemon} /> : null;
 }
 
 function App() {
