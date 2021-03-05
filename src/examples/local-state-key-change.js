@@ -3,15 +3,15 @@
 // http://localhost:3000/isolated/examples/local-state-key-change.js
 
 import * as React from 'react'
-import { useLocalStorageState } from '../utils';
+import {useLocalStorageState} from '../utils'
 
 function Greeting({initialName = ''}) {
-  const [key, setKey] = React.useState('name');
+  const [key, setKey] = React.useState('name')
   const [name, setName] = useLocalStorageState(key, initialName)
 
   function handleClick() {
     if (key === 'name') {
-      setKey('firstName');
+      setKey('firstName')
     } else if (key === 'firstName') {
       setKey('Name')
     } else {
@@ -25,7 +25,9 @@ function Greeting({initialName = ''}) {
 
   return (
     <div>
-      <button type="button" onClick={handleClick}>Change key!</button>
+      <button type="button" onClick={handleClick}>
+        Change key!
+      </button>
       <form>
         <label htmlFor="name">Name: </label>
         <input value={name} onChange={handleChange} id="name" />
