@@ -93,9 +93,7 @@ function calculateStatus(winner, squares, nextValue) {
 
 // eslint-disable-next-line no-unused-vars
 function calculateNextValue(squares) {
-  const xSquaresCount = squares.filter(r => r === 'X').length
-  const oSquaresCount = squares.filter(r => r === 'O').length
-  return oSquaresCount === xSquaresCount ? 'X' : 'O'
+  return squares.filter(Boolean).length % 2 === 0 ? 'X' : 'O'
 }
 
 // eslint-disable-next-line no-unused-vars
