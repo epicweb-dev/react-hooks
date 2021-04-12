@@ -218,6 +218,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://www.linkedin.com/in/johnalexanderferguson/"><img src="https://avatars.githubusercontent.com/u/30883573?v=4?s=100" width="100px;" alt=""/><br /><sub><b>John Alexander Ferguson</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=Alferguson" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://trentschneweis.com"><img src="https://avatars.githubusercontent.com/u/10525549?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Trent Schneweis</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=trentschnee" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/lionheart"><img src="https://avatars.githubusercontent.com/u/38447?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dan Loewenherz</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=dlo" title="Code">💻</a></td>
+    <td align="center"><a href="https://prabhuwali.me/"><img src="https://avatars.githubusercontent.com/u/40115160?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shivaprabhu</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=shivaprabhu" title="Documentation">📖</a></td>
   </tr>
 </table>
 
