@@ -365,6 +365,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "shivaprabhu",
+      "name": "Shivaprabhu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40115160?v=4",
+      "profile": "https://prabhuwali.me/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
