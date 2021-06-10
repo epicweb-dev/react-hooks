@@ -374,6 +374,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "JacobParis",
+      "name": "Jacob Paris",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5633704?v=4",
+      "profile": "https://www.jacobparis.com/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
