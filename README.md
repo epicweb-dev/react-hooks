@@ -1,11 +1,10 @@
 <div>
   <h1 align="center"><a href="https://epicreact.dev/hooks">🎣 React Hooks 🚀 EpicReact.Dev</a></h1>
   <strong>
-    There are better patterns and practices that are an entirely new approach to
-    developing components and managing state in your React applications.
+    Learn the ins and outs of React Hooks. 
   </strong>
   <p>
-    Learn the ins and outs of React Hooks. I will take you on a deep dive into
+    I will take you on a deep dive into
     React Hooks, and show you what you need to know to start using them in your
     applications right away.
   </p>
