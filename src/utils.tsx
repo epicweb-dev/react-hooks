@@ -19,7 +19,7 @@ function useLocalStorageState<TState>(
     deserialize = JSON.parse,
   }: UseLocalStorageOptions<TState> = {},
 ) {
-  const [state, setState] = React.useState(() => {
+  const [state, setState] = React.useState<TState>(() => {
     const valueInLocalStorage = window.localStorage.getItem(key)
     if (valueInLocalStorage) {
       // the try/catch is here in case the localStorage value was set before
