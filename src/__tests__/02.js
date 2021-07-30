@@ -10,7 +10,10 @@ afterEach(() => {
 
 test('App works', () => {
   const {rerender} = render(<App />)
-  userEvent.type(screen.getByRole('textbox', {name: /name/i}), 'bob')
+  const inputTextbox = screen.getByRole('textbox', {name: /name/i})
+  
+  userEvent.clear(inputTextbox)
+  userEvent.type(inputTextbox, 'bob')
   const lsName = window.localStorage.getItem('name')
 
   // extra credit 4 serializes the value in localStorage so there's a bit of a
