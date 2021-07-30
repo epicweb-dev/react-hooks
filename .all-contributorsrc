@@ -384,6 +384,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Eik-S",
+      "name": "Eike Mücksch",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9152141?v=4",
+      "profile": "https://github.com/Eik-S",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
