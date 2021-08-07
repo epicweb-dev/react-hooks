@@ -221,6 +221,9 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://www.jacobparis.com/"><img src="https://avatars.githubusercontent.com/u/5633704?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jacob Paris</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=JacobParis" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Eik-S"><img src="https://avatars.githubusercontent.com/u/9152141?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eike Mücksch</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=Eik-S" title="Tests">⚠️</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="http://pavlos.dev"><img src="https://avatars.githubusercontent.com/u/100233?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Pavlos Vinieratos</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=pvinis" title="Documentation">📖</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
