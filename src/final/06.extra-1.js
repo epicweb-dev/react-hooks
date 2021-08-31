@@ -56,6 +56,13 @@ function App() {
       <div className="pokemon-info">
         <PokemonInfo pokemonName={pokemonName} />
       </div>
+} else if (!pokemonName) {
+    return 'Submit a pokemon'
+  } else if (!pokemon) {
+    return <PokemonInfoFallback name={pokemonName} />
+  } else {
+    return <PokemonDataView pokemon={pokemon} />
+  }
     </div>
   )
 }
