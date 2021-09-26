@@ -11,7 +11,7 @@ afterEach(() => {
 test('App works', () => {
   const {rerender} = render(<App />)
   const inputTextbox = screen.getByRole('textbox', {name: /name/i})
-  
+
   userEvent.clear(inputTextbox)
   userEvent.type(inputTextbox, 'bob')
   const lsName = window.localStorage.getItem('name')
