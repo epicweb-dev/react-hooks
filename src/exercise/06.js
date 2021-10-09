@@ -17,7 +17,7 @@ function PokemonInfo({pokemonName}) {
   // 🐨 before calling `fetchPokemon`, clear the current pokemon state by setting it to null
   // 💰 Use the `fetchPokemon` function to fetch a pokemon by its name:
   //   fetchPokemon('Pikachu').then(
-  //     pokemonData => { /* update all the state here */},
+  //     pokemonData => {/* update all the state here */},
   //   )
   // 🐨 return the following things based on the `pokemon` state and `pokemonName` prop:
   //   1. no pokemonName: 'Submit a pokemon'
