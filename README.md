@@ -1,7 +1,7 @@
 <div>
   <h1 align="center"><a href="https://epicreact.dev/hooks">🎣 React Hooks 🚀 EpicReact.Dev</a></h1>
   <strong>
-    Learn the ins and outs of React Hooks. 
+    Learn the ins and outs of React Hooks.
   </strong>
   <p>
     I will take you on a deep dive into
