@@ -20,6 +20,7 @@ function PokemonInfo({pokemonName}) {
 
   React.useEffect(() => {
     if (!pokemonName) {
+      setState({status:'idle'}) 
       return
     }
     setState({status: 'pending'})

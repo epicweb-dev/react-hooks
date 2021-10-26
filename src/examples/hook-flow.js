@@ -69,6 +69,16 @@ function App() {
   })
 
   React.useEffect(() => {
+    console.log('%cApp: useEffect(() => {}, [showChild])', 'color: HotPink')
+    return () => {
+      console.log(
+        '%cApp: useEffect(() => {}, [showChild]) cleanup 🧹',
+        'color: HotPink',
+      )
+    }
+  }, [showChild])
+  
+  React.useEffect(() => {
     console.log('%cApp: useEffect(() => {})', 'color: LightCoral')
     return () => {
       console.log('%cApp: useEffect(() => {}) cleanup 🧹', 'color: LightCoral')
@@ -85,15 +95,7 @@ function App() {
     }
   }, [])
 
-  React.useEffect(() => {
-    console.log('%cApp: useEffect(() => {}, [showChild])', 'color: HotPink')
-    return () => {
-      console.log(
-        '%cApp: useEffect(() => {}, [showChild]) cleanup 🧹',
-        'color: HotPink',
-      )
-    }
-  }, [showChild])
+  
 
   const element = (
     <>

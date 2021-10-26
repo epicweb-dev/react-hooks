@@ -18,6 +18,7 @@ class ErrorBoundary extends React.Component {
   render() {
     const {error} = this.state
     if (error) {
+     
       return <this.props.FallbackComponent error={error} />
     }
 
