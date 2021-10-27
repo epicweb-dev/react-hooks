@@ -1,103 +1,51 @@
 // DOM Side-Effects
-// http://localhost:3000/isolated/final/02.extra-4.tsx
+// 💯 Side-effect cleanup
+// http://localhost:3000/isolated/exercise/05.tsx
 
 import * as React from 'react'
-import {useLocalStorageState} from '../utils'
+import VanillaTilt from 'vanilla-tilt'
 
-function UsernameForm({
-  initialUsername = '',
-  onSubmitUsername,
-}: {
-  initialUsername?: string
-  onSubmitUsername: (username: string) => void
-}) {
-  const [username, setUsername] = useLocalStorageState(
-    'username',
-    initialUsername,
-  )
-  const [touched, setTouched] = React.useState(false)
+function Tilt({children}: {children: React.ReactNode}) {
+  // 🐨 create a ref here with React.useRef()
 
-  const usernameIsLowerCase = username === username.toLowerCase()
-  const usernameIsLongEnough = username.length >= 3
-  const usernameIsShortEnough = username.length <= 10
-  const formIsValid =
-    usernameIsShortEnough && usernameIsLongEnough && usernameIsLowerCase
-
-  const displayErrorMessage = touched && !formIsValid
-
-  // 🐨 Add a useRef here. Call the ref `usernameInputRef`
-  // 🦺 useRef is a generic function and the type you pass is the type of value
-  // you intend to store in the ref. Since we plan to store the <input /> in this
-  // ref, you'll use HTMLInputElement
-
-  // 🐨 Add a useEffect here. Whenever the `displayErrorMessage` state changes,
-  // we want to call `focus()` on usernameInputRef.current if
-  // displayErrorMessage is true.
-  // 💰 You'll want to add `displayErrorMessage` in the effect dependencies array,
+  // 🐨 add a `React.useEffect` callback here and use VanillaTilt to make your
+  // div look fancy.
+  // 💰 like this:
+  // const tiltNode = tiltRef.current
+  // VanillaTilt.init(tiltNode, {
+  //   max: 25,
+  //   speed: 400,
+  //   glare: true,
+  //   'max-glare': 0.5,
+  // })
   //
-  // 🦉 you'll get a linting warning if you try to include `usernameInputRef`
-  // or `usernameInputRef.current`.
-  // 📜 Learn more: https://epicreact.dev/why-you-shouldnt-put-refs-in-a-dependency-array
+  // 🐨 Don't forget to return a cleanup function. VanillaTilt.init will add an
+  // object to your DOM node to cleanup:
+  // `return () => tiltNode.vanillaTilt.destroy()`
+  //
+  // 💰 Don't forget to specify your effect's dependencies array! In our case
+  // we know that the tilt node will never change, so make it `[]`. Ask me about
+  // this for a more in depth explanation.
 
-  let errorMessage = null
-  if (!usernameIsLowerCase) {
-    errorMessage = 'Username must be lower case'
-  } else if (!usernameIsLongEnough) {
-    errorMessage = 'Username must be at least 3 characters long'
-  } else if (!usernameIsShortEnough) {
-    errorMessage = 'Username must be no longer than 10 characters'
-  }
-
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    setTouched(true)
-    if (!formIsValid) return
-
-    onSubmitUsername(username)
-  }
-
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setUsername(event.currentTarget.value)
-  }
-
-  function handleBlur() {
-    setTouched(true)
-  }
-
+  // 🐨 add the `ref` prop to the `tilt-root` div here:
   return (
-    <form name="usernameForm" onSubmit={handleSubmit} noValidate>
-      <div>
-        <label htmlFor="usernameInput">Username:</label>
-        <input
-          // 🐨 set usernameInputRef as a ref prop here
-          id="usernameInput"
-          type="text"
-          value={username}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          pattern="[a-z]{3,10}"
-          required
-          aria-describedby={displayErrorMessage ? 'error-message' : undefined}
-        />
-      </div>
-      {displayErrorMessage ? (
-        <div role="alert" id="error-message">
-          {errorMessage}
-        </div>
-      ) : null}
-      <button type="submit">Submit</button>
-    </form>
-  )
-}
-
-function App() {
-  const onSubmitUsername = (username: string) =>
-    alert(`You entered: ${username}`)
-  return (
-    <div style={{width: 400}}>
-      <UsernameForm onSubmitUsername={onSubmitUsername} />
+    <div className="tilt-root">
+      <div className="tilt-child">{children}</div>
     </div>
   )
 }
 
+function App() {
+  return (
+    <Tilt>
+      <div className="totally-centered">vanilla-tilt.js</div>
+    </Tilt>
+  )
+}
+
 export {App}
+
+/*
+eslint
+  @typescript-eslint/no-unused-vars: "off",
+*/
