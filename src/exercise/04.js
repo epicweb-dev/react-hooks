@@ -3,14 +3,15 @@
 
 import React, { useState} from 'react'
 
+const initialSquares = Array(9).fill(null)
 function Board() {
-  const [squares, setSquares] = useState(Array(9).fill(null))
+  const [squares, setSquares] = useState(initialSquares)
   // - nextValue ('X' or 'O')
-  const [nextValue, setNextValue] = useState(calculateNextValue(squares))
+  const nextValue = calculateNextValue(squares)
   // - winner ('X', 'O', or null)
-  const [winner, setWinner] = useState(calculateWinner(squares))
+  const winner = calculateWinner(squares)
   // - status (`Winner: ${winner}`, `Scratch: Cat's game`, or `Next player: ${nextValue}`)
-  const [status, setStatus] = useState(calculateStatus(winner, squares, nextValue))
+  const status = calculateStatus(winner, squares, nextValue)
 
   // This is the function your square click handler will call. `square` should
   // be an index. So if they click the center square, this will be `4`.
@@ -19,21 +20,10 @@ function Board() {
     const squaresCopy = [...squares]
     squaresCopy[square] = nextValue
     setSquares(squaresCopy)
-    const thisMovesNextValue = calculateNextValue(squaresCopy)
-    setNextValue(thisMovesNextValue)
-    const thisMovesWin = calculateWinner(squaresCopy)
-    setWinner(thisMovesWin)
-    setStatus(calculateStatus(thisMovesWin, squaresCopy, thisMovesNextValue))
   }
 
   function restart() {
-    const initialSquares = Array(9).fill(null)
     setSquares(initialSquares)
-    const initialNextMove = calculateNextValue(initialSquares)
-    setNextValue(initialNextMove)
-    const initialWinner= calculateWinner(initialSquares)
-    setWinner(initialWinner)
-    setStatus(calculateStatus(initialWinner, initialSquares, initialNextMove))
   }
 
   function renderSquare(i) {

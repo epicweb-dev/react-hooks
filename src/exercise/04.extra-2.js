@@ -4,21 +4,22 @@
 import React, { useState } from 'react'
 import { useLocalStorageState } from '../utils.js'
 
+const initialSquares = Array(9).fill(null)
 function Board() {
   const [squares, setSquares] = useLocalStorageState(
     'board',
-    Array(9).fill(null),
+    initialSquares,
     {
       serialize: ((board) => board.toString()),
       deserialize: deserializeBoard
     }
   )
   // - nextValue ('X' or 'O')
-  const [nextValue, setNextValue] = useState(calculateNextValue(squares))
+  const nextValue = calculateNextValue(squares)
   // - winner ('X', 'O', or null)
-  const [winner, setWinner] = useState(calculateWinner(squares))
+  const winner = calculateWinner(squares)
   // - status (`Winner: ${winner}`, `Scratch: Cat's game`, or `Next player: ${nextValue}`)
-  const [status, setStatus] = useState(calculateStatus(winner, squares, nextValue))
+  const status = calculateStatus(winner, squares, nextValue)
 
   function deserializeBoard(boardString) {
     return boardString
@@ -32,21 +33,10 @@ function Board() {
     const squaresCopy = [...squares]
     squaresCopy[square] = nextValue
     setSquares(squaresCopy)
-    const thisMovesNextValue = calculateNextValue(squaresCopy)
-    setNextValue(thisMovesNextValue)
-    const thisMovesWin = calculateWinner(squaresCopy)
-    setWinner(thisMovesWin)
-    setStatus(calculateStatus(thisMovesWin, squaresCopy, thisMovesNextValue))
   }
 
   function restart() {
-    const initialSquares = Array(9).fill(null)
     setSquares(initialSquares)
-    const initialNextMove = calculateNextValue(initialSquares)
-    setNextValue(initialNextMove)
-    const initialWinner= calculateWinner(initialSquares)
-    setWinner(initialWinner)
-    setStatus(calculateStatus(initialWinner, initialSquares, initialNextMove))
   }
 
   function renderSquare(i) {
