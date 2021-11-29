@@ -225,6 +225,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="http://pavlos.dev"><img src="https://avatars.githubusercontent.com/u/100233?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Pavlos Vinieratos</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=pvinis" title="Documentation">📖</a></td>
     <td align="center"><a href="https://mokajima.com/"><img src="https://avatars.githubusercontent.com/u/10166985?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Misaki Okajima</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=mokajima" title="Code">💻</a> <a href="https://github.com/kentcdodds/react-hooks/commits?author=mokajima" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/marioleed"><img src="https://avatars.githubusercontent.com/u/1763448?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mario Sannum</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=marioleed" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jaquinocode"><img src="https://avatars.githubusercontent.com/u/28276675?v=4?s=100" width="100px;" alt=""/><br /><sub><b>jaquinocode</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/issues?q=author%3Ajaquinocode" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
