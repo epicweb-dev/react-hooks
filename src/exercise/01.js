@@ -6,7 +6,7 @@ import {useState} from 'react'
 
 function Greeting() {
   // 💣 delete this variable declaration and replace it with a React.useState call
-  const [name, setName] = useState('')
+  const [name, setName] = useState('Dawid')
 
   function handleChange(event) {
     // 🐨 update the name here based on event.target.value
