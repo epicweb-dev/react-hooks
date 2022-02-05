@@ -212,7 +212,11 @@ function ErrorFallback({error, resetErrorBoundary}: FallbackProps) {
   )
 }
 
-function PokemonErrorBoundary(props: ErrorBoundaryProps) {
+function PokemonErrorBoundary(
+  props: Pick<ErrorBoundaryProps, 'onReset' | 'resetKeys'> & {
+    children: React.ReactNode
+  },
+) {
   return <ErrorBoundary FallbackComponent={ErrorFallback} {...props} />
 }
 
