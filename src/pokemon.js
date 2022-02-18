@@ -173,6 +173,7 @@ function PokemonForm({
           id="pokemonName-input"
           name="pokemonName"
           placeholder="Pokemon Name..."
+          autoFocus
           value={pokemonName}
           onChange={handleChange}
         />
