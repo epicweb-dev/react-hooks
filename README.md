@@ -228,6 +228,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/jaquinocode"><img src="https://avatars.githubusercontent.com/u/28276675?v=4?s=100" width="100px;" alt=""/><br /><sub><b>jaquinocode</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/issues?q=author%3Ajaquinocode" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/Insidiae"><img src="https://avatars.githubusercontent.com/u/28495550?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kobe Ruado</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=Insidiae" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/prasanthlouis/"><img src="https://avatars.githubusercontent.com/u/8705429?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Prasanth Louis</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=prasanthlouis" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://stackoverflow.com/users/5411817/sherylhohman?tab=topactivity"><img src="https://avatars.githubusercontent.com/u/8204778?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sheryl Hohman</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=SherylHohman" title="Code">💻</a></td>
   </tr>
 </table>
 
