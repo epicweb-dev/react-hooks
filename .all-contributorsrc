@@ -448,6 +448,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "SherylHohman",
+      "name": "Sheryl Hohman",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8204778?v=4",
+      "profile": "https://stackoverflow.com/users/5411817/sherylhohman?tab=topactivity",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
