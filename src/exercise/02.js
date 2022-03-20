@@ -2,12 +2,12 @@
 // http://localhost:3000/isolated/exercise/02.js
 
 import * as React from 'react'
-function useLocalStorageState(key,initialName) {
-  const [state, setState] = React.useState(() =>(window.localStorage.getItem(key) ?? initialName))
+function useLocalStorageState(key,initialVal = '') {
+  const [state, setState] = React.useState(() =>(JSON.parse(window.localStorage.getItem(key)) ?? initialVal))
 
   React.useEffect(() => {
-    window.localStorage.setItem(key, state)
-  },[state])
+    window.localStorage.setItem(key, JSON.stringify(state))
+  },[key,state])
 
 
   return [state,setState];
@@ -44,3 +44,4 @@ function App() {
 }
 
 export default App
+
