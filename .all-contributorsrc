@@ -457,6 +457,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "VictoriaVasys",
+      "name": "Victoria Vasys",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10079657?v=4",
+      "profile": "https://www.victoriavasys.com/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
