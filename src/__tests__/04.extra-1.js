@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event'
 import App from '../final/04.extra-1'
 // import App from '../exercise/04'
 
-test('can play a game of tic tac toe', () => {
+test('can play a game of tic tac toe', async () => {
   const {container} = render(<App />)
   // prettier-ignore
   const [
@@ -15,36 +15,36 @@ test('can play a game of tic tac toe', () => {
   ] = Array.from(container.querySelectorAll('button'))
   expect(screen.getByText('Next player: X')).toBeInTheDocument()
 
-  userEvent.click(s1)
+  await userEvent.click(s1)
   expect(s1).toHaveTextContent('X')
 
   expect(screen.getByText('Next player: O')).toBeInTheDocument()
-  userEvent.click(s5)
+  await userEvent.click(s5)
   expect(s5).toHaveTextContent('O')
 
   expect(screen.getByText('Next player: X')).toBeInTheDocument()
-  userEvent.click(s9)
+  await userEvent.click(s9)
   expect(s9).toHaveTextContent('X')
 
   expect(screen.getByText('Next player: O')).toBeInTheDocument()
-  userEvent.click(s7)
+  await userEvent.click(s7)
   expect(s7).toHaveTextContent('O')
 
   expect(screen.getByText('Next player: X')).toBeInTheDocument()
-  userEvent.click(s3)
+  await userEvent.click(s3)
   expect(s3).toHaveTextContent('X')
 
   expect(screen.getByText('Next player: O')).toBeInTheDocument()
-  userEvent.click(s2)
+  await userEvent.click(s2)
   expect(s2).toHaveTextContent('O')
 
   expect(screen.getByText('Next player: X')).toBeInTheDocument()
-  userEvent.click(s6)
+  await userEvent.click(s6)
   expect(s6).toHaveTextContent('X')
 
   // game is over so no more moves may be played
   expect(screen.getByText('Winner: X')).toBeInTheDocument()
-  userEvent.click(s4)
+  await userEvent.click(s4)
   expect(s4).toHaveTextContent('')
 
   alfredTip(

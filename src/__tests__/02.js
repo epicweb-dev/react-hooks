@@ -8,12 +8,12 @@ afterEach(() => {
   window.localStorage.removeItem('name')
 })
 
-test('App works', () => {
+test('App works', async () => {
   const {rerender} = render(<App />)
   const inputTextbox = screen.getByRole('textbox', {name: /name/i})
 
-  userEvent.clear(inputTextbox)
-  userEvent.type(inputTextbox, 'bob')
+  await userEvent.clear(inputTextbox)
+  await userEvent.type(inputTextbox, 'bob')
   const lsName = window.localStorage.getItem('name')
 
   // extra credit 4 serializes the value in localStorage so there's a bit of a
