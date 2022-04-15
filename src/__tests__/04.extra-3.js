@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event'
 import App from '../final/04.extra-3'
 // import App from '../exercise/04'
 
-test('can play a game of tic tac toe', () => {
+test('can play a game of tic tac toe', async () => {
   render(<App />)
 
   // prettier-ignore
@@ -19,7 +19,7 @@ test('can play a game of tic tac toe', () => {
   expect(gameStart).toHaveAttribute('disabled')
   expect(gameStart).toHaveTextContent('current')
 
-  userEvent.click(s1)
+  await userEvent.click(s1)
   expect(s1).toHaveTextContent('X')
 
   expect(screen.getByText('Next player: O')).toBeInTheDocument()
@@ -29,7 +29,7 @@ test('can play a game of tic tac toe', () => {
   expect(firstMove).toHaveAttribute('disabled')
   expect(firstMove).toHaveTextContent('current')
 
-  userEvent.click(s5)
+  await userEvent.click(s5)
   expect(s5).toHaveTextContent('O')
   const secondMove = screen.getByText(/go to move #2/i)
   expect(gameStart).not.toHaveAttribute('disabled')
@@ -39,7 +39,7 @@ test('can play a game of tic tac toe', () => {
   expect(secondMove).toHaveAttribute('disabled')
   expect(secondMove).toHaveTextContent('current')
 
-  userEvent.click(firstMove)
+  await userEvent.click(firstMove)
   expect(gameStart).not.toHaveAttribute('disabled')
   expect(gameStart).not.toHaveTextContent('current')
   expect(firstMove).toHaveAttribute('disabled')
@@ -69,12 +69,12 @@ test('can play a game of tic tac toe', () => {
     'Make sure that the localStorage item is updated with the JSON.stringified squares array',
   )
 
-  userEvent.click(gameStart)
+  await userEvent.click(gameStart)
   expect(s1).toHaveTextContent('')
   expect(s5).toHaveTextContent('')
   expect(screen.queryAllByRole('listitem').length).toBe(3)
 
-  userEvent.click(screen.getByText('restart'))
+  await userEvent.click(screen.getByText('restart'))
   expect(s1).toHaveTextContent('')
   expect(s5).toHaveTextContent('')
   expect(screen.queryAllByRole('listitem').length).toBe(1)

@@ -32,6 +32,10 @@
   [Why React Hooks](https://www.youtube.com/watch?v=zWsZcBiwgVE&list=PLV5CVI1eNcJgNqzNwcs4UKrlJdhfDjshf)
   (35 minutes)
 
+> NOTE: The EpicReact.dev videos were recorded with React version ^16.13 and all
+> material in this repo has been updated to React version ^18. Differences are
+> minor and any relevant differences are noted in the instructions.
+
 ## System Requirements
 
 - [git][git] v2.13 or greater

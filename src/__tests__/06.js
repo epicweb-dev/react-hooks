@@ -14,21 +14,21 @@ test('displays the pokemon', async () => {
   const submit = screen.getByText(/^submit$/i)
 
   // verify that an initial request is made when mounted
-  userEvent.type(input, 'pikachu')
-  userEvent.click(submit)
+  await userEvent.type(input, 'pikachu')
+  await userEvent.click(submit)
 
   await screen.findByRole('heading', {name: /pikachu/i})
 
   // verify that a request is made when props change
-  userEvent.clear(input)
-  userEvent.type(input, 'ditto')
-  userEvent.click(submit)
+  await userEvent.clear(input)
+  await userEvent.type(input, 'ditto')
+  await userEvent.click(submit)
 
   await screen.findByRole('heading', {name: /ditto/i})
 
   // verify that when props remain the same a request is not made
   window.fetch.mockClear()
-  userEvent.click(submit)
+  await userEvent.click(submit)
 
   await screen.findByRole('heading', {name: /ditto/i})
 
