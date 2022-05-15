@@ -245,6 +245,7 @@ Thanks goes to these wonderful people
   </tr>
   <tr>
     <td align="center"><a href="https://www.victoriavasys.com/"><img src="https://avatars.githubusercontent.com/u/10079657?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Victoria Vasys</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=VictoriaVasys" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/ImElan"><img src="https://avatars.githubusercontent.com/u/59192383?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Elan</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=ImElan" title="Documentation">📖</a></td>
   </tr>
 </table>
 
