@@ -5,10 +5,11 @@ import * as React from 'react'
 
 function Greeting() {
   // 💣 delete this variable declaration and replace it with a React.useState call
-  const name = ''
+  const [name, setName] = React.useState('')
 
   function handleChange(event) {
     // 🐨 update the name here based on event.target.value
+    setName(event.target.value)
   }
 
   return (
