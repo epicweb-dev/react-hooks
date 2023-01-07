@@ -502,6 +502,15 @@
       "contributions": [
         "test"
       ]
+    },
+    {
+      "login": "romach",
+      "name": "Roman Cherepanov",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2506484?v=4",
+      "profile": "https://github.com/romach",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
