@@ -250,6 +250,7 @@ Thanks goes to these wonderful people
       <td align="center"><a href="http://about.me/mbehtemam"><img src="https://avatars.githubusercontent.com/u/1811124?v=4?s=100" width="100px;" alt="Mohammad Bagher Ehtemam"/><br /><sub><b>Mohammad Bagher Ehtemam</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=MBehtemam" title="Documentation">📖</a></td>
       <td align="center"><a href="https://github.com/leggsimon"><img src="https://avatars.githubusercontent.com/u/11544418?v=4?s=100" width="100px;" alt="Simon Legg"/><br /><sub><b>Simon Legg</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=leggsimon" title="Documentation">📖</a></td>
       <td align="center"><a href="https://github.com/PhilippVujic"><img src="https://avatars.githubusercontent.com/u/28774924?v=4?s=100" width="100px;" alt="Philipp Vujic"/><br /><sub><b>Philipp Vujic</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=PhilippVujic" title="Tests">⚠️</a></td>
+      <td align="center"><a href="https://github.com/romach"><img src="https://avatars.githubusercontent.com/u/2506484?v=4?s=100" width="100px;" alt="Roman Cherepanov"/><br /><sub><b>Roman Cherepanov</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=romach" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
