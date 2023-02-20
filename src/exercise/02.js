@@ -9,7 +9,12 @@ function Greeting({initialName = ''}) {
 
   //change the argument to the local stored name.
   //const [name, setName] = React.useState(initialName)
-  const [name, setName] = React.useState(window.localStorage.getItem('name') ?? initialName)
+  
+  //const [name, setName] = React.useState(window.localStorage.getItem('name') ?? initialName)
+
+  //Extra credit 1 implementing the Lazy state initialization.
+
+  const [name, setName] = React.useState(() => window.localStorage.getItem('name') ?? initialName)
 
   // 🐨 Here's where you'll use `React.useEffect`.
 
