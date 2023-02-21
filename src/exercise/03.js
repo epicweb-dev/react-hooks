@@ -3,11 +3,16 @@
 
 import * as React from 'react'
 
-function Name({name, onNameChange}) {
+//set in the name function to colocate or push down instead of lifting up.
+
+//function modified to colocate the name state and return the state management to the
+//name function.
+function Name() {
+  const [name, setName] = React.useState('')
   return (
     <div>
       <label htmlFor="name">Name: </label>
-      <input id="name" value={name} onChange={onNameChange} />
+      <input id="name" value={name} onChange={event => setName(event.target.value)} />
     </div>
   )
 }
