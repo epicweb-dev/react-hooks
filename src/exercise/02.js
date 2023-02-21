@@ -7,13 +7,51 @@ import * as React from 'react'
 //making a custom react hook with the react.useEffect() for extra credit 3.
 //all of the getting and setting logic us done in this custom hook.
 
+
+//extra credit 4, changing the custom hook to accept any data type, made by parsing into strings.
+/*
 function useLocalStorageState(key, defaultValue = ''){
   const [state, setState] = React.useState(() => window.localStorage.getItem(key) ?? defaultValue)
   React.useEffect(() => {window.localStorage.setItem(key, state)}, [key, state])
 
   return [state, setState]
 
+}
+*/
 
+//This serialized and pares implementation supports any data type
+//it does have more computations than if it were a bespoked type.
+
+//there is the use of the dependencies array in the use effect, and remember that
+// this function starts with React.useState and then in the second part of the function
+//it uses the React.useEffect with dependencies 
+
+//ask Ed about override and overload. and review the code with just to clear questions.
+function useLocalStorageState(key, defaultValue ='', {serialize = JSON.stringify, deserialize = JSON.parse} = {}){
+  const [state, setState] = React.useState(()=> {
+    const valueInLocalStorage = window.localStorage.getItem(key)
+    if (valueInLocalStorage){
+      try{
+        return deserialize(valueInLocalStorage)
+      }
+      catch(error){
+        window.localStorage.removeItem(key)
+      }
+    }
+    return typeof defaultValue === 'function' ? defaultValue() : defaultValue
+  })
+  const prevKeyRef = React.useRef(key)
+
+  React.useEffect(()=>{
+    const prevKey = prevKeyRef.current
+    if(prevKey != key){
+      window.localStorage.removeItem(prevKey)
+    }
+    prevKeyRef.current = key
+    window.localStorage.setItem(key, serialize(state))
+  }, [key, state, serialize]
+  )
+  return [state, setState]
 }
 
 function Greeting({initialName = ''}) {
