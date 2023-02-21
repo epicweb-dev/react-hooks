@@ -3,6 +3,19 @@
 
 import * as React from 'react'
 
+
+//making a custom react hook with the react.useEffect() for extra credit 3.
+//all of the getting and setting logic us done in this custom hook.
+
+function useLocalStorageState(key, defaultValue = ''){
+  const [state, setState] = React.useState(() => window.localStorage.getItem(key) ?? defaultValue)
+  React.useEffect(() => {window.localStorage.setItem(key, state)}, [key, state])
+
+  return [state, setState]
+
+
+}
+
 function Greeting({initialName = ''}) {
   // 🐨 initialize the state to the value from localStorage
   // 💰 window.localStorage.getItem('name') ?? initialName
@@ -14,7 +27,9 @@ function Greeting({initialName = ''}) {
 
   //Extra credit 1 implementing the Lazy state initialization.
 
-  const [name, setName] = React.useState(() => window.localStorage.getItem('name') ?? initialName)
+  //const [name, setName] = React.useState(() => window.localStorage.getItem('name') ?? initialName)
+  //extra credit implementation of th cutom hook.
+  const [name, setName] = useLocalStorageState('name', initialName)
 
   // 🐨 Here's where you'll use `React.useEffect`.
 
