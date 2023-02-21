@@ -20,9 +20,13 @@ function Greeting({initialName = ''}) {
 
   //impleneting the React.useEffect to get the value from local storage and keep local
   //storage updated as the 'name' is updated.
+
+  //extra credit 2, sdding the dependencies array to the useEffect second parameter.
 React.useEffect(() => {
   window.localStorage.setItem('name', name)
-})
+}, [name]
+)
+// the name dependencies makes sure to call only when the name is changed.
 
   // The callback should set the `name` in localStorage.
   // 💰 window.localStorage.setItem('name', name)
