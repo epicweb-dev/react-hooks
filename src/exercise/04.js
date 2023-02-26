@@ -2,7 +2,8 @@
 // http://localhost:3000/isolated/exercise/04.js
 
 import * as React from 'react'
-
+//importing the custom hook from the src/utils.js
+import {useLocalStorageState} from '../utils'
 function Board() {
   // 🐨 squares is the state for this component. Add useState for squares
   
@@ -12,12 +13,16 @@ function Board() {
   //this is the new implenetation with useState.
 
   //implementing the localStoage use to save the state of the game. for extra credit 1
-  const[squares, setSquares] = React.useState(()=>JSON.parse(localStorage.getItem('squares') || Array(9).fill(null)))
+  //const[squares, setSquares] = React.useState(()=>JSON.parse(localStorage.getItem('squares') || Array(9).fill(null)))
   // remember that the get item from local storage needs to be between ''.
 
-  React.useEffect(()=>{window.localStorage.setItem('squares', JSON.stringify(squares))}, [squares])
+  //extra credit 2 using the costum hook from utils.
+  const [squares, setSquares] = useLocalStorageState('squares', Array(9).fill(null))
 
-//using local storage to save the state working, ask Ed where in the browser is this data being held.
+  //React.useEffect(()=>{window.localStorage.setItem('squares', JSON.stringify(squares))}, [squares])
+  //removing the stringify since the 'useLocalStorageState' serializes and deserializes the string from within.
+
+  //using local storage to save the state working, ask Ed where in the browser is this data being held.
 
   // 🐨 We'll need the following bits of derived state:
   // - nextValue ('X' or 'O')
