@@ -8,8 +8,16 @@ function Board() {
   
   //const squares = Array(9).fill(null)
 
-  const [squares, setSquares] = React.useState(Array(9).fill(null))
+  //const [squares, setSquares] = React.useState(Array(9).fill(null))
   //this is the new implenetation with useState.
+
+  //implementing the localStoage use to save the state of the game. for extra credit 1
+  const[squares, setSquares] = React.useState(()=>JSON.parse(localStorage.getItem('squares') || Array(9).fill(null)))
+  // remember that the get item from local storage needs to be between ''.
+
+  React.useEffect(()=>{window.localStorage.setItem('squares', JSON.stringify(squares))}, [squares])
+
+//using local storage to save the state working, ask Ed where in the browser is this data being held.
 
   // 🐨 We'll need the following bits of derived state:
   // - nextValue ('X' or 'O')
