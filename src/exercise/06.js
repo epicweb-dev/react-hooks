@@ -17,6 +17,10 @@ import {PokemonForm} from '../pokemon'
 
 function PokemonInfo({pokemonName}) {
   // 🐨 Have state for the pokemon (null)
+
+  //state for status for extra credit 2.
+  const [status, setStatus] = React.useState('idle')
+
   const [pokemon, setPokemon] = React.useState(null)
   const [error, setError] = React.useState(null)
   // 🐨 use React.useEffect where the callback should be called whenever the
@@ -24,17 +28,28 @@ function PokemonInfo({pokemonName}) {
 
   React.useEffect(()=>{
     if(!pokemonName){return} //early return if no pokemon name.
-    setPokemon(null) //clearing the pokemon state by setting to null.
 
+    setStatus('pending')
+    setPokemon(null) //clearing the pokemon state by setting to null.
     setError(null)
 
     fetchPokemon(pokemonName).then(
-      pokemon => setPokemon(pokemon),
-      error => setError(error),
+      pokemon => {
+        setPokemon(pokemon)
+        setStatus('resolved')
+      },
+      error => {
+        setError(error)
+        setStatus('rejected')
+      },
       )
   }, [pokemonName]) //dependencies array set for pokemonName change.
 
-  
+  /* Another promise error handling implementtion. For reference.
+  fetchPokemon(pokemonName)
+  .then(pokemon => setPokemon(pokemon))
+  .catch(error => setError(error))
+  */
   
 
   // 💰 DON'T FORGET THE DEPENDENCIES ARRAY!
@@ -54,7 +69,7 @@ function PokemonInfo({pokemonName}) {
 
   //handling the error for extra credit 1
 
-  if(error){
+  if(status === 'rejected'){
       //missed the return, error statement entered yet didn't return the desired tag.
     return(
     <div role="alert">
@@ -62,11 +77,11 @@ function PokemonInfo({pokemonName}) {
     </div>
     )
   }
-    else if(!pokemonName){
+    else if(status === 'idle'){
     return 'Submit a pokemon'
-  } else if(!pokemon){
+  } else if(status === 'pending'){
     return <PokemonInfoFallback name={pokemonName} />
-  } else{
+  } else if(status === 'resolved'){
     return <PokemonDataView pokemon={pokemon} />
   }
 
