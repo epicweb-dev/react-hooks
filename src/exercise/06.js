@@ -18,15 +18,24 @@ import {PokemonForm} from '../pokemon'
 function PokemonInfo({pokemonName}) {
   // 🐨 Have state for the pokemon (null)
   const [pokemon, setPokemon] = React.useState(null)
+  const [error, setError] = React.useState(null)
   // 🐨 use React.useEffect where the callback should be called whenever the
   // pokemon name changes.
+
   React.useEffect(()=>{
     if(!pokemonName){return} //early return if no pokemon name.
     setPokemon(null) //clearing the pokemon state by setting to null.
 
-    fetchPokemon(pokemonName).then(pokemon => setPokemon(pokemon))
+    setError(null)
 
+    fetchPokemon(pokemonName).then(
+      pokemon => setPokemon(pokemon),
+      error => setError(error),
+      )
   }, [pokemonName]) //dependencies array set for pokemonName change.
+
+  
+  
 
   // 💰 DON'T FORGET THE DEPENDENCIES ARRAY!
   // 💰 if the pokemonName is falsy (an empty string) then don't bother making the request (exit early).
@@ -43,7 +52,17 @@ function PokemonInfo({pokemonName}) {
   //   2. pokemonName but no pokemon: <PokemonInfoFallback name={pokemonName} />
   //   3. pokemon: <PokemonDataView pokemon={pokemon} />
 
-  if(!pokemonName){
+  //handling the error for extra credit 1
+
+  if(error){
+      //missed the return, error statement entered yet didn't return the desired tag.
+    return(
+    <div role="alert">
+      There was an error: <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
+    </div>
+    )
+  }
+    else if(!pokemonName){
     return 'Submit a pokemon'
   } else if(!pokemon){
     return <PokemonInfoFallback name={pokemonName} />
