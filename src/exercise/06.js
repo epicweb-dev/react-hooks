@@ -12,37 +12,56 @@ import * as React from 'react'
 import {
   fetchPokemon,
   PokemonInfoFallback,
-  PokemonDataView
+  PokemonDataView,
+  PokemonForm
 } from '../pokemon'
 
-import {PokemonForm} from '../pokemon'
+//import {PokemonForm} from '../pokemon'
 
 function PokemonInfo({pokemonName}) {
   // 🐨 Have state for the pokemon (null)
 
   //state for status for extra credit 2.
-  const [status, setStatus] = React.useState('idle')
 
-  const [pokemon, setPokemon] = React.useState(null)
-  const [error, setError] = React.useState(null)
+  //pertinent chages for extra credit 3 using just one useState.
+
+  //const [status, setStatus] = React.useState('idle')
+
+  //const [pokemon, setPokemon] = React.useState(null)
+  //const [error, setError] = React.useState(null)
+
+  const [state, setState] = React.useState({
+    status: 'idle',
+    pokemon: null,
+    error: null
+  })
+
+  const {status, pokemon, error}  = state
+
   // 🐨 use React.useEffect where the callback should be called whenever the
   // pokemon name changes.
 
   React.useEffect(()=>{
     if(!pokemonName){return} //early return if no pokemon name.
 
-    setStatus('pending')
-    setPokemon(null) //clearing the pokemon state by setting to null.
-    setError(null)
+
+    setState({status: 'pending'})
+    //setStatus('pending')
+    
+    //setPokemon(null) //clearing the pokemon state by setting to null.
+    //setError(null)
 
     fetchPokemon(pokemonName).then(
       pokemon => {
-        setPokemon(pokemon)
-        setStatus('resolved')
+        setState({status:'resolved', pokemon})
+        //setPokemon(pokemon)
+        //setStatus('resolved')
       },
       error => {
-        setError(error)
-        setStatus('rejected')
+        setState({status:'rejected', error  })
+        
+        //setError(error)
+        //setStatus('rejected')
       },
       )
   }, [pokemonName]) //dependencies array set for pokemonName change.
