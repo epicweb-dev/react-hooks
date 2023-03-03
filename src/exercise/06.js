@@ -7,6 +7,8 @@ import * as React from 'react'
 // PokemonInfoFallback: the thing we show while we're loading the pokemon info
 // PokemonDataView: the stuff we use to display the pokemon info
 
+//going now for extra credit 3
+
 import {
   fetchPokemon,
   PokemonInfoFallback,
