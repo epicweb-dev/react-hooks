@@ -151,12 +151,13 @@ function App() {
       <PokemonForm pokemonName={pokemonName} onSubmit={handleSubmit} />
       <hr />
       <div className="pokemon-info">
-        <ErrorBoundery FallbackComponent={ErrorFallback}>
+        <ErrorBoundery key={pokemonName} FallbackComponent={ErrorFallback}>
           <PokemonInfo pokemonName={pokemonName} />
         </ErrorBoundery>
       </div>
     </div>
-  )
+  )// adding the key to the ErrorBoundery as to reset and rerender the children that has been 
+  //passed down.
 }
 
 export default App
