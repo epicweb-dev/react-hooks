@@ -118,9 +118,10 @@ function PokemonInfo({pokemonName}) {
 
   if(status === 'rejected'){
       //missed the return, error statement entered yet didn't return the desired tag.
-    return(
+    
 
-      error
+      throw error // changed return to thow for the error.
+      
       //this part will be handled by the react error boundery for extra credit 6.
     /*
     <div role="alert">
@@ -128,7 +129,7 @@ function PokemonInfo({pokemonName}) {
     </div>
     */
 
-    )
+    
   }
     else if(status === 'idle'){
     return 'Submit a pokemon'
