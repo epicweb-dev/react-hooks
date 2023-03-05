@@ -9,6 +9,8 @@ import * as React from 'react'
 
 //going now for extra credit 3
 
+
+//extra credit 4 using the react error boundery
 import {
   fetchPokemon,
   PokemonInfoFallback,
@@ -16,11 +18,17 @@ import {
   PokemonForm
 } from '../pokemon'
 
+//importing for extra crdit 6.
+import {ErrorBoundery} from 'react-error-boundary'
+
 //import {PokemonForm} from '../pokemon'
 
 //extra credit 4 using the errorBoundery class.
 
 //implementation of the ErrorBoundery class:
+
+//commenting out for extra credit 6.
+/*
 class ErrorBoundery extends React.Component{
   state = {error: null}
   static getDerivedStateFromError(error){
@@ -34,6 +42,7 @@ class ErrorBoundery extends React.Component{
     return this.props.children
   }
 }
+*/
 
 function PokemonInfo({pokemonName}) {
   // 🐨 Have state for the pokemon (null)
@@ -110,9 +119,15 @@ function PokemonInfo({pokemonName}) {
   if(status === 'rejected'){
       //missed the return, error statement entered yet didn't return the desired tag.
     return(
+
+      error
+      //this part will be handled by the react error boundery for extra credit 6.
+    /*
     <div role="alert">
       There was an error: <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
     </div>
+    */
+
     )
   }
     else if(status === 'idle'){
@@ -133,7 +148,6 @@ function ErrorFallback({error}){
     <div role="alert">
       There was an error:{' '}
       <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
-
     </div>
   )
 }
