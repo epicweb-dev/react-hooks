@@ -8,7 +8,8 @@ import * as React from 'react'
 // PokemonDataView: the stuff we use to display the pokemon info
 
 //going now for extra credit 3
-
+//importing for extra crdit 6.
+import {ErrorBoundary} from 'react-error-boundary'
 
 //extra credit 4 using the react error boundery
 import {
@@ -18,8 +19,7 @@ import {
   PokemonForm
 } from '../pokemon'
 
-//importing for extra crdit 6.
-import {ErrorBoundery} from 'react-error-boundary'
+
 
 //import {PokemonForm} from '../pokemon'
 
@@ -57,7 +57,7 @@ function PokemonInfo({pokemonName}) {
   //const [error, setError] = React.useState(null)
 
   const [state, setState] = React.useState({
-    status: 'idle',
+    status: pokemonName ? 'pending' : 'idle',
     pokemon: null,
     error: null
   })
@@ -116,40 +116,43 @@ function PokemonInfo({pokemonName}) {
 
   //handling the error for extra credit 1
 
-  if(status === 'rejected'){
-      //missed the return, error statement entered yet didn't return the desired tag.
-    
-
-      throw error // changed return to thow for the error.
-      
-      //this part will be handled by the react error boundery for extra credit 6.
-    /*
-    <div role="alert">
-      There was an error: <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
-    </div>
-    */
-
-    
-  }
-    else if(status === 'idle'){
+  
+  if(status === 'idle'){
     return 'Submit a pokemon'
   } else if(status === 'pending'){
     return <PokemonInfoFallback name={pokemonName} />
-  } else if(status === 'resolved'){
+  } 
+  else if(status === 'rejected'){
+    //missed the return, error statement entered yet didn't return the desired tag.
+  
+
+    throw error // changed return to thow for the error.
+
+    //this part will be handled by the react error boundery for extra credit 6.
+  /*
+  <div role="alert">
+    There was an error: <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
+  </div>
+  */
+
+  
+}
+  else if(status === 'resolved'){
     return <PokemonDataView pokemon={pokemon} />
   }
 
-  // 💣 remove this
-  //return 'TODO'
 }
 
 //using the new error class with a function
-function ErrorFallback({error}){
+function ErrorFallback({error, resetErrorBoundary}){
   return(
     <div role="alert">
       There was an error:{' '}
       <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
     </div>
+//implementing the error boundery reset with the button with the onClick tag.
+
   )
 }
 
@@ -161,14 +164,20 @@ function App() {
     setPokemonName(newPokemonName)
   }
 
+  //Added the handle reset for the resteErrorBoundery to work, just setting the name 
+  //value back to an empty string.
+  function handleReset(){
+    setPokemonName('')
+  }
+
   return (
     <div className="pokemon-info-app">
       <PokemonForm pokemonName={pokemonName} onSubmit={handleSubmit} />
       <hr />
       <div className="pokemon-info">
-        <ErrorBoundery key={pokemonName} FallbackComponent={ErrorFallback}>
+        <ErrorBoundary FallbackComponent={ErrorFallback} onReset={handleReset}>
           <PokemonInfo pokemonName={pokemonName} />
-        </ErrorBoundery>
+        </ErrorBoundary>
       </div>
     </div>
   )// adding the key to the ErrorBoundery as to reset and rerender the children that has been 
