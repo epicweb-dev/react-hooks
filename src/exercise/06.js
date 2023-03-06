@@ -170,16 +170,23 @@ function App() {
     setPokemonName('')
   }
 
+
+  //implementing 
   return (
     <div className="pokemon-info-app">
       <PokemonForm pokemonName={pokemonName} onSubmit={handleSubmit} />
       <hr />
       <div className="pokemon-info">
-        <ErrorBoundary FallbackComponent={ErrorFallback} onReset={handleReset}>
+        <ErrorBoundary 
+        FallbackComponent={ErrorFallback}
+        onReset={handleReset}
+        resetKeys={[pokemonName]}
+        >
           <PokemonInfo pokemonName={pokemonName} />
         </ErrorBoundary>
       </div>
     </div>
+    //adding the resetKeys set to the pokemonName within the errorBoundery tag.
   )// adding the key to the ErrorBoundery as to reset and rerender the children that has been 
   //passed down.
 }
