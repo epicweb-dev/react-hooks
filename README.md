@@ -253,6 +253,9 @@ Thanks goes to these wonderful people
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/romach"><img src="https://avatars.githubusercontent.com/u/2506484?v=4?s=100" width="100px;" alt="Roman Cherepanov"/><br /><sub><b>Roman Cherepanov</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=romach" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ambujsahu81"><img src="https://avatars.githubusercontent.com/u/118078892?v=4?s=100" width="100px;" alt="Ambuj sahu"/><br /><sub><b>Ambuj sahu</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=ambujsahu81" title="Documentation">📖</a></td>
     </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/pnadalini"><img src="https://avatars.githubusercontent.com/u/26207809?v=4?s=100" width="100px;" alt="Pietro Nadalini"/><br /><sub><b>Pietro Nadalini</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=pnadalini" title="Documentation">📖</a> <a href="https://github.com/kentcdodds/react-hooks/commits?author=pnadalini" title="Code">💻</a></td>
+    </tr>
   </tbody>
 </table>
 
