@@ -520,6 +520,16 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "pnadalini",
+      "name": "Pietro Nadalini",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26207809?v=4",
+      "profile": "https://github.com/pnadalini",
+      "contributions": [
+        "doc",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
