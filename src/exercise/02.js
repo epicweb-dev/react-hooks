@@ -6,7 +6,7 @@ import * as React from 'react'
 function Greeting({initialName = ''}) {
   // 🐨 initialize the state to the value from localStorage
   // 💰 window.localStorage.getItem('name') ?? initialName
-  console.log('rendering')
+  // console.log('rendering')
   const [name, setName] = React.useState(
     () => localStorage.getItem('name') || initialName,
   )
