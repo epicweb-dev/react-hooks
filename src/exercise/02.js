@@ -21,7 +21,7 @@ function Greeting({initialName = ''}) {
 
   React.useEffect(() => {
     localStorage.setItem('name', name)
-  })
+  }, [name])
   return (
     <div>
       <form>
