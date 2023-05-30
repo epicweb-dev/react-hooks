@@ -530,10 +530,20 @@
         "doc",
         "code"
       ]
+    },
+    {
+      "login": "stanulilic",
+      "name": "Stanley Ulili",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25522835?v=4",
+      "profile": "https://www.stanleyulili.com",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "repoHost": "https://github.com",
   "skipCi": true,
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "commitType": "docs"
 }
