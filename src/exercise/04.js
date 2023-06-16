@@ -66,14 +66,13 @@ function Game() {
   }
 
   const moves = history.map((move, index) => {
+    const desc = index === 0 ? "Go to game start" : `Go to move #${index}`;
+    const isCurrentStep = index === currentStep;
     return (
       <li key={index}>
-        <button
-          disabled={index === currentStep}
-          onClick={() => setCurrentStep(index)}
-        >
-          Go to {index === 0 ? "game start" : `move #${index}`}{" "}
-          {index === currentStep && "(current)"}
+        <button disabled={isCurrentStep} onClick={() => setCurrentStep(index)}>
+          {desc}
+          {isCurrentStep && " (current)"}
         </button>
       </li>
     );
