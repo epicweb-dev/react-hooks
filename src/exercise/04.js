@@ -71,8 +71,7 @@ function Game() {
     return (
       <li key={index}>
         <button disabled={isCurrentStep} onClick={() => setCurrentStep(index)}>
-          {desc}
-          {isCurrentStep && " (current)"}
+          {desc} {isCurrentStep && "(current)"}
         </button>
       </li>
     );
