@@ -539,6 +539,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "jaharnum",
+      "name": "Jamie Harnum",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19540539?v=4",
+      "profile": "https://github.com/jaharnum",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
