@@ -1,17 +1,12 @@
-// Managing UI State
-// 💯 Initialize state
-// http://localhost:3000/isolated/final/01.extra-1.tsx
-
 import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
 
 function UsernameForm({
-  initialUsername = '',
   onSubmitUsername,
 }: {
-  initialUsername?: string
   onSubmitUsername: (username: string) => void
 }) {
-  const [username, setUsername] = React.useState(initialUsername)
+  const [username, setUsername] = React.useState('')
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -26,12 +21,7 @@ function UsernameForm({
     <form name="usernameForm" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="usernameInput">Username:</label>
-        <input
-          id="usernameInput"
-          type="text"
-          value={username}
-          onChange={handleChange}
-        />
+        <input id="usernameInput" type="text" onChange={handleChange} />
       </div>
       <button type="submit">Submit</button>
     </form>
@@ -43,12 +33,11 @@ function App() {
     alert(`You entered: ${username}`)
   return (
     <div style={{width: 400}}>
-      <UsernameForm
-        onSubmitUsername={onSubmitUsername}
-        initialUsername="kody"
-      />
+      <UsernameForm onSubmitUsername={onSubmitUsername} />
     </div>
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)

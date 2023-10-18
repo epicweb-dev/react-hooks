@@ -1,0 +1,28 @@
+# Improve Error UX
+
+I don't know about you, but having an error message yelling at me before I've
+had a chance to fill out the field is really annoying. What I think would be
+better is if we wait until the user has focused on the input and then unfocused
+it (this is called "blur"-ing the input).
+
+Here's how you create a `onBlur` event handler:
+
+```tsx
+function handleBlur() {
+  // the user blurred the input...
+}
+const element = <input onBlur={handleBlur} />
+```
+
+So we shouldn't show the error if the form is valid and we shouldn't show it
+unless the user has blurred the input. We've already got the validity working,
+now we just need to keep track of whether the user has blurred the input. To do
+that, we'll need some new state.
+
+Create some new state (with another `React.useState` call) called `showError`
+and start it out as `false`. Then use the `onBlur` event to set that state to
+`true`.
+
+Also, if the user skips the input and just clicks "submit" it should show the
+error as well.
+

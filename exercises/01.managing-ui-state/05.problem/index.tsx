@@ -1,8 +1,5 @@
-// Managing UI State
-// 💯 Improve error accessibility for screen readers
-// http://localhost:3000/isolated/final/01.extra-4.tsx
-
 import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
 
 function UsernameForm({
   initialUsername = '',
@@ -48,7 +45,7 @@ function UsernameForm({
   }
 
   return (
-    <form name="usernameForm" onSubmit={handleSubmit} noValidate>
+    <form name="usernameForm" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="usernameInput">Username:</label>
         <input
@@ -57,15 +54,11 @@ function UsernameForm({
           value={username}
           onChange={handleChange}
           onBlur={handleBlur}
-          pattern="[a-z]{3,10}"
-          required
           aria-describedby={displayErrorMessage ? 'error-message' : undefined}
         />
       </div>
       {displayErrorMessage ? (
-        <div role="alert" id="error-message">
-          {errorMessage}
-        </div>
+        <div id="error-message">{errorMessage}</div>
       ) : null}
       <button type="submit">Submit</button>
     </form>
@@ -82,4 +75,6 @@ function App() {
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)
