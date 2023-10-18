@@ -1,10 +1,14 @@
 {
   "name": "react-hooks",
-  "title": "React Hooks 🎣",
   "description": "The best resources for you to learn React Hooks",
   "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com/)",
   "version": "1.0.0",
   "private": true,
+  "kcd-workshop": {
+    "title": "React Hooks 🎣",
+    "githubRoot": "https://github.com/kentcdodds/react-hooks/blob/main",
+    "root": true
+  },
   "keywords": [],
   "homepage": "https://react-hooks-next.netlify.app/",
   "license": "GPL-3.0-only",
@@ -15,6 +19,7 @@
   },
   "dependencies": {
     "@kentcdodds/react-workshop-app": "^6.0.0",
+    "@kentcdodds/workshop-app": "^2.23.1",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^14.2.1",
     "codegen.macro": "^4.1.0",
@@ -36,7 +41,8 @@
   },
   "scripts": {
     "postinstall": "patch-package --patch-dir config/patches",
-    "start": "craco start",
+    "start": "kcdshop start",
+    "dev": "kcdshop start",
     "build": "craco build",
     "test": "craco test",
     "test:coverage": "npm run test -- --watchAll=false",
