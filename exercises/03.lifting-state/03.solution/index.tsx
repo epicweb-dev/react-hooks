@@ -1,23 +1,11 @@
-// Lifting state
-// http://localhost:3000/isolated/final/03.tsx
-
 import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
 
-function Name({
-  name,
-  onNameChange,
-}: {
-  name: string
-  onNameChange: (newName: string) => void
-}) {
+function Name() {
   return (
     <div>
       <label htmlFor="name">Name: </label>
-      <input
-        id="name"
-        value={name}
-        onChange={event => onNameChange(event.currentTarget.value)}
-      />
+      <input id="name" />
     </div>
   )
 }
@@ -41,20 +29,21 @@ function FavoriteAnimal({
   )
 }
 
-function Display({name, animal}: {name: string; animal: string}) {
-  return <div>{`Hey ${name}, your favorite animal is: ${animal}!`}</div>
+function Display({animal}: {animal: string}) {
+  return <div>{`Your favorite animal is: ${animal}!`}</div>
 }
 
 function App() {
   const [animal, setAnimal] = React.useState('')
-  const [name, setName] = React.useState('')
   return (
     <form>
-      <Name name={name} onNameChange={setName} />
+      <Name />
       <FavoriteAnimal animal={animal} onAnimalChange={setAnimal} />
-      <Display name={name} animal={animal} />
+      <Display animal={animal} />
     </form>
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)

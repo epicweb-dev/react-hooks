@@ -1,14 +1,16 @@
-// Lifting state
-// 💯 removing unnecessary controlled state
-// http://localhost:3000/isolated/final/03.extra-2.tsx
-
 import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
 
 function Name() {
+  const [name, setName] = React.useState('')
   return (
     <div>
       <label htmlFor="name">Name: </label>
-      <input id="name" />
+      <input
+        id="name"
+        value={name}
+        onChange={event => setName(event.currentTarget.value)}
+      />
     </div>
   )
 }
@@ -47,4 +49,6 @@ function App() {
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)
