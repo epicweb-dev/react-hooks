@@ -3,7 +3,7 @@
 // http://localhost:3000/isolated/examples/local-state-key-change.tsx
 
 import * as React from 'react'
-import {useLocalStorageState} from '../utils'
+import {useLocalStorageState} from '~/shared/utils'
 
 function App({initialName = ''}: {initialName?: string}) {
   const [key, setKey] = React.useState('name')
