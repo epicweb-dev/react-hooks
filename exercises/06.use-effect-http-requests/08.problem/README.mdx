@@ -1,0 +1,22 @@
+# Reset the Error Boundary
+
+You may have noticed a problem with the way we're resetting the internal state
+of the `ErrorBoundary` using the `key`. Unfortunately, we're not only
+re-mounting the `ErrorBoundary`, we're also re-mounting the `PokemonInfo` which
+results in a flash of the initial "Submit a pokemon" state whenever we change
+our pokemon.
+
+So let's backtrack on that and instead we'll use `react-error-boundary`'s
+`resetErrorBoundary` function (which will be passed to our `ErrorFallback`
+component) to reset the state of the `ErrorBoundary` when the user clicks a "try
+again" button.
+
+> 💰 feel free to open up the finished version by clicking the link in the app
+> so you can get an idea of how this is supposed to work.
+
+Once you have this button wired up, we need to react to this reset of the
+`ErrorBoundary`'s state by resetting our own state so we don't wind up
+triggering the error again. To do this we can use the `onReset` prop of the
+`ErrorBoundary`. In that function we can simply `setPokemonName` to an empty
+string.
+

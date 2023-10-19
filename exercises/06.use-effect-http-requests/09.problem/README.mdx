@@ -1,0 +1,13 @@
+# Use resetKeys
+
+Unfortunately now the user can't simply select a new pokemon and continue with
+their day. They have to first click "Try again" and then select their new
+pokemon. I think it would be cooler if they can just submit a new `pokemonName`
+and the `ErrorBoundary` would reset itself automatically.
+
+Luckily for us `react-error-boundary` supports this with the `resetKeys` prop.
+You pass an array of values to `resetKeys` and if the `ErrorBoundary` is in an
+error state and any of those values change, it will reset the error boundary.
+
+💰 Your `resetKeys` prop should be: `[pokemonName]`
+
