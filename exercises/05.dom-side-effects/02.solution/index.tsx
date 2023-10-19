@@ -1,8 +1,5 @@
-// DOM Side-Effects
-// 💯 Side-effect cleanup
-// http://localhost:3000/isolated/final/05.tsx
-
 import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
 import VanillaTilt from 'vanilla-tilt'
 
 interface HTMLVanillaTiltElement extends HTMLDivElement {
@@ -40,4 +37,6 @@ function App() {
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)

@@ -1,8 +1,6 @@
-// DOM Side-Effects
-// http://localhost:3000/isolated/final/02.extra-4.tsx
-
 import * as React from 'react'
-import {useLocalStorageState} from '../utils'
+import * as ReactDOM from 'react-dom/client'
+import {useLocalStorageState} from '~/shared/utils'
 
 function UsernameForm({
   initialUsername = '',
@@ -100,4 +98,6 @@ function App() {
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)
