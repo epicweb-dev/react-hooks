@@ -1,35 +1,14 @@
-// Real World Review: Tic Tac Toe
-// 💯 preserve state in localStorage
-// http://localhost:3000/isolated/final/04.extra-1.tsx
-
 import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
 import {
   calculateStatus,
   calculateNextValue,
   calculateWinner,
-} from '../tic-tac-toe-utils'
-import type {Squares} from '../tic-tac-toe-utils'
+} from '~/shared/tic-tac-toe-utils'
+import type {Squares} from '~/shared/tic-tac-toe-utils'
 
 function Board() {
-  const [squares, setSquares] = React.useState<Squares>(() => {
-    let localStorageValue
-    try {
-      localStorageValue = JSON.parse(
-        window.localStorage.getItem('squares') ?? 'null',
-      )
-    } catch (error: unknown) {
-      // something is wrong in localStorage, so don't use it
-    }
-    if (localStorageValue) {
-      return localStorageValue
-    } else {
-      return Array(9).fill(null)
-    }
-  })
-
-  React.useEffect(() => {
-    window.localStorage.setItem('squares', JSON.stringify(squares))
-  }, [squares])
+  const [squares, setSquares] = React.useState<Squares>(Array(9).fill(null))
 
   const nextValue = calculateNextValue(squares)
   const winner = calculateWinner(squares)
@@ -93,4 +72,6 @@ function App() {
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)

@@ -1,15 +1,12 @@
-// Real World Review: Tic Tac Toe
-// 💯 add game history feature
-// http://localhost:3000/isolated/final/04.extra-3.tsx
-
 import * as React from 'react'
-import {useLocalStorageState} from '../utils'
+import * as ReactDOM from 'react-dom/client'
+import {useLocalStorageState} from '~/shared/utils'
 import {
   calculateStatus,
   calculateNextValue,
   calculateWinner,
-} from '../tic-tac-toe-utils'
-import type {Squares} from '../tic-tac-toe-utils'
+} from '~/shared/tic-tac-toe-utils'
+import type {Squares} from '~/shared/tic-tac-toe-utils'
 
 function Board({
   squares,
@@ -117,4 +114,6 @@ function App() {
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)

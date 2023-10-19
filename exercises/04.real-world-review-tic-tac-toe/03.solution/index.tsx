@@ -1,16 +1,18 @@
-// Real World Review: Tic Tac Toe
-// http://localhost:3000/isolated/final/04.tsx
-
 import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
+import {useLocalStorageState} from '~/shared/utils'
 import {
   calculateStatus,
   calculateNextValue,
   calculateWinner,
-} from '../tic-tac-toe-utils'
-import type {Squares} from '../tic-tac-toe-utils'
+} from '~/shared/tic-tac-toe-utils'
+import type {Squares} from '~/shared/tic-tac-toe-utils'
 
 function Board() {
-  const [squares, setSquares] = React.useState<Squares>(Array(9).fill(null))
+  const [squares, setSquares] = useLocalStorageState<Squares>(
+    'squares',
+    Array(9).fill(null),
+  )
 
   const nextValue = calculateNextValue(squares)
   const winner = calculateWinner(squares)
@@ -74,4 +76,6 @@ function App() {
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)

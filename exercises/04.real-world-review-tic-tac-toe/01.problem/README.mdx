@@ -1,0 +1,37 @@
+# Real World Review: Tic Tac Toe
+
+We're going to build tic-tac-toe (with localStorage support)! If you've gone
+through React's official tutorial, this was lifted from that.
+
+You're going to need some managed state and some derived state. Remember from
+exercise 1:
+
+- **Managed State:** State that you need to explicitly manage
+- **Derived State:** State that you can calculate based on other state
+
+`squares` is the managed state and it's the state of the board in a
+single-dimensional array:
+
+```
+[
+  'X', 'O', 'X',
+  'X', 'O', 'O',
+  'X', 'X', 'O'
+]
+```
+
+This will start out as an empty array because it's the start of the game.
+
+`nextValue` will be either the string `X` or `O` and is derived state which you
+can determine based on the value of `squares`. We can determine whose turn it is
+based on how many "X" and "O" squares there are. We've written this out for you
+in a `calculateNextValue` function in the `tic-tac-toe-utils.tsx` file.
+
+`winner` will be either the string `X` or `O` and is derived state which can
+also be determined based on the value of `squares` and we've provided a
+`calculateWinner` function you can use to get that value.
+
+If you want to try this exercise on beast mode then you can ignore
+`calculateNextValue` and `calculateWinner` and write your own version of those
+utilities.
+

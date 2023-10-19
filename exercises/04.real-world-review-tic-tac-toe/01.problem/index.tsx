@@ -1,13 +1,11 @@
-// Real World Review: Tic Tac Toe
-// http://localhost:3000/isolated/exercise/04.tsx
-
 import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
 import {
   calculateStatus,
   calculateNextValue,
   calculateWinner,
-} from '../tic-tac-toe-utils'
-import type {Squares} from '../tic-tac-toe-utils'
+} from '~/shared/tic-tac-toe-utils'
+import type {Squares} from '~/shared/tic-tac-toe-utils'
 
 function Board() {
   // 🐨 squares is the state for this component. Add useState for squares
@@ -89,7 +87,9 @@ function App() {
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)
 
 /*
 eslint
