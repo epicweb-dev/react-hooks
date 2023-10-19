@@ -5,3 +5,6 @@ build
 .idea/
 .vscode/
 .eslintcache
+/playwright-report
+/test-results
+/playground
