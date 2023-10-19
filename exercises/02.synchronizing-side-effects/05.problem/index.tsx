@@ -1,8 +1,5 @@
-// Synchronizing Side-Effects
-// 💯 custom hook
-// http://localhost:3000/isolated/final/02.extra-3.tsx
-
 import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
 
 function useLocalStorageState(key: string, defaultValue: string = '') {
   const [state, setState] = React.useState(
@@ -97,4 +94,6 @@ function App() {
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)

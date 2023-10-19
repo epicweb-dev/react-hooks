@@ -1,18 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom/client'
 
-function useLocalStorageState(key: string, defaultValue: string = '') {
-  const [state, setState] = React.useState(
-    () => window.localStorage.getItem(key) || defaultValue,
-  )
-
-  React.useEffect(() => {
-    window.localStorage.setItem(key, state)
-  }, [key, state])
-
-  return [state, setState] as const
-}
-
 function UsernameForm({
   initialUsername = '',
   onSubmitUsername,
@@ -20,11 +8,14 @@ function UsernameForm({
   initialUsername?: string
   onSubmitUsername: (username: string) => void
 }) {
-  const [username, setUsername] = useLocalStorageState(
-    'username',
-    initialUsername,
+  const [username, setUsername] = React.useState(
+    () => window.localStorage.getItem('username') || initialUsername,
   )
   const [touched, setTouched] = React.useState(false)
+
+  React.useEffect(() => {
+    window.localStorage.setItem('username', username)
+  }, [username])
 
   const usernameIsLowerCase = username === username.toLowerCase()
   const usernameIsLongEnough = username.length >= 3

@@ -1,8 +1,48 @@
-// Synchronizing Side-Effects
-// 💯 lazy state initialization
-// http://localhost:3000/isolated/final/02.extra-1.tsx
-
 import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
+
+type UseLocalStorageOptions<TState = unknown> = {
+  serialize?: (data: TState) => string
+  deserialize?: (str: string) => TState
+}
+function useLocalStorageState<TState>(
+  key: string,
+  defaultValue: TState | (() => TState),
+  {
+    serialize = JSON.stringify,
+    deserialize = JSON.parse,
+  }: UseLocalStorageOptions<TState> = {},
+) {
+  const [state, setState] = React.useState(() => {
+    const valueInLocalStorage = window.localStorage.getItem(key)
+    if (valueInLocalStorage) {
+      // the try/catch is here in case the localStorage value was set before
+      // we had the serialization in place (like we do in previous extra credits)
+      try {
+        return deserialize(valueInLocalStorage)
+      } catch (error) {
+        window.localStorage.removeItem(key)
+      }
+    }
+    // can't do typeof because:
+    // https://github.com/microsoft/TypeScript/issues/37663#issuecomment-759728342
+    return defaultValue instanceof Function ? defaultValue() : defaultValue
+  })
+
+  const prevKeyRef = React.useRef(key)
+
+  // Check the example at src/examples/local-state-key-change.js to visualize a key change
+  React.useEffect(() => {
+    const prevKey = prevKeyRef.current
+    if (prevKey !== key) {
+      window.localStorage.removeItem(prevKey)
+    }
+    prevKeyRef.current = key
+    window.localStorage.setItem(key, serialize(state))
+  }, [key, state, serialize])
+
+  return [state, setState] as const
+}
 
 function UsernameForm({
   initialUsername = '',
@@ -11,14 +51,11 @@ function UsernameForm({
   initialUsername?: string
   onSubmitUsername: (username: string) => void
 }) {
-  const [username, setUsername] = React.useState(
-    () => window.localStorage.getItem('username') || initialUsername,
+  const [username, setUsername] = useLocalStorageState(
+    'username',
+    initialUsername,
   )
   const [touched, setTouched] = React.useState(false)
-
-  React.useEffect(() => {
-    window.localStorage.setItem('username', username)
-  })
 
   const usernameIsLowerCase = username === username.toLowerCase()
   const usernameIsLongEnough = username.length >= 3
@@ -88,4 +125,6 @@ function App() {
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)

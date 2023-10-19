@@ -1,0 +1,27 @@
+# Synchronizing Side-Effects
+
+`React.useEffect` is a built-in hook that allows you to run some custom code
+after React renders (and re-renders) your component to the DOM. It accepts a
+callback function which React will call after the DOM has been updated:
+
+```javascript
+React.useEffect(() => {
+  // your side-effect code here.
+  // this is where you can make HTTP requests or interact with browser APIs.
+})
+```
+
+`useState` is for managing our react component state and `useEffect` is for
+synchronizing the our react component state with the everything outside our
+react components.
+
+For example, things outside our react components include:
+
+- Remote server requests
+- Browser APIs like local storage/document title/media devices/etc.
+- Integrations with non-react code
+
+Feel free to take a look at `src/examples/hook-flow.png` if you're interested in
+the timing of when your functions are run. This will make more sense after
+finishing the exercises/extra credit/instruction.
+

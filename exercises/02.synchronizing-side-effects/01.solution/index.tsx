@@ -1,8 +1,5 @@
-// Synchronizing Side-Effects
-// 💯 effect dependencies
-// http://localhost:3000/isolated/final/02.extra-2.tsx
-
 import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
 
 function UsernameForm({
   initialUsername = '',
@@ -12,13 +9,13 @@ function UsernameForm({
   onSubmitUsername: (username: string) => void
 }) {
   const [username, setUsername] = React.useState(
-    () => window.localStorage.getItem('username') || initialUsername,
+    window.localStorage.getItem('username') || initialUsername,
   )
   const [touched, setTouched] = React.useState(false)
 
   React.useEffect(() => {
     window.localStorage.setItem('username', username)
-  }, [username])
+  })
 
   const usernameIsLowerCase = username === username.toLowerCase()
   const usernameIsLongEnough = username.length >= 3
@@ -88,4 +85,6 @@ function App() {
   )
 }
 
-export {App}
+const rootEl = document.createElement('div')
+document.body.append(rootEl)
+ReactDOM.createRoot(rootEl).render(<App />)
