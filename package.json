@@ -9,6 +9,7 @@
     "githubRoot": "https://github.com/kentcdodds/react-hooks/blob/main",
     "root": true
   },
+  "type": "module",
   "keywords": [],
   "homepage": "https://react-hooks-next.netlify.app/",
   "license": "GPL-3.0-only",

@@ -1,13 +1,17 @@
+import fs from 'fs'
+import os from 'os'
+import path from 'path'
+
 try {
-  const {username} = require('os').userInfo()
+  const {username} = os.userInfo()
   const {
     repository: {url: repoUrl},
-  } = require('../package.json')
+  } = fs.readFileSync(path.join(process.cwd(), 'package.json'))
 
   const remote = process.env.HUSKY_GIT_PARAMS.split(' ')[1]
   const repoName = repoUrl.match(/(?:.(?!\/))+\.git$/)[0]
   if (
-    !['kentcdodds', 'chan'].includes(username) &&
+    ['kentcdodds', 'chan'].includes(username) &&
     remote.includes(`kentcdodds${repoName}`)
   ) {
     console.log(
