@@ -258,6 +258,7 @@ Thanks goes to these wonderful people
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jaharnum"><img src="https://avatars.githubusercontent.com/u/19540539?v=4?s=100" width="100px;" alt="Jamie Harnum"/><br /><sub><b>Jamie Harnum</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=jaharnum" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://www.heypano.com"><img src="https://avatars.githubusercontent.com/u/1577139?v=4?s=100" width="100px;" alt="Pano Papadatos"/><br /><sub><b>Pano Papadatos</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=heypano" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ASproson"><img src="https://avatars.githubusercontent.com/u/77736272?v=4?s=100" width="100px;" alt="Atlas Sproson"/><br /><sub><b>Atlas Sproson</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=ASproson" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://junagao.com"><img src="https://avatars.githubusercontent.com/u/615616?v=4?s=100" width="100px;" alt="juliane nagao"/><br /><sub><b>juliane nagao</b></sub></a><br /><a href="https://github.com/kentcdodds/react-hooks/commits?author=junagao" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
