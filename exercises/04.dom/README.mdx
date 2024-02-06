@@ -1,0 +1,73 @@
+# DOM Side-Effects
+
+Often when working with React you'll need to interact with the DOM directly. You
+may need to use a vanilla-js (non-framework-specific) library that needs to
+interact with directly with the DOM. Often to make a UI accessible you need to
+consider focus management requiring you to call `.focus()` on an input.
+
+Remember that when you do: `<div>hi</div>` that's actually syntactic sugar for a
+`React.createElement` so you don't actually have access to DOM nodes in your
+render method. In fact, DOM nodes aren't created at all until the
+`ReactDOM.render` method is called. Your component's render method is really
+just responsible for creating and returning React Elements and has nothing to do
+with the DOM in particular.
+
+So to get access to the DOM, you need to ask React to give you access to a
+particular DOM node when it renders your component. The way this happens is
+through a special prop called `ref`.
+
+Here's a simple example of using the `ref` prop:
+
+```tsx
+function MyDiv() {
+	const myDivRef = useRef<HTMLDivElement>(null)
+	useEffect(() => {
+		const myDiv = myDivRef.current
+		// myDiv is the div DOM node!
+		console.log(myDiv)
+	}, [])
+	return <div ref={myDivRef}>hi</div>
+}
+```
+
+After the component has been rendered, it's considered "mounted." That's when
+the useEffect callback is called and so by that point, the ref should have
+its `current` property set to the DOM node. So often you'll do direct DOM
+interactions/manipulations in the `useEffect` callback.
+
+Every element has a special `ref` prop (as shown above). You pass a ref to that
+prop and React will give you a reference to the thing that's created for that
+element.
+
+📜 Learn more about `useRef` from the docs:
+https://reactjs.org/docs/hooks-reference.html#useref
+
+🦉 Note, sometimes the DOM interaction will make observable changes to the UI.
+In those cases you'll want to use `useLayoutEffect` and we cover that in the
+"Advanced React Hooks" workshop.
+
+🦉 A ref is basically state that's associated to a React component that will not
+trigger a rerender when changed. So you can store whatever you'd like in a ref,
+not just DOM nodes. Think of a ref like this:
+
+```tsx
+const myRef = useState({ current: null })[0]
+
+// you are now free to mutate the value of myRef.current
+```
+
+Keep in mind, React can't track when you change a ref value. That's part of it's
+appeal in some cases and it can cause trouble in others. You'll develop the
+intuition of when to use which over time, but in general it's best to start with
+state if you're unsure and then move to a ref if you decide you don't want a
+rerender when it's updated. We'll dive deeper into non-DOM refs in future
+workshops.
+
+🦉 If you run your application
+[in strict mode](https://react.dev/reference/react/StrictMode#strictmode), one
+of the things it does is run your `useEffect` callback twice. This is intended
+to help you find bugs in your code. It's important to note that in production,
+`StrictMode` does nothing, so this will only happen development. However, I
+personally find this to cause more trouble than it's worth and do not develop
+my React applications with StrictMode enabled, but it's definitely something
+you should be aware of.
