@@ -21,7 +21,6 @@ function isSquaresArray(value: unknown): value is Squares {
 
 function isHistory(value: unknown): value is Array<Squares> {
 	if (!isArray(value)) return false
-	if (value.length !== 9) return false
 	if (!value.every(isSquaresArray)) return false
 	return true
 }

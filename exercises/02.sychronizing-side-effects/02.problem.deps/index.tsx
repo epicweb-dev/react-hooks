@@ -6,7 +6,7 @@ eslint
 import { useEffect, useState } from 'react'
 import * as ReactDOM from 'react-dom/client'
 import { generateGradient, getMatchingPosts } from '#shared/blog-posts'
-import { setSearchParams } from '#shared/utils'
+import { setGlobalSearchParams } from '#shared/utils'
 
 // 🐨 create a getQueryParam function which:
 // 1. creates a new params object
@@ -40,7 +40,7 @@ function App() {
 			<form
 				onSubmit={e => {
 					e.preventDefault()
-					setSearchParams({ query })
+					setGlobalSearchParams({ query })
 				}}
 			>
 				<div>

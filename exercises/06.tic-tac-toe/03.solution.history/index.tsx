@@ -48,7 +48,7 @@ function Board({
 	)
 }
 
-const defaultState = {
+const defaultState: GameState = {
 	history: [Array(9).fill(null)],
 	currentStep: 0,
 }

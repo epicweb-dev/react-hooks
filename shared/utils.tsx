@@ -6,7 +6,7 @@
  * @param {boolean} options.replace - Whether to replace the current URL in the history or not.
  * @returns {URLSearchParams} - The updated search parameters.
  */
-export function setSearchParams(
+export function setGlobalSearchParams(
 	params: Record<string, string | null>,
 	options: { replace?: boolean } = {},
 ) {

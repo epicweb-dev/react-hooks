@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import * as ReactDOM from 'react-dom/client'
 import { generateGradient, getMatchingPosts } from '#shared/blog-posts'
-import { setSearchParams } from '#shared/utils'
+import { setGlobalSearchParams } from '#shared/utils'
 
 function App() {
 	// NOTE: this will not work with server rendering, but in a real app you can
@@ -35,7 +35,7 @@ function App() {
 			<form
 				onSubmit={e => {
 					e.preventDefault()
-					setSearchParams({ query })
+					setGlobalSearchParams({ query })
 				}}
 			>
 				<div>

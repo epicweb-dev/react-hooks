@@ -5,7 +5,7 @@ import {
 	generateGradient,
 	getMatchingPosts,
 } from '#shared/blog-posts'
-import { setSearchParams } from '#shared/utils'
+import { setGlobalSearchParams } from '#shared/utils'
 
 function getQueryParam() {
 	const params = new URLSearchParams(window.location.search)
@@ -35,13 +35,13 @@ function Form() {
 	const catChecked = words.includes('cat')
 	const caterpillarChecked = words.includes('caterpillar')
 
+	// 🐨 move this up to the App as well
 	useEffect(() => {
 		const updateQuery = () => setQuery(getQueryParam())
 		window.addEventListener('popstate', updateQuery)
 		return () => {
 			window.removeEventListener('popstate', updateQuery)
 		}
-		// 🐨 add setQuery to the dependency array here
 	}, [])
 
 	function handleCheck(tag: string, checked: boolean) {
@@ -53,7 +53,7 @@ function Form() {
 		<form
 			onSubmit={e => {
 				e.preventDefault()
-				setSearchParams({ query })
+				setGlobalSearchParams({ query })
 			}}
 		>
 			<div>
