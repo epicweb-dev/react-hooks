@@ -4,7 +4,6 @@ import { generateGradient, getMatchingPosts } from '#shared/blog-posts'
 
 function App() {
 	const [query, setQuery] = useState('')
-	console.log(query)
 
 	// 🐨 make a function called handleCheck that accepts a "tag" string and a "checked" boolean
 	// 🐨 By calling setQuery, add the tag to the query if checked and remove it if not

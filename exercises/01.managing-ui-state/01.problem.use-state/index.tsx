@@ -3,7 +3,6 @@ import { generateGradient, getMatchingPosts } from '#shared/blog-posts'
 
 function App() {
 	// 🐨 call useState here and initialize the query with an empty string
-	// 💰 we don't need the query yet, but you can console.log it if you want
 
 	return (
 		<div className="app">

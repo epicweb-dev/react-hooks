@@ -5,10 +5,10 @@ you use special functions called "hooks" to do this. Common built-in hooks
 include:
 
 - `useState`
-- `useEffect`
-- `useContext`
 - `useRef`
+- `use` (currently in canary)
 - `useReducer`
+- `useEffect`
 
 Each of these is a special function that you can call inside your custom React
 component function to store data (like state) or perform actions (or
@@ -16,13 +16,13 @@ side-effects). There are a few more built-in hooks that have special use cases,
 but the ones above are what you'll be using most of the time.
 
 Each of the hooks has a unique API. Some return a value (like `useRef` and
-`useContext`), others return a pair of values (like `useState` and
+`use`), others return a pair of values (like `useState` and
 `useReducer`), and others return nothing at all (like `useEffect`).
 
 Here's an example of a component that uses the `useState` hook and an onClick
 event handler to update that state:
 
-```jsx
+```tsx
 function Counter() {
 	const [count, setCount] = useState(0)
 	const increment = () => setCount(count + 1)
@@ -50,6 +50,11 @@ does this, the entire `Counter` function is re-run, so when `useState` is
 called this time, the value we get back is the value that we called `setCount`
 with. And it continues like that until `Counter` is unmounted (removed from the
 application), or the user closes the application.
+
+Note that after the initial render, the argument passed to `useState` is
+ignored. The only time it's used is when the component is first created. The
+only way to change the state value of the component while it's around is to
+call the updater function returned by `useState`.
 
 📜 To get a deeper dive on how React keeps track of hooks, read/watch this great
 post/talk by [Shawn Wang](https://twitter.com/swyx):

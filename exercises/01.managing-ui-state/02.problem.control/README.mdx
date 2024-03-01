@@ -1,1 +1,15 @@
 # Controlling Inputs
+
+👨‍💼 When the user clicks on one of the checkboxes, we want to auto-fill that
+value into the search input for them. This means we need to "control" the input
+value so we can set it programmatically. We can do this by using the `value`
+prop on the input.
+
+📜 You can read up more on this in the React docs:
+[Controlling an input with a state variable](https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable)
+
+Once we add the query as the value for the input, we'll also want to have a
+function responsible for updating the query when the user checks or unchecks the
+checkboxes and call that in the `onClick` handler of the checkboxes.
+
+Good luck!

@@ -33,16 +33,18 @@
 
 ## Prerequisites
 
-- Watch my talk
-  [Why React Hooks](https://www.youtube.com/watch?v=zWsZcBiwgVE&list=PLV5CVI1eNcJgNqzNwcs4UKrlJdhfDjshf)
-  (35 minutes)
+- Experience with
+  [React fundamentals](https://github.com/epicweb-dev/react-fundamentals)
 
 ## Pre-workshop Resources
 
 Here are some resources you can read before taking the workshop to get you up to
 speed on some of the tools and concepts we'll be covering:
 
-- TODO: add resources
+- [Why React Hooks](https://www.youtube.com/watch?v=zWsZcBiwgVE&list=PLV5CVI1eNcJgNqzNwcs4UKrlJdhfDjshf)
+  (35 minutes)
+- [Getting Closure on Hooks](https://www.swyx.io/getting-closure-on-hooks/)
+- [React Hooks Documentation](https://react.dev/reference/react/hooks)
 
 ## System Requirements
 

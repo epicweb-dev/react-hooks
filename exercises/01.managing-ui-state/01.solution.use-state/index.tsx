@@ -4,7 +4,6 @@ import { generateGradient, getMatchingPosts } from '#shared/blog-posts'
 
 function App() {
 	const [query, setQuery] = useState('')
-	console.log(query)
 
 	return (
 		<div className="app">
