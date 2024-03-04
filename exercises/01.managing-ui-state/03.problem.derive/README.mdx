@@ -1,1 +1,70 @@
 # Derive State
+
+🦉 Often, it can be easy to think you need to keep track of two elements of
+state when you really only need one. For example, let's say you have a counter
+that will display the number of times a user has clicked a button and also it
+will display whether that number is odd or even. You might be tempted to write
+the following code:
+
+```tsx
+import { useState } from 'react'
+
+export default function Counter() {
+	const [count, setCount] = useState(0)
+	const [isEven, setIsEven] = useState(true)
+
+	function handleClick() {
+		const newCount = count + 1
+		setCount(newCount)
+		setIsEven(newCount % 2 === 0)
+	}
+
+	return (
+		<div>
+			<p>{count}</p>
+			<p>{isEven ? 'Even' : 'Odd'}</p>
+			<button onClick={handleClick}>Increment</button>
+		</div>
+	)
+}
+```
+
+This code works, but it's not ideal because it's keeping track of two pieces of
+state when it only needs to keep track of one. Imagine if we had multiple places
+where the count could be changed. We'd have to remember to update the `isEven`
+state in all of those places. This is a recipe for bugs.
+
+Instead, we can derive the `isEven` state from the `count` state:
+
+```tsx
+import { useState } from 'react'
+
+export default function Counter() {
+	const [count, setCount] = useState(0)
+
+	function handleClick() {
+		const newCount = count + 1
+		setCount(newCount)
+	}
+
+	// this is the derived state
+	const isEven = count % 2 === 0
+
+	return (
+		<div>
+			<p>{count}</p>
+			<p>{isEven ? 'Even' : 'Odd'}</p>
+			<button onClick={handleClick}>Increment</button>
+		</div>
+	)
+}
+```
+
+This is a much better solution because we only have to keep track of the `count`
+state. The `isEven` state is derived from the `count` state. This means we don't
+have to worry about keeping the `isEven` state in sync with the `count` state.
+
+👨‍💼 Thanks Olivia! So what we want to do in this step is derive the checkboxes'
+`checked` state based on whether the query contains the word they represent.
+
+Give that a shot.

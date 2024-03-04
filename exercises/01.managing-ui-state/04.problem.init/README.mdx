@@ -1,1 +1,20 @@
 # Initialize State
+
+👨‍💼 We want users to be able to share a link to this page with a prefilled
+search. For example:
+[`https://www.example.com/search?query=cat+dog`](/app/playground?query=cat+dog).
+
+Right now, this won't work, because we don't have a way to initialize the
+state of the search box from the URL. Let's fix that.
+
+The `useState` hook supports an initial value. Right now we're just passing
+`''` as the initial value, but we can use the `URLSearchParams` API to get the
+query string from the URL and use that as the initial value.
+
+```tsx
+const params = new URLSearchParams(window.location.search)
+const initialQuery = params.get('query') ?? ''
+```
+
+Then you can pass that `initialQuery` to `useState`. Give that a shot and then
+the link above should work!
