@@ -108,8 +108,7 @@ function MatchingPosts({ query }: { query: string }) {
 					// 🐨 determine whether post a and b are included in favorites
 					const aFav = false // 💰 favorites.includes(a.id)
 					const bFav = false // 💰 favorites.includes(b.id)
-					if (aFav === bFav) return a.title.localeCompare(b.title)
-					return aFav ? -1 : 1
+					return aFav === bFav ? 0 : aFav ? -1 : 1
 				})
 				.map(post => (
 					<Card

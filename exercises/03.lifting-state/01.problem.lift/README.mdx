@@ -1,1 +1,21 @@
 # Lift State
+
+🧝‍♂️ I refactored the app a bit. In the process I kinda broke stuff and you'll be
+required to fix it. Feel free to <DiffLink app1={-1}>check the diff</DiffLink>
+to know what I've done. I pretty much just moved stuff into separate components
+to get a little more organization in here.
+
+<callout-info>
+	🦉 check out [When to break up a component into multiple
+	components](https://kentcdodds.com/blog/when-to-break-up-a-component-into-multiple-components).
+</callout-info>
+
+🧝‍♂️ Oh, also I added a new feature. You can now "like" specific posts by clicking
+a little heart on the post. How nice! It's not persisted anywhere yet, so when
+you refresh the page the likes all get reset, but it's a nice start!
+
+👨‍💼 Great, now your job is to fix what's broken. You need to move not only the
+state, but also we're going to have you move the `useEffect` that sets the query
+as well.
+
+Then you're going to need to pass props to the components as needed. Enjoy!

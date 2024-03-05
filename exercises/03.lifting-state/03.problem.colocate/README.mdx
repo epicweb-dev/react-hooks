@@ -1,6 +1,19 @@
 # Colocate State
 
+👨‍💼 Well, the users thought they wanted the articles sorted by whether they were
+favorited... But after using the feature, they found it to be jarring and
+confusing. So we're going to need you to remove that feature. Kellie already
+removed the sorting for you, but she didn't have time to move the state back to
+the `Card` component.
+
 As a community we're pretty good at lifting state. It becomes natural over time.
-One thing that we typically have trouble remembering to do is to push state back
-down (or
+In fact it's required to make the feature work. But as you notice here, the
+functionality we want is already "working" without moving any of the state
+around so it's easy to forget to improve the performance and maintainability of
+our code by moving state back down (or
 [colocate state](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster)).
+
+So your job is to move the `favorited` state back to the `Card` component.
+
+When you're finished, the functionality should be no different, but the code
+should feel simpler.

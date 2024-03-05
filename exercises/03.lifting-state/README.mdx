@@ -7,3 +7,146 @@ which basically amounts to finding the lowest common parent shared between the
 two components and placing the state management there, and then passing the
 state and a mechanism for updating that state down into the components that need
 it.
+
+Let's look at a simple example.
+
+```tsx
+import { useState } from 'react'
+
+function App() {
+	return (
+		<div>
+			<Counter />
+		</div>
+	)
+}
+
+function Counter() {
+	const [count, setCount] = useState(0)
+
+	return (
+		<div>
+			<button onClick={() => setCount(count + 1)}>Increment</button>
+		</div>
+	)
+}
+```
+
+In this example, the `Counter` component has its own state. What if I wanted to
+make a fancy `CountDisplay` component that was a sibling to the Counter:
+
+```tsx
+function App() {
+	return (
+		<div>
+			<Counter />
+			<CountDisplay />
+		</div>
+	)
+}
+
+function CountDisplay() {
+	return <div>Count: 0</div>
+}
+```
+
+How can I get the `CountDisplay` to show the current count from the `Counter`?
+The answer is to lift the state up to the `App` component and then pass the
+state and a mechanism for updating that state down into the `Counter` and
+`CountDisplay` components.
+
+```tsx
+function App() {
+	const [count, setCount] = useState(0)
+
+	return (
+		<div>
+			<Counter count={count} setCount={setCount} />
+			<CountDisplay count={count} />
+		</div>
+	)
+}
+
+function Counter({ count, setCount }) {
+	return (
+		<div>
+			<button onClick={() => setCount(count + 1)}>Increment</button>
+		</div>
+	)
+}
+
+function CountDisplay({ count }) {
+	return <div>Count: {count}</div>
+}
+```
+
+Now the `App` component is managing the state and passing it down to the
+`Counter` and `CountDisplay` components. This is a simple example, but the
+principle is the same for more complex state management.
+
+There are other ways to get the state around to components that need it. We'll
+cover my preferred pattern of using composition in the Advanced React Patterns
+workshop, but moving state up the tree is pretty common.
+
+## Colocating state
+
+One thing that's not as common as it should be in React is moving state the
+other direction when changes are made. This is because you don't have to do it
+for things to work, but it's better for performance and maintainability if you
+do.
+
+Let's take our example further by saying that we no longer need the
+`CountDisplay` component to show the count. Instead, we want to show the count
+in the button of the Counter. So we might do this:
+
+```tsx
+function App() {
+	const [count, setCount] = useState(0)
+
+	return (
+		<div>
+			<Counter count={count} setCount={setCount} />
+		</div>
+	)
+}
+
+function Counter({ count, setCount }) {
+	return (
+		<div>
+			<button onClick={() => setCount(count + 1)}>Increment ({count})</button>
+		</div>
+	)
+}
+```
+
+But now the `App` component is managing the state and passing it down to the
+`Counter` component, but nothing but the `Counter` needs this state. So we can
+move the state back down to the `Counter` component:
+
+```tsx
+function App() {
+	return (
+		<div>
+			<Counter />
+		</div>
+	)
+}
+
+function Counter() {
+	const [count, setCount] = useState(0)
+
+	return (
+		<div>
+			<button onClick={() => setCount(count + 1)}>Increment ({count})</button>
+		</div>
+	)
+}
+```
+
+Novice React developers learn to lift state pretty early, but experienced React
+developers know how to recognize when state can be "pushed down."
+
+Let's do both in this exercise.
+
+Read more about state colocation from
+[State Colocation will make your React app faster](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster).
