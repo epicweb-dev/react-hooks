@@ -1,0 +1,105 @@
+# Side-Effects
+
+`useEffect` is a built-in hook that allows you to run some custom code
+after React renders (and re-renders) your component to the DOM. It accepts a
+callback function which React will call after the DOM has been updated:
+
+```javascript
+useEffect(() => {
+	// your side-effect code here.
+	// this is where you can interact with browser APIs for example
+	doSomeThing()
+	return function cleanup() {
+		// if you need to clean up after your side-effect (like unsubscribe from an
+		// event), you can do it here
+		doSomeCleanup()
+	}
+}, [
+	// this is where dependencies of your useEffect callback go
+	// we'll talk about this in depth in a future exercise.
+	// In this exercise, we'll just leave it as an empty array
+	dep1,
+	dep2,
+])
+```
+
+`useState` is for managing our react component state and `useEffect` is for
+managing side-effects. Side-effects are things that happen outside our react
+components.
+
+For example, things outside our react components include:
+
+- Browser APIs like local storage, geolocation, media devices, etc.
+- Integrations with third-party libraries like D3, Chart.js, etc.
+
+Check out [the React Flow diagram](https://github.com/donavon/hook-flow) below:
+
+![React Flow diagram showing mount, update, unmount](https://github-production-user-asset-6210df.s3.amazonaws.com/1500684/295689283-b9ecdd1d-ce28-446b-84ad-6b264d4be8e4.png)
+
+The graphic illustrates the lifecycle of a React component, focusing on how
+hooks behave during different phases: Mount, Update, and Unmount. It's
+structured into different sections, each representing a stage in the component
+lifecycle, and provides a visual flow of the order in which React hooks and
+other operations are executed. Here's a breakdown:
+
+1. **Mount Phase**:
+   - **Run lazy initializers**: This step involves executing any lazy
+     initialization functions provided to hooks like `useState` or `useReducer`.
+     These functions are only run during the initial render.
+2. **Update Phase** (triggered by a parent re-render, state change, or context
+   change):
+   - **Render**: The component re-renders, evaluating its function body.
+   - **React updates DOM**: React applies any changes from the render phase to
+     the DOM.
+   - **Cleanup LayoutEffects**: Before running any new layout effects, React
+     cleans up the previous ones defined in `useLayoutEffect`.
+   - **Run LayoutEffects**: Runs the effects defined in `useLayoutEffect`
+     immediately after DOM updates, blocking the browser painting until
+     complete.
+   - **Browser paints screen**: The browser updates the visual representation of
+     the page.
+   - **Cleanup Effects**: Cleans up any effects defined in `useEffect` from the
+     previous render.
+   - **Run Effects**: Runs the effects defined in `useEffect`. These are
+     scheduled to run after the paint, so they don't block the browser from
+     updating the screen.
+3. **Unmount Phase**:
+   - React performs cleanup for both `useEffect` and `useLayoutEffect` hooks,
+     preventing memory leaks by removing event listeners, canceling network
+     requests, or invalidating timers set up by the component.
+
+**Notes** at the bottom highlight key concepts:
+
+- **Updates** are triggered by re-renders from parent components, state changes,
+  or context changes.
+- **Lazy initializers** are functions that initialize state lazily, meaning the
+  initial state is computed only on the initial render, potentially optimizing
+  performance.
+
+The different colors in the graphic signify various stages and types of
+operations within the React component lifecycle, specifically relating to the
+execution of hooks and rendering processes. Each color represents a distinct
+group of operations:
+
+1. **Green (Top section)**: This color is associated with the initial setup
+   phase of a component, including running lazy initializers which are functions
+   provided to hooks like `useState` and `useReducer` for setting the initial
+   state.
+2. **Red (Middle section)**: Represents operations related to the
+   DOM updates and the pre-paint phase. This includes the rendering process,
+   where React evaluates the component and updates the DOM, followed by the
+   cleanup and execution of layout effects (`useLayoutEffect`). These operations
+   are crucial for ensuring that any DOM manipulations or measurements happen
+   synchronously before the browser paints.
+3. **Yellow (Bottom section)**: Focuses on post-paint effects, encapsulating the
+   cleanup and execution of side effects (`useEffect`). These operations are
+   scheduled after painting, allowing for non-blocking operations like data
+   fetching, subscriptions, or manually triggering DOM updates. These effects
+   run asynchronously to avoid delaying the visual update of the page.
+
+This diagram is a helpful reference for understanding the sequence and timing of
+React's hook-based lifecycle methods, which is crucial for correctly managing
+side effects, subscriptions, and manual DOM manipulations in functional
+components.
+
+This will make more sense after finishing the exercise. So come back!

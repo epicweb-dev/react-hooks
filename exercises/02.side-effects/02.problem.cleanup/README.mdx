@@ -1,0 +1,67 @@
+# Effect Cleanup
+
+👨‍💼 We've got an issue with our `useEffect` callback here that needs some
+attention. You won't be able to tell without a little bit extra in the app, so
+Kellie (🧝‍♂️) has put together a demo.
+
+🧝‍♂️ Yep, so now we have a checkbox that says "show form." When you check it,
+it'll show the form and the results, when you uncheck it, those will be removed.
+In dynamic applications we have components that are added and removed from the
+page all the time, so you definitelly will have situations like this.
+
+👨‍💼 Thanks Kellie. Olivia (🦉) would like to talk to you about memory leaks.
+
+🦉 Thanks Peter. So, let's review what's going on. When our component is
+rendered, we subscribe to the `popstate` event. The callback we pass to the
+`addEventListener` method creates a closure over all the variables in the
+function's scope. This means that when the callback is called, it has access to
+those values. What that means is that as long as that function exists and is
+referenced by something else in the application, those values will be kept in
+memory as well just in case the callback is called again.
+
+As a result, when the component is removed from the page, the callback is still
+referenced by the `popstate` event, and so the values are kept in memory. So
+imagine if you have a component that is added and removed from the page many
+times, and each time it's added, it subscribes to an event and adds more to the
+memory, but that memory is never released because even when the component is
+removed from the page the event still has a reference to the callback which is
+hanging on to all the values!
+
+This is called a memory leak and will make your application slower and use more
+memory than it needs to (leading to a bad user experience). Whether you're using
+React or anything else, you should always be aware of memory leaks and how to
+avoid them. In general, whenever you find yourself adding an event listener or
+subscribing to something, you should always make sure to remove that listener or
+subscription when you're finished with it.
+
+So in a React context, this means that you should always clean up your effects
+when the component is removed from the page. The way to do this is to return a
+function from the effect that removes the listener or subscription:
+
+```tsx
+useEffect(() => {
+	function handleEvent() {
+		// some-event happened!
+	}
+	window.addEventListener('some-event', handleEvent)
+	return () => {
+		window.removeEventListener('some-event', handleEvent)
+	}
+}, [])
+```
+
+This way, when the component is removed from the page, React will call the
+cleanup function and remove the listener or subscription.
+
+👨‍💼 Great. Now that we've got that out of the way, let's handle this in our app.
+
+You can add `console.log` statements to make sure things are being called (unless
+you want to open up the memory profiling tab in your dev tools and click the
+checkbox a bunch of times to see the memory usage go up 😅).
+
+💯 If you really do want to test this out, I've added a couple lines you can
+uncomment to allocate huge amounts of memory to huge arrays. If you uncomment
+those, then watch the quick climb of the memory in the
+[Memory tab of dev tools](https://developer.chrome.com/docs/devtools/memory) or
+[Browser Task manager](https://developer.chrome.com/docs/devtools/memory-problems#monitor_memory_use_in_realtime_with_the_chrome_task_manager)
+every time you check and uncheck the box.

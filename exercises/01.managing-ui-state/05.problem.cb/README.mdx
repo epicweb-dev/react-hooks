@@ -1,0 +1,43 @@
+# Init Callback
+
+🦉 There's one more thing you should know about `useState` initialization and
+that is a small performance optimization. `useState` can accept a function.
+
+You may recall from earlier we mentioned that the first argument to `useState`
+is only used during the initial render. It's not used on subsequent renders.
+This is because the initial value is only used when the component is first
+rendered. After that, the value is managed by React and you use the updater
+function to update it.
+
+But imagine a situation where calculating that initial value were
+computationally expensive. It would be a waste to compute the initial value for
+all but the initial render right? That's where the function form of `useState`
+comes in.
+
+Let's imagine we have a function that calculates the initial value and it's
+computationally expensive:
+
+```tsx
+const [val, setVal] = useState(calculateInitialValue())
+```
+
+This will work just fine, but it's not ideal. The `calculateInitialValue` will
+be called on every render, even though it's only needed for the initial render.
+So instead of calling the function, we can just pass it:
+
+```tsx
+const [val, setVal] = useState(calculateInitialValue)
+```
+
+Typically doing this is unnecessary, but it's good to know about in case you
+need it.
+
+So
+
+```tsx
+// both of these work just fine:
+const [query, setQuery] = useState(getQueryParam())
+const [query, setQuery] = useState(getQueryParam)
+```
+
+You're going to be making the `getQueryParam` function. Got it? Great, let's go!

@@ -21,7 +21,7 @@ function App() {
 		return () => {
 			window.removeEventListener('popstate', updateQuery)
 		}
-	}, [setQuery])
+	}, [])
 
 	return (
 		<div className="app">
