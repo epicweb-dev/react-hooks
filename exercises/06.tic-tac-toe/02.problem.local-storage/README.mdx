@@ -3,3 +3,13 @@
 👨‍💼 Our customers want to be able to close the tab in the middle of a game and
 then resume the game later. Can you store the game's state in `localStorage`?
 
+I think you can! You're going to need to use `useEffect` to coordinate things
+with `localStorage`. Luckily for us, `localStorage` is synchronous, so
+initializing our state from `localStorage` is straightforward (you should
+definitely use the callback form of `useState` for initialization though!).
+
+For keeping the squares up-to-date in `localStorage`, you'll want to use
+`useEffect` with a dependency array that includes the squares.
+
+📜 If you need to learn a bit about the `localStorage` API, you can check out the
+[MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).

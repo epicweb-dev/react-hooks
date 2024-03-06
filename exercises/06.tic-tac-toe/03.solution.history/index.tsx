@@ -100,19 +100,13 @@ function App() {
 	const moves = state.history.map((_stepSquares, step) => {
 		const desc = step ? `Go to move number ${step}` : 'Go to game start'
 		const isCurrentStep = step === state.currentStep
-		const label = isCurrentStep ? `${desc} (current)` : desc
-		// NOTE: the "step" is actually the "index" which normally you don't want to
-		// use as the "key" prop. However, in this case, the index is effectively
-		// the "id" of the step in history, so it is correct.
 		return (
 			<li key={step}>
 				<button
 					onClick={() =>
 						setState(previousState => ({ ...previousState, currentStep: step }))
 					}
-					aria-disabled={isCurrentStep}
-					aria-label={label}
-					aria-current={isCurrentStep ? 'step' : undefined}
+					disabled={isCurrentStep}
 				>
 					{desc} {isCurrentStep ? '(current)' : null}
 				</button>

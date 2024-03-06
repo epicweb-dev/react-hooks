@@ -88,27 +88,33 @@ function App() {
 
 	function selectSquare(index: number) {
 		if (winner || squares[index]) return
-		// 🐨 this is now previousState, not previousSquares
+		// 🐨 this is now setState and previousState, not setSquares and previousSquares
 		setSquares(previousSquares => {
 			// 🐨 create an updated history and squares object
-			// 🦉 note that the history should be from index 0 to the current step plus the new squares
+			// 💰 note that the history should be from index 0 to the current step plus the new squares
 			// and the new current step should be equal to the last index of the new history
 			return previousSquares.with(index, nextValue)
 		})
 	}
 
 	function restart() {
+		// 🐨 this is now setState
 		setSquares(defaultState)
 	}
 
 	// 🐨 create moves by mapping over the history and rendering on <li> for each
 	// step in the history. This should have a button which when clicked calls
 	// `setState` to update the currentStep.
+	// 💯 disable the current step
+	// 💰 NOTE: the "step" is actually the "index" which normally you don't want to
+	// use as the "key" prop. However, in this case, the index is effectively
+	// the "id" of the step in history, so it is correct.
 	const moves = 'TODO: create moves lis'
 
 	return (
 		<div className="game">
 			<div className="game-board">
+				{/* 🐨 update the reference of "squares" here to "currentSquares" */}
 				<Board onClick={selectSquare} squares={squares} />
 				<button className="restart" onClick={restart}>
 					restart

@@ -55,9 +55,3 @@
 	margin-left: 20px;
 	min-width: 190px;
 }
-
-[aria-disabled='true'] {
-	opacity: 0.6;
-	pointer-events: none;
-	user-select: none;
-}
