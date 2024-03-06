@@ -1,1 +1,21 @@
 # useId
+
+🧝‍♂️ I've made a few changes to our `vanilla-tilt` app to try and make a reusable
+`Field` component. But there's a problem. When I try to click on the label for
+a field, it doesn't focus the input. This is because we're missing an `id`.
+
+I don't want to just use the `name` attribute as the `id` because I don't want
+to run the risk of having multiple elements with the same `id` on the page if
+we render multiple `Field` components with the same `name`. And I don't want to
+have to pass in an `id` prop every time I use the `Field` component. Though, if
+they do pass an `id` we should use the `id` they passed instead of a generated
+one (maybe they want a very specific `id` for some reason and we should support
+both!).
+
+As usual, you can <DiffLink app1={-1}>check my work</DiffLink> if you like.
+
+👨‍💼 So your job is to fix the label association. You'll notice that the checkbox
+is working as expected already because it's not using the `Field` component due
+to its unique structure.
+
+So, let's handle the `id` in the `Field` component.

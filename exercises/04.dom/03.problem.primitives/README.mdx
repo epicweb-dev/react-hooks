@@ -1,0 +1,30 @@
+# Primitive Dependencies
+
+👨‍💼 Our users are annoyed. Whenever they click the incrementing button in the
+middle, the tilt effect is reset. You can reproduce this more easily by clicking
+one of the corners of the button.
+
+If you add a `console.log` to the `useEffect`, you'll notice that it runs even
+when the button is clicked, even if the actual options are unchanged. The reason
+is because the `options` object actually _did_ change! This is because the
+`options` object is a new object every time the component renders. This is
+because of the way we're using the `...` spread operator to collect the options
+into a single (brand new) object. This means that the dependency array will
+always be different and the effect will always run!
+
+`useEffect` iterates through each of our dependencies and checks whether they
+have changed and it uses `Object.is` to do so (this is effectively the same
+as `===`). This means that even if two objects have the same properties, they
+will not be considered equal if they are different objects.
+
+```tsx
+const options1 = { glare: true, max: 25, 'max-glare': 0.5, speed: 400 }
+const options2 = { glare: true, max: 25, 'max-glare': 0.5, speed: 400 }
+Object.is(options1, options2) // false!!
+```
+
+So the easiest way to fix this is by switching from using an object to using the
+primitive values directly. This way, the dependency array will only change when
+the actual values change.
+
+So please update the `useEffect` to use the primitive values directly. Thanks!

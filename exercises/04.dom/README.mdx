@@ -40,7 +40,7 @@ prop and React will give you a reference to the thing that's created for that
 element.
 
 📜 Learn more about `useRef` from the docs:
-https://reactjs.org/docs/hooks-reference.html#useref
+https://react.dev/reference/react/useRef
 
 🦉 Note, sometimes the DOM interaction will make observable changes to the UI.
 In those cases you'll want to use `useLayoutEffect` and we cover that in the
@@ -48,13 +48,7 @@ In those cases you'll want to use `useLayoutEffect` and we cover that in the
 
 🦉 A ref is basically state that's associated to a React component that will not
 trigger a rerender when changed. So you can store whatever you'd like in a ref,
-not just DOM nodes. Think of a ref like this:
-
-```tsx
-const myRef = useState({ current: null })[0]
-
-// you are now free to mutate the value of myRef.current
-```
+not just DOM nodes.
 
 Keep in mind, React can't track when you change a ref value. That's part of it's
 appeal in some cases and it can cause trouble in others. You'll develop the
@@ -63,11 +57,13 @@ state if you're unsure and then move to a ref if you decide you don't want a
 rerender when it's updated. We'll dive deeper into non-DOM refs in future
 workshops.
 
-🦉 If you run your application
-[in strict mode](https://react.dev/reference/react/StrictMode#strictmode), one
-of the things it does is run your `useEffect` callback twice. This is intended
-to help you find bugs in your code. It's important to note that in production,
-`StrictMode` does nothing, so this will only happen development. However, I
-personally find this to cause more trouble than it's worth and do not develop
-my React applications with StrictMode enabled, but it's definitely something
-you should be aware of.
+<callout-warning class="aside">
+	🦉 If you run your application [in strict
+	mode](https://react.dev/reference/react/StrictMode#strictmode), one of the
+	things it does is run your `useEffect` callback twice. This is intended to
+	help you find bugs in your code. It's important to note that in production,
+	`StrictMode` does nothing, so this will only happen development. However, I
+	personally find this to cause more trouble than it's worth and do not develop
+	my React applications with StrictMode enabled, but it's definitely something
+	you should be aware of.
+</callout-warning>

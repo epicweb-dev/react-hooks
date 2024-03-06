@@ -1,1 +1,32 @@
 # Dependencies
+
+👨‍💼 Our users wanted to be able to control `vanilla-tilt` a bit. Some of them
+like the speed and glare to look different. So Kellie 🧝‍♂️ added a form that will
+allow them to control those values. The trouble is when the users change the
+values, the vanilla tilt element isn't updated with the new values.
+
+🦉 React needs to know when it needs to run your effect callback function again.
+We do this using the dependency array which is the second argument to
+`useEffect`. Whenever values in that array changes, React will call the returned
+cleanup function and then invoke the effect callback again.
+
+So far we've provided an empty dependency array which effectively tells React
+that the effect doesn't depend on any values from the component. This is why the
+effect is only run once when the component mounts and when values change it's
+not run again.
+
+By default, if you don't provide a second argument, `useEffect` runs after every
+render. While this is probably the right default for correctness, it's far from
+optimal in most cases. If you're not careful, it's easy to end up with infinite
+loops (imagine if you're calling `setState` in the effect which triggers another
+render and so on).
+
+👨‍💼 So what we need to do in this step is let React know that our effect callback
+depends on the `vanillaTiltOptions` the user is providing. Let's do that by
+passing the `vanillaTiltOptions` in the dependency array.
+
+<callout-warning class="aside">
+	You'll notice an issue when you've finished this step. If you click the button
+	to increment the count, the tilt effect is reset! We'll fix this in the next
+	step.
+</callout-warning>

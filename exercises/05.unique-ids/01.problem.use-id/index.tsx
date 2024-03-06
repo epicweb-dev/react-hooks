@@ -82,12 +82,7 @@ function App() {
 				}}
 			>
 				<Field label="Max" name="max" type="number" defaultValue={25} />
-				<Field
-					label="Glare"
-					name="glare"
-					type="checkbox"
-					defaultChecked={true}
-				/>
+				<Field label="Speed" name="speed" type="number" defaultValue={400} />
 				<div>
 					<label>
 						<input name="glare" type="checkbox" defaultChecked />

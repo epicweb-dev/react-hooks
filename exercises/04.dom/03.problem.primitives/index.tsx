@@ -21,6 +21,7 @@ function Tilt({
 }) {
 	const tiltRef = useRef<HTMLVanillaTiltElement>(null)
 
+	// 🐨 move this into the useEffect directly
 	const vanillaTiltOptions = {
 		max,
 		speed,
@@ -33,8 +34,8 @@ function Tilt({
 		if (tiltNode === null) return
 		VanillaTilt.init(tiltNode, vanillaTiltOptions)
 		return () => tiltNode.vanillaTilt.destroy()
-		// 🐨 Add vanillaTiltOptions to fix the original bug
-	}, [])
+		// 🐨 instead of passing the options object here, pass each primitive option
+	}, [vanillaTiltOptions])
 
 	return (
 		<div ref={tiltRef} className="tilt-root">

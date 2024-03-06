@@ -1,1 +1,63 @@
 # Unique IDs
+
+To build accessible forms, you need to ensure that each input element has a
+globally unique `id` attribute, and that the corresponding label element has a
+`for` attribute that matches the input's `id`. This allows screen readers to
+associate the label with the input, making it easier for users to understand the
+form's structure and purpose. Additionally, it allows users to click on the
+label to focus the input, which can be especially helpful for users with motor
+impairments (or like, for everyone you know?).
+
+This gets challenging with reusable components, especially when they're used
+multiple times on the same page. You can't just hardcode an `id` value, because
+then you'd have multiple elements with the same `id`, which is invalid HTML. You
+could use a random number or string, but then you'd have to manage that
+yourself, and it wouldn't be consistent between renders. And if you want to
+server render your app, you'd have to make sure the ID that's generated on the
+client matches the one that was generated on the server to avoid bugs which is
+a pain.
+
+This is where the `useId` hook comes into play.
+
+The `useId` hook generates a unique and stable identifier (ID) that you can use
+for DOM elements.
+
+Here's an example of how you can use the `useId` hook in a form component:
+
+```tsx
+function FormField() {
+	const id = useId()
+	return (
+		<div>
+			<label htmlFor={id}>Name:</label>
+			<input id={id} type="text" />
+		</div>
+	)
+}
+```
+
+In this example, `useId` generates a unique ID that links the label to the
+input, ensuring that screen readers and other assistive technologies can
+correctly identify the form field relationship.
+
+Unlike `useState` or `useEffect`, `useId` does not accept any arguments and
+returns a single string value. There's no setter or updater function because the
+ID it provides is meant to be constant and unique throughout the component's
+lifecycle.
+
+It's especially useful in server-side rendering (SSR) contexts because it
+ensures consistency between server-generated IDs and client-side generated ones,
+avoiding hydration mismatches.
+
+Remember, the main use of `useId` is for accessibility and managing
+relationships between different DOM elements, like labels and inputs. It helps
+keep your UI predictable and accessible without having to manage unique IDs
+yourself.
+
+One important thing to call out is that you should never use `useId` to generate
+IDs for non-DOM elements, like keys in a list or unique keys for React elements.
+Those IDs should come from your data, not from `useId`.
+
+📜 Check [the `useId` docs](https://react.dev/reference/react/useId) for more
+info. (There's this interesting `identifierPrefix` feature you'll probably never
+use too! 😅)
