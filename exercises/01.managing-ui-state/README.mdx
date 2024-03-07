@@ -1,8 +1,26 @@
 # Managing UI State
 
-Normally an interactive application will need to hold state somewhere. In React,
-you use special functions called "hooks" to do this. Common built-in hooks
-include:
+Dynamic applications allow users to interact and make changes to what they see
+on the page and the application should respond by updating the UI based on what
+the user has done. We accomplish this by using state. When state changes (for
+example as the result of user interaction and input), we update the UI. Here's
+how that works with React:
+
+```
+render --> set up the DOM ↙
+user interacts --> state changes ↙
+re-render --> update the DOM ↖
+```
+
+From there's a cycle of user interaction, state changes, and re-rendering. This
+is the core of how React works for interactive applications.
+
+The `render` phase is what what we've done so far with creating React elements.
+Handling user interactions is what we've done with event listeners like
+`onSubmit`. Now we're going to get into the `state changes` bit.
+
+In React, you use special functions called "hooks" to do this. Common built-in
+hooks include:
 
 - `useState`
 - `useRef`
