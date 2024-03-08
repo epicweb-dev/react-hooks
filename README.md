@@ -45,6 +45,7 @@ speed on some of the tools and concepts we'll be covering:
   (35 minutes)
 - [Getting Closure on Hooks](https://www.swyx.io/getting-closure-on-hooks/)
 - [React Hooks Documentation](https://react.dev/reference/react/hooks)
+- [Rules of Hooks](https://react.dev/warnings/invalid-hook-call-warning)
 
 ## System Requirements
 
