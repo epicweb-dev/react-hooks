@@ -7,7 +7,7 @@ interface HTMLVanillaTiltElement extends HTMLDivElement {
 }
 
 function Tilt({ children }: { children: React.ReactNode }) {
-	// 🐨 create a tiltRef here with useRef<HTMLVanillaTiltElement>()
+	// 🐨 create a tiltRef here with useRef<HTMLVanillaTiltElement>(null)
 
 	useEffect(() => {
 		// 🐨 get the tiltNode from tiltRef.current
