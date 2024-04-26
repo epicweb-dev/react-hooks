@@ -2,31 +2,54 @@
 
 👨‍💼 Our users wanted to be able to control `vanilla-tilt` a bit. Some of them
 like the speed and glare to look different. So Kellie 🧝‍♂️ added a form that will
-allow them to control those values. The trouble is when the users change the
-values, the vanilla tilt element isn't updated with the new values.
+allow them to control those values. This is working great, but something we
+noticed is the tilt effect is getting reset whenever you click the count button!
+
+🦉 The reason this happens is because the ref callback is called every time the
+component is rendered (and the cleanup runs between renders). So we're
+re-initializing the tilt effect on every render.
+
+👨‍💼 This is inefficient and it's a jarring experience if the user clicks on the
+corner of the count button. We want the effect to only re-initialize when the
+options change.
+
+The trick is we want the effect to re-initialize when the `vanillaTiltOptions`
+change, but nothing else. So we can use `useEffect` to do that:
+
+```tsx
+useEffect(
+	() => {
+		// set up stuff
+		return function cleanup() {
+			// clean up stuff
+		}
+	},
+	// depend on stuff:
+	[],
+)
+```
 
 🦉 React needs to know when it needs to run your effect callback function again.
 We do this using the dependency array which is the second argument to
 `useEffect`. Whenever values in that array changes, React will call the returned
 cleanup function and then invoke the effect callback again.
 
-So far we've provided an empty dependency array which effectively tells React
-that the effect doesn't depend on any values from the component. This is why the
-effect is only run once when the component mounts and when values change it's
-not run again.
-
 By default, if you don't provide a second argument, `useEffect` runs after every
-render. While this is probably the right default for correctness, it's far from
-optimal in most cases. If you're not careful, it's easy to end up with infinite
-loops (imagine if you're calling `setState` in the effect which triggers another
-render and so on).
+render (similar to what we're currently experiencing with the `ref` callback).
+While this is probably the right default for correctness, it's far from optimal
+in most `useEffect` cases. If you're not careful, it's easy to end up with
+infinite loops (imagine if you're calling `setState` in the effect which
+triggers another render, which calls the effect, which calls `setState` and so
+on).
 
-👨‍💼 So what we need to do in this step is let React know that our effect callback
-depends on the `vanillaTiltOptions` the user is providing. Let's do that by
-passing the `vanillaTiltOptions` in the dependency array.
+👨‍💼 So what we need to do in this step is move our `ref` callback stuff to
+`useEffect`, create a `useRef` so we can access the DOM node in the `useEffect`
+callback, and let React know that our effect callback depends on the
+`vanillaTiltOptions` the user is providing. Let's do that by passing the
+`vanillaTiltOptions` in the dependency array.
 
 <callout-warning class="aside">
 	You'll notice an issue when you've finished this step. If you click the button
-	to increment the count, the tilt effect is reset! We'll fix this in the next
-	step.
+	to increment the count, the tilt effect is still reset! We'll fix this in the
+	next step.
 </callout-warning>

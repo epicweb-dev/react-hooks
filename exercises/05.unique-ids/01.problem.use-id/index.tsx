@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import * as ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import VanillaTilt from 'vanilla-tilt'
 
 function Field({
@@ -21,7 +21,7 @@ function Field({
 }
 
 interface HTMLVanillaTiltElement extends HTMLDivElement {
-	vanillaTilt: VanillaTilt
+	vanillaTilt?: VanillaTilt
 }
 
 function Tilt({
@@ -41,7 +41,7 @@ function Tilt({
 
 	useEffect(() => {
 		const { current: tiltNode } = tiltRef
-		if (tiltNode === null) return
+		if (!tiltNode) return
 		const vanillaTiltOptions = {
 			max,
 			speed,
@@ -49,7 +49,7 @@ function Tilt({
 			'max-glare': maxGlare,
 		}
 		VanillaTilt.init(tiltNode, vanillaTiltOptions)
-		return () => tiltNode.vanillaTilt.destroy()
+		return () => tiltNode.vanillaTilt?.destroy()
 	}, [glare, max, maxGlare, speed])
 
 	return (
@@ -110,4 +110,4 @@ function App() {
 
 const rootEl = document.createElement('div')
 document.body.append(rootEl)
-ReactDOM.createRoot(rootEl).render(<App />)
+createRoot(rootEl).render(<App />)

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import * as ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import { generateGradient, getMatchingPosts } from '#shared/blog-posts'
 import { setGlobalSearchParams } from '#shared/utils'
 
@@ -141,4 +141,4 @@ function DemoApp() {
 
 const rootEl = document.createElement('div')
 document.body.append(rootEl)
-ReactDOM.createRoot(rootEl).render(<DemoApp />)
+createRoot(rootEl).render(<DemoApp />)

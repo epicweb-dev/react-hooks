@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import * as ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import {
 	type BlogPost,
 	generateGradient,
@@ -164,4 +164,4 @@ function Card({ post }: { post: BlogPost }) {
 
 const rootEl = document.createElement('div')
 document.body.append(rootEl)
-ReactDOM.createRoot(rootEl).render(<App />)
+createRoot(rootEl).render(<App />)

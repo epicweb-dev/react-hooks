@@ -4,6 +4,10 @@
 middle, the tilt effect is reset. You can reproduce this more easily by clicking
 one of the corners of the button.
 
+Moving things into a `useEffect` was supposed to help this because we can be
+explicit about which dependencies trigger the `cleanup` and effect to be run
+again. But we're still having the problem.
+
 If you add a `console.log` to the `useEffect`, you'll notice that it runs even
 when the button is clicked, even if the actual options are unchanged. The reason
 is because the `options` object actually _did_ change! This is because the

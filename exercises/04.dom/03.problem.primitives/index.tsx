@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import * as ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import VanillaTilt from 'vanilla-tilt'
 
 interface HTMLVanillaTiltElement extends HTMLDivElement {
-	vanillaTilt: VanillaTilt
+	vanillaTilt?: VanillaTilt
 }
 
 function Tilt({
@@ -31,9 +31,9 @@ function Tilt({
 
 	useEffect(() => {
 		const { current: tiltNode } = tiltRef
-		if (tiltNode === null) return
+		if (!tiltNode) return
 		VanillaTilt.init(tiltNode, vanillaTiltOptions)
-		return () => tiltNode.vanillaTilt.destroy()
+		return () => tiltNode.vanillaTilt?.destroy()
 		// 🐨 instead of passing the options object here, pass each primitive option
 	}, [vanillaTiltOptions])
 
@@ -45,6 +45,7 @@ function Tilt({
 }
 
 function App() {
+	const [showTilt, setShowTilt] = useState(true)
 	const [count, setCount] = useState(0)
 	const [options, setOptions] = useState({
 		max: 25,
@@ -53,60 +54,68 @@ function App() {
 		maxGlare: 0.5,
 	})
 	return (
-		<div className="app">
-			<form
-				onSubmit={e => e.preventDefault()}
-				onChange={event => {
-					const formData = new FormData(event.currentTarget)
-					setOptions({
-						max: formData.get('max') as any,
-						speed: formData.get('speed') as any,
-						glare: formData.get('glare') === 'on',
-						maxGlare: formData.get('maxGlare') as any,
-					})
-				}}
-			>
-				<div>
-					<label htmlFor="max">Max:</label>
-					<input id="max" name="max" type="number" defaultValue={25} />
+		<div>
+			<button onClick={() => setShowTilt(s => !s)}>Toggle Visibility</button>
+			{showTilt ? (
+				<div className="app">
+					<form
+						onSubmit={e => e.preventDefault()}
+						onChange={event => {
+							const formData = new FormData(event.currentTarget)
+							setOptions({
+								max: formData.get('max') as any,
+								speed: formData.get('speed') as any,
+								glare: formData.get('glare') === 'on',
+								maxGlare: formData.get('maxGlare') as any,
+							})
+						}}
+					>
+						<div>
+							<label htmlFor="max">Max:</label>
+							<input id="max" name="max" type="number" defaultValue={25} />
+						</div>
+						<div>
+							<label htmlFor="speed">Speed:</label>
+							<input id="speed" name="speed" type="number" defaultValue={400} />
+						</div>
+						<div>
+							<label>
+								<input id="glare" name="glare" type="checkbox" defaultChecked />
+								Glare
+							</label>
+						</div>
+						<div>
+							<label htmlFor="maxGlare">Max Glare:</label>
+							<input
+								id="maxGlare"
+								name="maxGlare"
+								type="number"
+								defaultValue={0.5}
+							/>
+						</div>
+					</form>
+					<br />
+					<Tilt {...options}>
+						<div className="totally-centered">
+							<button
+								className="count-button"
+								onClick={() => setCount(c => c + 1)}
+							>
+								{count}
+							</button>
+						</div>
+					</Tilt>
 				</div>
-				<div>
-					<label htmlFor="speed">Speed:</label>
-					<input id="speed" name="speed" type="number" defaultValue={400} />
-				</div>
-				<div>
-					<label>
-						<input id="glare" name="glare" type="checkbox" defaultChecked />
-						Glare
-					</label>
-				</div>
-				<div>
-					<label htmlFor="maxGlare">Max Glare:</label>
-					<input
-						id="maxGlare"
-						name="maxGlare"
-						type="number"
-						defaultValue={0.5}
-					/>
-				</div>
-			</form>
-			<br />
-			<Tilt {...options}>
-				<div className="totally-centered">
-					<button className="count-button" onClick={() => setCount(c => c + 1)}>
-						{count}
-					</button>
-				</div>
-			</Tilt>
+			) : null}
 		</div>
 	)
 }
 
 const rootEl = document.createElement('div')
 document.body.append(rootEl)
-ReactDOM.createRoot(rootEl).render(<App />)
+createRoot(rootEl).render(<App />)
 
-// 🤫 we'll fix this in the next step!
+// 🤫 we'll fix this in this step!
 // (ALMOST) NEVER DISABLE THIS LINT RULE IN REAL LIFE!
 /*
 eslint
