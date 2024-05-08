@@ -2,3 +2,16 @@
 
 👨‍💼 Awesome! You now know how to colocate state! Try to do this as much as
 possible in the future.
+
+🦉 You may have noticed that by putting the state in the `Card`, you actually
+lose the favorited state of the card whenever the card is removed from the page
+(like if you do a search that filters out the card). So really the best place
+for this state would be in the `App` to ensure it never gets lost (except on
+page reloads). Really the best place for this type of state would be in the
+database but that's out of scope for this workshop.
+
+In this exercise, I mostly want you to appreciate how much it simplifies our
+`Card` component and the `MatchingPosts` component by moving the state into the
+`Card` itself. Additionally, it helps performance because now when the favorite
+state changes for a card, React only needs to re-render that card rather than
+the entire `MatchingPosts` component.
