@@ -45,26 +45,12 @@ That last step will be broken and that's what you should fix in this step.
 One more thing, we're going to need to retrieve the query param in two places.
 Right now we get it to initialize our state, but we'll also want to get it when
 the `popstate` event fires. So you'll be extracting that logic to a small
-function. This will introduce another feature of React's `useState` hook that
-we'll take advantage of for the first time and that is the callback form of
-`useState`. So you should know that these are equivalent:
+function and we'll pass that as a function to our `useState` (using the lazy
+initializer as before).
 
-```tsx
-const [val, setVal] = useState('hello')
-// will result in the same thing as:
-const [val, setVal] = useState(function getHello() {
-	return 'hello'
-})
-```
-
-What's the difference? The second form is useful when you creating the initial
-state is computationally expensive. So it's a performance optimization because
-it allows you to place the expensive stuff inside the function and then it will
-only be called during the initial render. This is a bit of a tangent, but I
-thought it was worth mentioning.
-
-Typically it's unnecessary, but since we're making a function anyway, you can
-simply pass the function to `useState` directly:
+In our case the performance difference is so small it's not really worth it, but
+since we're making a function anyway, you can simply pass the function to
+`useState` directly:
 
 ```tsx
 // both of these work just fine:
