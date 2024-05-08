@@ -6,11 +6,7 @@ the user has done. We accomplish this by using state. When state changes (for
 example as the result of user interaction and input), we update the UI. Here's
 how that works with React:
 
-```
-render --> set up the DOM ↙
-user interacts --> state changes ↙
-re-render --> update the DOM ↖
-```
+![render --> set up the DOM --> user interacts --> state changes --> re-render --> update the DOM --> return to user interacts](/react-app-lifecycle.png)
 
 From there's a cycle of user interaction, state changes, and re-rendering. This
 is the core of how React works for interactive applications.
@@ -24,7 +20,7 @@ hooks include:
 
 - `useState`
 - `useRef`
-- `use` (currently in canary)
+- `use`
 - `useReducer`
 - `useEffect`
 
