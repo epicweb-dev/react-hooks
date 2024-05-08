@@ -7,7 +7,7 @@ function Field({
 	...inputProps
 }: {
 	label: string
-} & React.InputHTMLAttributes<HTMLInputElement>) {
+} & React.ComponentProps<'input'>) {
 	// 🐨 create a generatedId using useId
 	// 🐨 create an id that defaults to inputProps.id and falls back to the generatedId
 	return (
