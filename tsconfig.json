@@ -2,6 +2,9 @@
 	"include": ["**/*.ts", "**/*.tsx"],
 	"extends": ["@epic-web/config/typescript"],
 	"compilerOptions": {
+		"lib": ["ES2023", "DOM"],
+		// keep things easy for the exercises
+		"noUncheckedIndexedAccess": false,
 		"paths": {
 			"#*": ["./*"]
 		}
