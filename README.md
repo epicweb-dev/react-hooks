@@ -1,7 +1,7 @@
 <div>
   <h1 align="center"><a href="https://www.epicweb.dev/workshops">🎣 React Hooks</a></h1>
   <strong>
-    Learn the ins and outs of React Hooks.
+    Understand the building blocks of React
   </strong>
   <p>
     Go on a deep dive into React Hooks, and find you what you need to know to
