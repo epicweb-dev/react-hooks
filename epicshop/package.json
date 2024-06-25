@@ -1,7 +1,7 @@
 {
   "type": "module",
   "dependencies": {
-    "@epic-web/workshop-app": "^4.5.1",
+    "@epic-web/workshop-app": "^4.6.0",
     "execa": "^9.1.0"
   }
 }
