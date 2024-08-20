@@ -4,7 +4,9 @@
   "epicshop": {
     "title": "React Hooks 🎣",
     "subtitle": "Understand the building blocks of React",
-    "githubRoot": "https://github.com/epicweb-dev/react-hooks/blob/main",
+    "githubRepo": "https://github.com/epicweb-dev/react-hooks",
+    "epicWorkshopHost": "www.epicreact.dev",
+    "epicWorkshopSlug": "react-hooks",
     "instructor": {
       "name": "Kent C. Dodds",
       "avatar": "/images/instructor.png",
