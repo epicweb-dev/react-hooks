@@ -74,10 +74,10 @@ function App() {
 				onChange={event => {
 					const formData = new FormData(event.currentTarget)
 					setOptions({
-						max: formData.get('max') as any,
-						speed: formData.get('speed') as any,
+						max: Number(formData.get('max')),
+						speed: Number(formData.get('speed')),
 						glare: formData.get('glare') === 'on',
-						maxGlare: formData.get('maxGlare') as any,
+						maxGlare: Number(formData.get('maxGlare')),
 					})
 				}}
 			>
