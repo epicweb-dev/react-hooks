@@ -18,13 +18,15 @@ function App() {
 	const caterpillarChecked = words.includes('caterpillar')
 
 	useEffect(() => {
-		// 💯 you can use this to test whether your cleanup is working (make sure to include the console.log below as well)
-		// const hugeData = new Array(1_000_000).fill(new Array(1_000_000).fill('🐶🐱🐛'))
+		// 🚨 we use this to test whether your cleanup is working
+		const hugeData = new Array(1_000_000).fill(
+			new Array(1_000_000).fill('🐶🐱🐛'),
+		)
 
 		// 🐨 extract your event handler here into a function called updateQuery
 		window.addEventListener('popstate', () => {
-			// 💯 you can use this to test whether your cleanup is freeing up memory
-			// console.log(hugeData)
+			// 🚨 this console.log forces the hugeData to hang around as long as the event listener is active
+			console.log(hugeData)
 
 			console.log('popstate event listener called')
 			setQuery(getQueryParam())
@@ -40,12 +42,7 @@ function App() {
 
 	return (
 		<div className="app">
-			<form
-				onSubmit={e => {
-					e.preventDefault()
-					setGlobalSearchParams({ query })
-				}}
-			>
+			<form action={() => setGlobalSearchParams({ query })}>
 				<div>
 					<label htmlFor="searchInput">Search:</label>
 					<input

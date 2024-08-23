@@ -1,8 +1,7 @@
 import { expect, testStep, dtl } from '@epic-web/workshop-utils/test'
-const { screen } = dtl
+const { screen, fireEvent } = dtl
 
-const currentPath = window.location.pathname
-window.history.pushState({}, '', `${currentPath}?query=dog`)
+window.history.pushState({}, '', '?query=dog')
 
 await import('./index.tsx')
 

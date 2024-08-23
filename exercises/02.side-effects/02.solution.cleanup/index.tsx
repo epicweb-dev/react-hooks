@@ -18,14 +18,12 @@ function App() {
 	const caterpillarChecked = words.includes('caterpillar')
 
 	useEffect(() => {
-		// 💯 this is here for you to test that the memory is freed up when the
-		// component is unmounted.
+		// 🚨 we use this to test whether your cleanup is working
 		const hugeData = new Array(1_000_000).fill(
 			new Array(1_000_000).fill('🐶🐱🐛'),
 		)
 		function updateQuery() {
-			// 💯 this is here to make sure the function hangs onto the reference with
-			// hugeData (because browsers can be pretty clever with their JIT optimizations)
+			// 🚨 this console.log forces the hugeData to hang around as long as the event listener is active
 			console.log(hugeData)
 			console.log('popstate event listener called')
 			setQuery(getQueryParam())
@@ -43,12 +41,7 @@ function App() {
 
 	return (
 		<div className="app">
-			<form
-				onSubmit={e => {
-					e.preventDefault()
-					setGlobalSearchParams({ query })
-				}}
-			>
+			<form action={() => setGlobalSearchParams({ query })}>
 				<div>
 					<label htmlFor="searchInput">Search:</label>
 					<input

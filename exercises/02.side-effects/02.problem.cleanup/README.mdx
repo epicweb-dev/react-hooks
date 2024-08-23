@@ -61,9 +61,16 @@ You can add `console.log` statements to make sure things are being called (unles
 you want to open up the memory profiling tab in your dev tools and click the
 checkbox a bunch of times to see the memory usage go up 😅).
 
-💯 If you really do want to test this out, I've added a couple lines you can
-uncomment to allocate huge amounts of memory to huge arrays. If you uncomment
-those, then watch the quick climb of the memory in the
+🚨 To test this, I've added a couple lines to allocate huge amounts of memory to
+huge arrays. Watch the quick climb of the memory in the
 [Memory tab of dev tools](https://developer.chrome.com/docs/devtools/memory) or
 [Browser Task manager](https://developer.chrome.com/docs/devtools/memory-problems#monitor_memory_use_in_realtime_with_the_chrome_task_manager)
-every time you check and uncheck the box.
+every time you check and uncheck the box. The test toggles the checkbox many
+times and then checks that the memory usage is a reasonable increase of the
+initial memory usage.
+
+<callout-warning>
+	Testing memory leaks is tricky. It's possible the memory usage starts out
+	higher than it should leading to a test that passes but should not. Try
+	running the test a few times to be certain you've got it right.
+</callout-warning>

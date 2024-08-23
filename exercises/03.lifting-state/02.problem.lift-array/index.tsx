@@ -50,12 +50,7 @@ function Form({
 	}
 
 	return (
-		<form
-			onSubmit={e => {
-				e.preventDefault()
-				setGlobalSearchParams({ query })
-			}}
-		>
+		<form action={() => setGlobalSearchParams({ query })}>
 			<div>
 				<label htmlFor="searchInput">Search:</label>
 				<input
