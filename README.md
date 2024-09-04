@@ -14,7 +14,7 @@
 <div align="center">
   <a
     alt="Epic Web logo with the words Deployed Version"
-    href="https://epicweb-dev-react-hooks.fly.dev/"
+    href="https://hooks.epicreact.dev"
   >
     <img
       width="300px"
