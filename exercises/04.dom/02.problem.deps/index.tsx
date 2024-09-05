@@ -38,7 +38,8 @@ function Tilt({
 	return (
 		<div
 			className="tilt-root"
-			// 🐨 replace this ref prop with the tiltRef
+			// 🐨 replace the contents of this ref prop with a reference to tiltRef
+			// 💰 ref={tiltRef}
 			ref={(tiltNode: HTMLVanillaTiltElement) => {
 				// 🐨 move all of this to the useEffect callback
 				if (!tiltNode) return
