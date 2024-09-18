@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@epic-web/workshop-app": "^4.28.0",
+    "@epic-web/workshop-utils": "^4.28.0",
     "execa": "^9.1.0"
   }
 }
