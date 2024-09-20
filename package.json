@@ -5,6 +5,9 @@
     "title": "React Hooks 🎣",
     "subtitle": "Understand the building blocks of React",
     "githubRepo": "https://github.com/epicweb-dev/react-hooks",
+    "stackBlitzConfig": {
+      "view": "editor"
+    },
     "product": {
       "host": "www.epicreact.dev",
       "slug": "react-hooks",
