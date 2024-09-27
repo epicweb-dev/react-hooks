@@ -57,7 +57,7 @@ if (performance.memory) {
 			).toFixed(2)
 			expect(
 				Number(percentageChange),
-				`The memory usage increased from ${initialMemoryMB} to ${finalMemoryMB} (a ${percentageChange}% increase)`,
+				`🚨 The memory usage increased from ${initialMemoryMB} to ${finalMemoryMB} (a ${percentageChange}% increase)`,
 			).toBeLessThan(110)
 		},
 	)
