@@ -8,7 +8,7 @@ function App() {
 	// 🦉 this is deriving state!
 
 	// 🐨 create a dogChecked variable that is whether words includes "dog"
-	// and do the same for "cat" and "caterpiller"
+	// and do the same for "cat" and "caterpillar"
 	// 🦉 this is deriving state from derived state!
 
 	function handleCheck(tag: string, checked: boolean) {
