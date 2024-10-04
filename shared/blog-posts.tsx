@@ -10,7 +10,7 @@ const blogPosts = [
 		id: 'b912d5c6674bb',
 		title: 'Caring for Your Feline Friend',
 		description:
-			'Learn how to provide the best care for your beloved cat (not caterpiller).',
+			'Learn how to provide the best care for your beloved cat (not caterpillar).',
 		tags: ['cat', 'care', 'caterpillar'],
 	},
 	{
