@@ -18,7 +18,8 @@ function App() {
 	const caterpillarChecked = words.includes('caterpillar')
 
 	// 🐨 add a useEffect(() => {}, []) call here (we'll talk about that empty array later)
-	// 🐨 in the useEffect callback, subscribe to window's popstate event
+	// 🐨 in the useEffect call, subscribe to window's popstate event
+	// 🐨 in the useEffect callback, unsubscribe from window's popstate event
 	// 🐨 your event handler should call setQuery to getQueryParam()
 	// 📜 https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 
