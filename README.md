@@ -105,7 +105,7 @@ Learn all about the workshop app on the
 [build-badge]: https://img.shields.io/github/actions/workflow/status/epicweb-dev/react-hooks/validate.yml?branch=main&logo=github&style=flat-square
 [build]: https://github.com/epicweb-dev/react-hooks/actions?query=workflow%3Avalidate
 [license-badge]: https://img.shields.io/badge/license-GPL%203.0%20License-blue.svg?style=flat-square
-[license]: https://github.com/epicweb-dev/react-hooks/blob/main/LICENSE
+[license]: https://github.com/epicweb-dev/react-hooks/blob/main/LICENSE.md
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
 [coc]: https://kentcdodds.com/conduct
 [win-path]: https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/
