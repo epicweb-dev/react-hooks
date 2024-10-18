@@ -37,8 +37,10 @@ need it.
 So
 
 ```tsx
-// both of these work just fine:
+// This will call getQueryParam on every render, undermining our optimization! 😵
 const [query, setQuery] = useState(getQueryParam())
+
+// This will _only_ call getQueryParam on init. Great! ✅
 const [query, setQuery] = useState(getQueryParam)
 ```
 
