@@ -11,7 +11,7 @@ const defaultState = Array(9).fill(null)
 // 🐨 create a variable for the key you'll use for storing the squares
 // 💰 'squares' should work well.
 function Board() {
-	// 🐨 use the callback form for useState the callback should:
+	// 🐨 use the callback form for useState. The callback should:
 	// 1. get the value from localStorage using the key you created above
 	// 2. parse the JSON from that value
 	// 3. return the parsed value (or the default value if there isn't one)
