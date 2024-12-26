@@ -43,7 +43,7 @@ speed on some of the tools and concepts we'll be covering:
 
 - [Why React Hooks](https://www.youtube.com/watch?v=zWsZcBiwgVE&list=PLV5CVI1eNcJgNqzNwcs4UKrlJdhfDjshf)
   (35 minutes)
-- [Getting Closure on Hooks](https://www.swyx.io/getting-closure-on-hooks/)
+- [Getting Closure on Hooks](https://www.youtube.com/embed/KJP1E-Y-xyo?autoplay=1)
 - [React Hooks Documentation](https://react.dev/reference/react/hooks)
 - [Rules of Hooks](https://react.dev/warnings/invalid-hook-call-warning)
 
