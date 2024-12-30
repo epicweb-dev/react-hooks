@@ -109,7 +109,7 @@ function App() {
 	// 💰 NOTE: the "step" is actually the "index" which normally you don't want to
 	// use as the "key" prop. However, in this case, the index is effectively
 	// the "id" of the step in history, so it is correct.
-	const moves = 'TODO: create moves list'
+	const moves = 'TODO: create moves li elements'
 
 	return (
 		<div className="game">
