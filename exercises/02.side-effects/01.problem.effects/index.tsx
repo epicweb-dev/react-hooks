@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { generateGradient, getMatchingPosts } from '#shared/blog-posts'
 import { setGlobalSearchParams } from '#shared/utils'
@@ -19,6 +19,10 @@ function App() {
 
 	// 🐨 add a useEffect(() => {}, []) call here (we'll talk about that empty array later)
 	// 🐨 in the useEffect callback, subscribe to window's popstate event
+
+	useEffect(()=>{
+		window.addEventListener('popstate',()=> setQuery(getQueryParam))
+	},[])
 	// 🦉 if that doesn't make sense to you... don't worry, it's supposed to be broken! We'll fix it next
 	// 🐨 your event handler should call setQuery to getQueryParam()
 	// 📜 https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
@@ -26,7 +30,7 @@ function App() {
 	function handleCheck(tag: string, checked: boolean) {
 		const newWords = checked ? [...words, tag] : words.filter(w => w !== tag)
 		setQuery(newWords.filter(Boolean).join(' ').trim())
-	}
+	} 
 
 	return (
 		<div className="app">

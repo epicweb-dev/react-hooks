@@ -9,6 +9,7 @@ function getQueryParam() {
 }
 
 function App() {
+	console.log('clean up')
 	const [query, setQuery] = useState(getQueryParam)
 
 	const words = query.split(' ')
@@ -24,13 +25,16 @@ function App() {
 		)
 
 		// 🐨 extract your event handler here into a function called updateQuery
-		window.addEventListener('popstate', () => {
+		function updateQuery(){
 			// 🚨 this console.log forces the hugeData to hang around as long as the event listener is active
 			console.log(hugeData)
 
 			console.log('popstate event listener called')
 			setQuery(getQueryParam())
-		})
+		}
+		window.addEventListener('popstate', updateQuery)
+		console.log('clean up')
+		return () => window.removeEventListener('popstate', updateQuery)
 		// 🐨 return a function which removes the popstate event listener
 		// 📜 https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
 	}, [])
