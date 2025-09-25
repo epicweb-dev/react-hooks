@@ -5,9 +5,9 @@
     "test": "playwright test"
   },
   "dependencies": {
-    "@epic-web/workshop-app": "^6.32.2",
-    "@epic-web/workshop-utils": "^6.32.2",
+    "@epic-web/workshop-app": "^6.32.3",
+    "@epic-web/workshop-utils": "^6.32.3",
     "execa": "^9.5.1",
-    "@epic-web/workshop-cli": "^6.32.2"
+    "@epic-web/workshop-cli": "^6.32.3"
   }
 }
