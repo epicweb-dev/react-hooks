@@ -14,7 +14,7 @@ function App() {
 						id="searchInput"
 						name="query"
 						type="search"
-						onChange={e => setQuery(e.currentTarget.value)}
+						onChange={(e) => setQuery(e.currentTarget.value)}
 					/>
 				</div>
 				<div>
@@ -40,7 +40,7 @@ function MatchingPosts({ query }: { query: string }) {
 
 	return (
 		<ul className="post-list">
-			{matchingPosts.map(post => (
+			{matchingPosts.map((post) => (
 				<li key={post.id}>
 					<div
 						className="post-image"
@@ -48,7 +48,7 @@ function MatchingPosts({ query }: { query: string }) {
 					/>
 					<a
 						href={post.id}
-						onClick={event => {
+						onClick={(event) => {
 							event.preventDefault()
 							alert(`Great! Let's go to ${post.id}!`)
 						}}

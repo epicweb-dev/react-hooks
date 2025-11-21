@@ -20,7 +20,7 @@ if (performance.memory) {
 		for (let i = 0; i < times; i++) {
 			fireEvent.click(checkbox)
 			// Wait for any asynchronous operations to complete
-			await new Promise(resolve => setTimeout(resolve, 10))
+			await new Promise((resolve) => setTimeout(resolve, 10))
 		}
 	}
 
@@ -36,13 +36,13 @@ if (performance.memory) {
 			}
 
 			// wait a bit for garbage collection to finish
-			await new Promise(resolve => setTimeout(resolve, 500))
+			await new Promise((resolve) => setTimeout(resolve, 500))
 			const initialMemory = performance.memory.usedJSHeapSize
 
 			await toggleShowForm(250)
 
 			// wait a bit for garbage collection to finish
-			await new Promise(resolve => setTimeout(resolve, 500))
+			await new Promise((resolve) => setTimeout(resolve, 500))
 
 			const finalMemory = performance.memory.usedJSHeapSize
 

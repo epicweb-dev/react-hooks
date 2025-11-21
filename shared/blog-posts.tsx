@@ -96,11 +96,11 @@ export function generateGradient(seedHex: string): string {
 }
 
 export function getMatchingPosts(query: string) {
-	const words = query.split(' ').map(w => w.trim())
-	return blogPosts.filter(post => {
+	const words = query.split(' ').map((w) => w.trim())
+	return blogPosts.filter((post) => {
 		if (!query) return true
 		return (
-			words.every(word => post.tags.some(tag => tag === word)) ||
+			words.every((word) => post.tags.some((tag) => tag === word)) ||
 			post.title.toLowerCase().includes(query.toLowerCase()) ||
 			post.description.toLowerCase().includes(query.toLowerCase())
 		)

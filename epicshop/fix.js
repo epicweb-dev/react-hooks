@@ -9,29 +9,29 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const here = (...p) => path.join(__dirname, ...p)
 
 const workshopRoot = here('..')
-const examples = (await readDir(here('../examples'))).map(dir =>
+const examples = (await readDir(here('../examples'))).map((dir) =>
 	here(`../examples/${dir}`),
 )
 const exercises = (await readDir(here('../exercises')))
-	.map(name => here(`../exercises/${name}`))
-	.filter(filepath => fs.statSync(filepath).isDirectory())
+	.map((name) => here(`../exercises/${name}`))
+	.filter((filepath) => fs.statSync(filepath).isDirectory())
 const exerciseApps = (
 	await Promise.all(
-		exercises.flatMap(async exercise => {
+		exercises.flatMap(async (exercise) => {
 			return (await readDir(exercise))
-				.filter(dir => {
+				.filter((dir) => {
 					return /(problem|solution)/.test(dir)
 				})
-				.map(dir => path.join(exercise, dir))
+				.map((dir) => path.join(exercise, dir))
 		}),
 	)
 ).flat()
-const exampleApps = (await readDir(here('../examples'))).map(dir =>
+const exampleApps = (await readDir(here('../examples'))).map((dir) =>
 	here(`../examples/${dir}`),
 )
 const apps = [...exampleApps, ...exerciseApps]
 
-const appsWithPkgJson = [...examples, ...apps].filter(app => {
+const appsWithPkgJson = [...examples, ...apps].filter((app) => {
 	const pkgjsonPath = path.join(app, 'package.json')
 	return exists(pkgjsonPath)
 })
@@ -67,7 +67,7 @@ async function updateTsconfig() {
 	const tsconfig = {
 		files: [],
 		exclude: ['node_modules'],
-		references: appsWithPkgJson.map(a => ({
+		references: appsWithPkgJson.map((a) => ({
 			path: relativeToWorkshopRoot(a).replace(/\\/g, '/'),
 		})),
 	}

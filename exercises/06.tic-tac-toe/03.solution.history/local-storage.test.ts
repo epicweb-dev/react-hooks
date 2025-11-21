@@ -57,7 +57,7 @@ await testStep('Game updates localStorage after a move', async () => {
 await testStep('Adding another move', async () => {
 	const squares = await getSquares()
 	fireEvent.click(squares[5])
-	await new Promise(resolve => setTimeout(resolve, 100))
+	await new Promise((resolve) => setTimeout(resolve, 100))
 })
 
 await testStep('Game history allows going back to previous moves', async () => {
@@ -98,7 +98,7 @@ await testStep('Restart button clears game history', async () => {
 
 	// Check if the board is reset
 	const squares = await getSquares()
-	squares.forEach(square => expect(square).toHaveTextContent(''))
+	squares.forEach((square) => expect(square).toHaveTextContent(''))
 
 	// Check if move history is cleared
 	const moveButtons = screen.queryAllByRole('button', { name: /Go to/i })

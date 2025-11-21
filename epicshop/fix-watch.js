@@ -20,14 +20,14 @@ const debouncedRun = debounce(run, 200)
 
 // Add event listeners.
 watcher
-	.on('addDir', path => {
+	.on('addDir', (path) => {
 		debouncedRun()
 	})
-	.on('unlinkDir', path => {
+	.on('unlinkDir', (path) => {
 		// Only act if path contains two slashes (excluding the leading `./`)
 		debouncedRun()
 	})
-	.on('error', error => console.log(`Watcher error: ${error}`))
+	.on('error', (error) => console.log(`Watcher error: ${error}`))
 
 /**
  * Simple debounce implementation

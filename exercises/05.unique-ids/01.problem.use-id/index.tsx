@@ -70,8 +70,8 @@ function App() {
 	return (
 		<div className="app">
 			<form
-				onSubmit={e => e.preventDefault()}
-				onChange={event => {
+				onSubmit={(e) => e.preventDefault()}
+				onChange={(event) => {
 					const formData = new FormData(event.currentTarget)
 					setOptions({
 						max: Number(formData.get('max')),
@@ -99,7 +99,10 @@ function App() {
 			<br />
 			<Tilt {...options}>
 				<div className="totally-centered">
-					<button className="count-button" onClick={() => setCount(c => c + 1)}>
+					<button
+						className="count-button"
+						onClick={() => setCount((c) => c + 1)}
+					>
 						{count}
 					</button>
 				</div>

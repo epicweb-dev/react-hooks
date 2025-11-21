@@ -77,14 +77,14 @@ await testStep('Cannot play on occupied square', async () => {
 await testStep('Game ends in a draw', async () => {
 	const restartButton = await screen.findByRole('button', { name: /restart/i })
 	fireEvent.click(restartButton)
-	await new Promise(resolve => setTimeout(resolve, 10))
+	await new Promise((resolve) => setTimeout(resolve, 10))
 
 	const squares = await getSquares()
 	const moves = [0, 1, 2, 4, 3, 5, 7, 6, 8]
 
 	for (const move of moves) {
 		fireEvent.click(squares[move])
-		await new Promise(resolve => setTimeout(resolve, 10))
+		await new Promise((resolve) => setTimeout(resolve, 10))
 	}
 
 	await waitFor(() => {

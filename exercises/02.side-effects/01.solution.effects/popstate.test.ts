@@ -16,7 +16,7 @@ await testStep(
 
 // wait for the event handler to be set up
 // for some reason it takes a bit
-await new Promise(resolve => setTimeout(resolve, 100))
+await new Promise((resolve) => setTimeout(resolve, 100))
 
 await testStep(
 	'The search box updates when popstate event is triggered',

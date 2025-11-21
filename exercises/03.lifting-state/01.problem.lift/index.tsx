@@ -29,7 +29,7 @@ function Form() {
 	// 🐨 lift this up to the App
 	const [query, setQuery] = useState(getQueryParam)
 
-	const words = query.split(' ').map(w => w.trim())
+	const words = query.split(' ').map((w) => w.trim())
 
 	const dogChecked = words.includes('dog')
 	const catChecked = words.includes('cat')
@@ -45,7 +45,7 @@ function Form() {
 	}, [])
 
 	function handleCheck(tag: string, checked: boolean) {
-		const newWords = checked ? [...words, tag] : words.filter(w => w !== tag)
+		const newWords = checked ? [...words, tag] : words.filter((w) => w !== tag)
 		setQuery(newWords.filter(Boolean).join(' ').trim())
 	}
 
@@ -62,7 +62,7 @@ function Form() {
 					name="query"
 					type="search"
 					value={query}
-					onChange={e => setQuery(e.currentTarget.value)}
+					onChange={(e) => setQuery(e.currentTarget.value)}
 				/>
 			</div>
 			<div>
@@ -70,7 +70,7 @@ function Form() {
 					<input
 						type="checkbox"
 						checked={dogChecked}
-						onChange={e => handleCheck('dog', e.currentTarget.checked)}
+						onChange={(e) => handleCheck('dog', e.currentTarget.checked)}
 					/>{' '}
 					🐶 dog
 				</label>
@@ -78,7 +78,7 @@ function Form() {
 					<input
 						type="checkbox"
 						checked={catChecked}
-						onChange={e => handleCheck('cat', e.currentTarget.checked)}
+						onChange={(e) => handleCheck('cat', e.currentTarget.checked)}
 					/>{' '}
 					🐱 cat
 				</label>
@@ -86,7 +86,9 @@ function Form() {
 					<input
 						type="checkbox"
 						checked={caterpillarChecked}
-						onChange={e => handleCheck('caterpillar', e.currentTarget.checked)}
+						onChange={(e) =>
+							handleCheck('caterpillar', e.currentTarget.checked)
+						}
 					/>{' '}
 					🐛 caterpillar
 				</label>
@@ -103,7 +105,7 @@ function MatchingPosts({ query }: { query: string }) {
 		<ul className="post-list">
 			{matchingPosts
 				.sort((a, b) => a.title.localeCompare(b.title))
-				.map(post => (
+				.map((post) => (
 					<Card key={post.id} post={post} />
 				))}
 		</ul>
@@ -132,7 +134,7 @@ function Card({ post }: { post: BlogPost }) {
 			/>
 			<a
 				href={post.id}
-				onClick={event => {
+				onClick={(event) => {
 					event.preventDefault()
 					alert(`Great! Let's go to ${post.id}!`)
 				}}

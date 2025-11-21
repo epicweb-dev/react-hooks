@@ -55,12 +55,12 @@ function App() {
 	})
 	return (
 		<div>
-			<button onClick={() => setShowTilt(s => !s)}>Toggle Visibility</button>
+			<button onClick={() => setShowTilt((s) => !s)}>Toggle Visibility</button>
 			{showTilt ? (
 				<div className="app">
 					<form
-						onSubmit={e => e.preventDefault()}
-						onChange={event => {
+						onSubmit={(e) => e.preventDefault()}
+						onChange={(event) => {
 							const formData = new FormData(event.currentTarget)
 							setOptions({
 								max: Number(formData.get('max')),
@@ -99,7 +99,7 @@ function App() {
 						<div className="totally-centered">
 							<button
 								className="count-button"
-								onClick={() => setCount(c => c + 1)}
+								onClick={() => setCount((c) => c + 1)}
 							>
 								{count}
 							</button>

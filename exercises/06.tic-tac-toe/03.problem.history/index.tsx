@@ -89,7 +89,7 @@ function App() {
 	function selectSquare(index: number) {
 		if (winner || squares[index]) return
 		// 🐨 this is now setState and previousState, not setSquares and previousSquares
-		setSquares(previousSquares => {
+		setSquares((previousSquares) => {
 			// 🐨 create an updated history and squares object
 			// 💰 note that the history should be from index 0 to the current step plus the new squares
 			// and the new current step should be equal to the last index of the new history

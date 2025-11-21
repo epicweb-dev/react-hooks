@@ -56,8 +56,8 @@ export function calculateStatus(
 }
 
 export function calculateNextValue(squares: Squares): Player {
-	const xSquaresCount = squares.filter(r => r === 'X').length
-	const oSquaresCount = squares.filter(r => r === 'O').length
+	const xSquaresCount = squares.filter((r) => r === 'X').length
+	const oSquaresCount = squares.filter((r) => r === 'O').length
 	return oSquaresCount === xSquaresCount ? 'X' : 'O'
 }
 

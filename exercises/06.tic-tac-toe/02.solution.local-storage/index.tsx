@@ -35,7 +35,7 @@ function Board() {
 
 	function selectSquare(index: number) {
 		if (winner || squares[index]) return
-		setSquares(previousSquares => previousSquares.with(index, nextValue))
+		setSquares((previousSquares) => previousSquares.with(index, nextValue))
 	}
 
 	function restart() {

@@ -28,7 +28,7 @@ The simplest way is to use the `ref` prop is by passing a callback:
 function MyDiv() {
 	return (
 		<div
-			ref={myDiv => {
+			ref={(myDiv) => {
 				console.log(`here's my div!`, myDiv)
 				return function cleanup() {
 					console.log(`my div is getting removed from the page!`, myDiv)

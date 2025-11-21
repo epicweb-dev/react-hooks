@@ -14,7 +14,7 @@ function App() {
 	const caterpillarChecked = words.includes('caterpillar')
 
 	function handleCheck(tag: string, checked: boolean) {
-		const newWords = checked ? [...words, tag] : words.filter(w => w !== tag)
+		const newWords = checked ? [...words, tag] : words.filter((w) => w !== tag)
 		setQuery(newWords.filter(Boolean).join(' ').trim())
 	}
 
@@ -28,7 +28,7 @@ function App() {
 						name="query"
 						type="search"
 						value={query}
-						onChange={e => setQuery(e.currentTarget.value)}
+						onChange={(e) => setQuery(e.currentTarget.value)}
 					/>
 				</div>
 				<div>
@@ -36,7 +36,7 @@ function App() {
 						<input
 							type="checkbox"
 							checked={dogChecked}
-							onChange={e => handleCheck('dog', e.currentTarget.checked)}
+							onChange={(e) => handleCheck('dog', e.currentTarget.checked)}
 						/>{' '}
 						🐶 dog
 					</label>
@@ -44,7 +44,7 @@ function App() {
 						<input
 							type="checkbox"
 							checked={catChecked}
-							onChange={e => handleCheck('cat', e.currentTarget.checked)}
+							onChange={(e) => handleCheck('cat', e.currentTarget.checked)}
 						/>{' '}
 						🐱 cat
 					</label>
@@ -52,7 +52,7 @@ function App() {
 						<input
 							type="checkbox"
 							checked={caterpillarChecked}
-							onChange={e =>
+							onChange={(e) =>
 								handleCheck('caterpillar', e.currentTarget.checked)
 							}
 						/>{' '}
@@ -71,7 +71,7 @@ function MatchingPosts({ query }: { query: string }) {
 
 	return (
 		<ul className="post-list">
-			{matchingPosts.map(post => (
+			{matchingPosts.map((post) => (
 				<li key={post.id}>
 					<div
 						className="post-image"
@@ -79,7 +79,7 @@ function MatchingPosts({ query }: { query: string }) {
 					/>
 					<a
 						href={post.id}
-						onClick={event => {
+						onClick={(event) => {
 							event.preventDefault()
 							alert(`Great! Let's go to ${post.id}!`)
 						}}

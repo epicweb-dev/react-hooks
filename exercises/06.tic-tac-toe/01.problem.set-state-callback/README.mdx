@@ -47,7 +47,7 @@ correctly. This is because the state is updated based on the previous state and
 you want to make sure that you're always using the most up-to-date state.
 
 ```tsx
-setCount(currentCount => {
+setCount((currentCount) => {
 	return currentCount + 1
 })
 ```

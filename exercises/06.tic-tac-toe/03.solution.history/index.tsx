@@ -81,7 +81,7 @@ function App() {
 	function selectSquare(index: number) {
 		if (winner || currentSquares[index]) return
 
-		setState(previousState => {
+		setState((previousState) => {
 			const { currentStep, history } = previousState
 			const newHistory = history.slice(0, currentStep + 1)
 			const squares = history[currentStep].with(index, nextValue)
@@ -104,7 +104,10 @@ function App() {
 			<li key={step}>
 				<button
 					onClick={() =>
-						setState(previousState => ({ ...previousState, currentStep: step }))
+						setState((previousState) => ({
+							...previousState,
+							currentStep: step,
+						}))
 					}
 					disabled={isCurrentStep}
 				>
