@@ -33,15 +33,15 @@ jobs:
         run: epicshop config --repos-dir ./workshops
 
       - name: ▶️ Add repo
-        run: epicshop add react-hooks
+        run: epicshop add ${{ github.event.repository.name }}
 
       - name: ʦ TypeScript
         run: npm run typecheck
-        working-directory: ./workshops/react-hooks
+        working-directory: ./workshops/${{ github.event.repository.name }}
 
       - name: ⬣ ESLint
         run: npm run lint
-        working-directory: ./workshops/react-hooks
+        working-directory: ./workshops/${{ github.event.repository.name }}
 
       # TODO: get this working again
       # - name: ⬇️ Install Playwright
