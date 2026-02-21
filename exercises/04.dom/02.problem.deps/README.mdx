@@ -7,9 +7,11 @@ like the speed and glare to look different. So Kellie 🧝‍♂️ added a form
 allow them to control those values. This is working great, but something we
 noticed is the tilt effect is getting reset whenever you click the count button!
 
-🦉 The reason this happens is because the ref callback is called every time the
-component is rendered (and the cleanup runs between renders). So we're
-re-initializing the tilt effect on every render.
+🦉 The reason this happens is because we're passing an inline callback to `ref`.
+Callback refs run when the DOM node is added/removed, and React will also call
+them again if you pass a different ref callback. Because `(tiltNode) => { ... }`
+is a new function on every render, React runs the previous ref cleanup and then
+re-initializes the tilt effect on every render.
 
 👨‍💼 This is inefficient and it's a jarring experience if the user clicks on the
 corner of the count button. We want the effect to only re-initialize when the
@@ -37,7 +39,8 @@ We do this using the dependency array which is the second argument to
 cleanup function and then invoke the effect callback again.
 
 By default, if you don't provide a second argument, `useEffect` runs after every
-render (similar to what we're currently experiencing with the `ref` callback).
+render (similar to what we're currently experiencing with the inline `ref`
+callback, because it's a new function on every render).
 While this is probably the right default for correctness, it's far from optimal
 in most `useEffect` cases. If you're not careful, it's easy to end up with
 infinite loops (imagine if you're calling `setState` in the effect which
