@@ -1,6 +1,8 @@
 {
   "type": "module",
   "scripts": {
+    "postinstall": "node ./patch-workshop-app.js",
+    "test:patch": "node --test ./patch-workshop-app.test.js",
     "test:setup": "playwright install chromium --with-deps",
     "test": "playwright test"
   },
